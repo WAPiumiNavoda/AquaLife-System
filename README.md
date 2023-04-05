@@ -13,7 +13,7 @@ Member 03 - Heshan Kotuwegedra<br>
 Member 04 - Rashmi Bhagya<br>
 
 # Technical Stack
-![enter image description here](https://res.cloudinary.com/sliit45/image/upload/v1665509665/SPMAPP/Orange_Minimal_Illustrative_Reddit_Banner_eaowfg.png)
+![enter image description here](https://devtechnosys.com/insights/wp-content/uploads/2022/12/Mern-Stack.png)
 
 mongoDB<br>
 express<br>
