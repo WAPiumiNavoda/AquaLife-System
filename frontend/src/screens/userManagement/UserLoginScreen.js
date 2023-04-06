@@ -43,7 +43,7 @@ const Login = () => {
                   alt="Sample image"
                 />
               </div>
-              <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <div className="col-md-10 col-lg-8 col-xl-5 offset-xl-1">
                 <form>
                   <div className="form-outline mb-4">
                     {/* EMAIL INPUT */}

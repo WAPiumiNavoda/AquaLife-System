@@ -7,7 +7,6 @@ import { userRegister } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
 //import "./RegisterScreen.css";
 
-
 const UserRegisterScreen = () => {
 	const [name, setName] = useState("");
 	const [dob, setDob] = useState("");
@@ -39,7 +38,7 @@ const UserRegisterScreen = () => {
 		}
 	};
 
-	
+
 
 	const demoHandler = async (e) => {
 		e.preventDefault();
