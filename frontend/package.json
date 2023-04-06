@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "concurrently": "^8.0.1",
+    "prettier": "^2.8.7"
+  }
+}
