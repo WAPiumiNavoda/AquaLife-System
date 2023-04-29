@@ -3,6 +3,7 @@ import { useState, useE } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,6 +45,7 @@ const Login = () => {
                 />
               </div>
               <div className="col-md-10 col-lg-8 col-xl-5 offset-xl-1">
+              <h2 className="title">LOGIN</h2><br/>
                 <form>
                   <div className="form-outline mb-4">
                     {/* EMAIL INPUT */}
