@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const connectDB = require("./config/db");
-const adminRoutes = require("./routes/adminRoutes");
 const userRoutes = require("./routes/userRoutes")
+const adminRoutes = require("./routes/adminRoutes")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 dotenv.config();
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 	res.send("API is Running");
 });
 
-app.use("/user/admin", adminRoutes);
+app.use("/user/admin",adminRoutes)
 app.use("/user",userRoutes)
 
 
