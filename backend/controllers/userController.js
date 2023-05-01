@@ -114,7 +114,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 			_id: updatedUser._id,
 			name: updatedUser.name,
 			dob: updatedUser.dob,
-			nic: updateUser.nic,
+			nic: updatedUser.nic,
 			telephone: updatedUser.telephone,
 			address: updatedUser.address,
 			email: updatedUser.email,
