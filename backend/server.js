@@ -5,7 +5,8 @@ const cors = require("cors");
 const app = express();
 const connectDB = require("./config/db");
 const adminRoutes = require("./routes/adminRoutes");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
+const submitInnovations = require("./routes/sunmitInnovationRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/user/admin", adminRoutes);
 app.use("/user",userRoutes)
+app.use("/innovation",submitInnovations);
 
 
 app.use(notFound);
