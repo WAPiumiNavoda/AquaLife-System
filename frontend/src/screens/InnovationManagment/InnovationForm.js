@@ -1,4 +1,3 @@
-import React from 'react'
 import React,{useState,useEffect} from 'react'
 import { Button, Card, Form } from "react-bootstrap";
 
@@ -10,6 +9,14 @@ const InnovationForm = () => {
   const [innovationDes, setInnovationDes] = useState("");
   const [innovationImage, setInnovationImage] = useState("");
   const [innovationFile, setInnovationFile] = useState("");
+
+  const postImage = (pics) => {
+   
+  };
+
+  const postFile = (files) => {
+   
+  };
 
   return (
 <div class="container p-5">
@@ -25,6 +32,7 @@ const InnovationForm = () => {
                 type="title"
                 placeholder="Enter the food name" 
                 value={innovationType}
+                onChange={(e) => setInnovationType(e.target.value)}
               />
             </Form.Group>
 
@@ -34,7 +42,7 @@ const InnovationForm = () => {
                 type="title"
                 placeholder="Enter the price"
                  value={innovationTitle}
-                // onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => setInnovationTitle(e.target.value)}
               />
             </Form.Group>
 
@@ -44,7 +52,7 @@ const InnovationForm = () => {
                 type="title"
                 placeholder="Enter the price"
                  value={innovationDes}
-                // onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => setInnovationDes(e.target.value)}
               />
             </Form.Group>
 
@@ -52,11 +60,11 @@ const InnovationForm = () => {
           <Form.Group controlId="pic">
             <Form.Label>Pictures</Form.Label>
             <Form.Control
-              // onChange={(e) => postDetails(e.target.files[0])}
+              onChange={(e) => postImage(e.target.files[0])}
               id="custom-file"
               type="file"
               label="Upload Profile Picture"
-               value={innovationImage}
+              value={innovationImage}
               custom
             />
           </Form.Group>
@@ -64,10 +72,10 @@ const InnovationForm = () => {
            <Form.Group controlId="pic">
             <Form.Label>Files</Form.Label>
             <Form.Control
-              // onChange={(e) => postDetails(e.target.files[0])}
+              onChange={(e) => postFile(e.target.files[0])}
               id="custom-file"
               type="file"
-               value={innovationFile}
+              value={innovationFile}
               label="Upload Profile Picture"
               custom
             />
