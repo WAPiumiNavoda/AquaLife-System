@@ -18,8 +18,8 @@ const getProjectForEachAdmin = asyncHandler(async (req, res) => {
 const createProject = asyncHandler(async (req, res) => {
 	const {
 		name,
-    description,
-    price,
+        description,
+        price,
 		photo,
 	} = req.body;
 
@@ -35,9 +35,9 @@ const createProject = asyncHandler(async (req, res) => {
 	} else {
 		const project = new Project({
 			name,
-      description,
-      price,
-		  photo,
+            description,
+            price,
+		    photo,
 		});
 		const createProject = await project.save();
 
