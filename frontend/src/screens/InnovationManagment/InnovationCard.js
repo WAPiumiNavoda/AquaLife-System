@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 const InnovationCard = () => {
   return (
 <div>
-    <Row className='m-5 border border-dark'>
+    <Row className='m-5 shadow p-3 mb-5 bg-body rounded'>
         <Col>
            <p className='pt-5 mx-5'>The advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do 
@@ -23,14 +23,14 @@ const InnovationCard = () => {
          </Col>
          <Col className=' text-center'>
          <Image 
-          src="https://i.ibb.co/GRjFMyM/1629350854-2v-Ov-GH-aaa.jpg" 
+          src="https://i.ibb.co/7Jt1bHD/images.jpg" 
           class="rounded float-right w-80" 
-          style={{width: '70%'}} 
+          style={{width: '30%'}} 
           alt="image" />
          </Col>
     </Row>
 
-     <Row className='m-5 border border-dark'>
+     <Row className='m-5 shadow p-3 mb-5 bg-body rounded'>
         <Col>
            <p className='pt-5 mx-5'>The advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do 
@@ -46,9 +46,9 @@ const InnovationCard = () => {
          </Col>
          <Col className=' text-center'>
          <Image 
-          src="https://i.ibb.co/GRjFMyM/1629350854-2v-Ov-GH-aaa.jpg" 
+          src="https://i.ibb.co/7Jt1bHD/images.jpg" 
           class="rounded float-right w-80" 
-          style={{width: '70%'}} 
+          style={{width: '30%'}} 
           alt="image" />
          </Col>
     </Row>
