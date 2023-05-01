@@ -4,11 +4,12 @@ const { protect } = require('../middleware/authUserMiddleware');
 const {getInnovation,
        getInnovationById,
        createInnovation,
-       deleteInnovation} = require('../controllers/submitInnovationController');
+       deleteInnovation,
+       updateInnovation
+       } = require('../controllers/submitInnovationController');
 
-router.route('/').get(protect,getInnovation);
-router.route('/create').post(protect,createInnovation);
-router.route('/:id').get(protect,getInnovationById).delete(protect,deleteInnovation);
-// .put(protect,UpdateCategory);
+router.route('/').get(getInnovation);
+router.route('/create').post(createInnovation);
+router.route('/:id').get(getInnovationById).delete(deleteInnovation).put(updateInnovation);
 
 module.exports = router;
