@@ -18,6 +18,10 @@ const InnovationForm = () => {
    
   };
 
+  const submitInnovation = (e) => {
+  };
+
+
   return (
 <div class="container p-5">
   <div class="row">
@@ -25,7 +29,7 @@ const InnovationForm = () => {
       <img src="https://i.ibb.co/xhr7v59/EDA-082214.jpg" alt="Image" class="img-fluid"/>
     </div>
     <div class="col-md-6">
-       <Form >  
+       <Form onSubmit={submitInnovation}>  
             <Form.Group controlId="title">
               <Form.Label>Innovation Type</Form.Label>
               <Form.Control
