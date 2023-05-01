@@ -7,12 +7,12 @@ const router = express.Router();
 //Routes for User Account Operations
 router.route("/register").post(registerUser);
 router.route("/login").post(authUser);
-router.route("/view").get(protect, getUserProfile);
+router.route("/view").get(getUserProfile);
 router.route("/edit").put(protect, updateUserProfile);
 
 //Routes for Admin Project management Operations
-router.route("/projectCreate").post(protect,createProject);
-router.route("/getProjects/:id").get(protect, getProjectForEachAdmin);
+router.route("/projectCreate").post(createProject);
+router.route("/getProjects/:id").get(getProjectForEachAdmin);
 router
 	.route("/getProject/:id")
 	.get(protect, getProjectById)
