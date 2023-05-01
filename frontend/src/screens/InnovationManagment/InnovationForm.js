@@ -24,6 +24,7 @@ const InnovationForm = () => {
               <Form.Control
                 type="title"
                 placeholder="Enter the food name" 
+                value={innovationType}
               />
             </Form.Group>
 
@@ -32,6 +33,7 @@ const InnovationForm = () => {
                <Form.Control
                 type="title"
                 placeholder="Enter the price"
+                 value={innovationTitle}
                 // onChange={(e) => setPrice(e.target.value)}
               />
             </Form.Group>
@@ -41,6 +43,7 @@ const InnovationForm = () => {
                <Form.Control
                 type="title"
                 placeholder="Enter the price"
+                 value={innovationDes}
                 // onChange={(e) => setPrice(e.target.value)}
               />
             </Form.Group>
@@ -53,6 +56,7 @@ const InnovationForm = () => {
               id="custom-file"
               type="file"
               label="Upload Profile Picture"
+               value={innovationImage}
               custom
             />
           </Form.Group>
@@ -63,6 +67,7 @@ const InnovationForm = () => {
               // onChange={(e) => postDetails(e.target.files[0])}
               id="custom-file"
               type="file"
+               value={innovationFile}
               label="Upload Profile Picture"
               custom
             />
