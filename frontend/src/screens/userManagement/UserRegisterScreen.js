@@ -88,7 +88,7 @@ const UserRegisterScreen = () => {
 		}
 	};
 	
-	// if(userInfo){
+	if(userInfo){
 		return (
 			<div className="registerBg">
 				<br></br>
@@ -287,14 +287,14 @@ const UserRegisterScreen = () => {
 				<br></br>
 			</div>
 		);
-	//  } else {
-	// 	return (
-	// 		<div className="denied">
-	// 			{/* <MainScreen /> */}
-	// 			<br></br>
-	// 		</div>
-	// 	);
-	// }
+	 } else {
+		return (
+			<div className="denied">
+				{/* <MainScreen /> */}
+				<br></br>
+			</div>
+		);
+	}
 };
 
 export default UserRegisterScreen;
