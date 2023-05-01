@@ -9,6 +9,22 @@ const getInnovation =  asyncHandler(
     }
 )
 
+//Create innovation controller
+const  createInnovation = asyncHandler(async (req, res) => {
+  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile } = req.body;
+
+  if (! innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile) {
+    res.status(400);
+    throw new Error("Please Fill all the feilds");
+  } else {
+    const Innovation = new Innovations({ user: req.user._id, innovationType,innovationTitle, innovationDes, innovationImage,innovationFile });
+
+    const createdInnovation = await Innovation.save();
+
+    res.status(201).json(createdInnovation);
+  }
+});
+
 //Get one innovations controller
 const getInnovationById= asyncHandler(async (req,res)=>{
      const innovation= await Innovations.findById(req.params.id);
@@ -25,5 +41,6 @@ const getInnovationById= asyncHandler(async (req,res)=>{
 //export all functions
 module.exports = {
      getInnovation,
-     getInnovationById
+     getInnovationById,
+     createInnovation
 }
