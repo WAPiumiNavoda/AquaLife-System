@@ -1,0 +1,21 @@
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+
+    margin-left: 200px;
+}
+.profileCont {
+	background: rgba(196, 201, 201, 0.5);
+    margin: 260px;
+    
+}
+.registerBg {
+	background: url("https://res.cloudinary.com/flocktogether/image/upload/v1682925369/water_qxqa4u.webp");
+	background-position: center;
+	background-size: cover;
+}
+.denied {
+	background: url("https://res.cloudinary.com/bytesquad202202/image/upload/v1660761809/images/accessDenied_zhvugi.jpg");
+	background-position: center;
+	background-size: cover;
+}

@@ -63,7 +63,7 @@ export const userLogout = () => async (dispatch) => {
 	dispatch({ type: USER_LOGOUT });
 };
 
-export const userRegister = (name, dob, nic, telephone, address, email, password, pic,role) => async (dispatch) => {
+export const userRegister = (name, dob, nic, telephone, address, email, password, pic) => async (dispatch) => {
 	try {
 		dispatch({ type: USER_REGISTER_REQUEST });
 
@@ -84,7 +84,7 @@ export const userRegister = (name, dob, nic, telephone, address, email, password
 				email,
 				password,
 				pic,
-				role
+			
 			},
 			config
 		);
