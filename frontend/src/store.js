@@ -19,7 +19,7 @@ const reducer = combineReducers({
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
-//console.log(userInfoFromStorage);
+console.log(userInfoFromStorage);
 
 
 const initialState = {
