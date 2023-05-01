@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 	res.send("API is Running");
 });
 
-app.use("/user/admin",adminRoutes)
 app.use("/user",userRoutes)
 
 
