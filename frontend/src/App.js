@@ -3,7 +3,8 @@ import './App.css';
 import React from "react";
 import UserRegisterScreen from "./screens/userManagement/UserRegisterScreen";
 import UserLoginScreen from "./screens/userManagement/UserLoginScreen";
-
+import InnovationHome from "./screens/InnovationManagment/InnovationHome";
+import Innovation from "./screens/InnovationManagment/Innovation";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
       <Route path = "/user-register" element={<UserRegisterScreen/>}/>
       <Route path = "/user-login" element={<UserLoginScreen/>} />
+      <Route path = "/innovation" element={<Innovation/>} />
       </Routes>
         
           
