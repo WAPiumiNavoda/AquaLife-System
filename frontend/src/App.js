@@ -5,20 +5,19 @@ import UserRegisterScreen from "./screens/userManagement/UserRegisterScreen";
 import UserLoginScreen from "./screens/userManagement/UserLoginScreen";
 import InnovationHome from "./screens/InnovationManagment/InnovationHome";
 import Innovation from "./screens/InnovationManagment/Innovation";
+import AllInnovation from "./screens/InnovationManagment/AllInnovation";
 
 
 const App = () => {
   return (
     <BrowserRouter>
-      
        <main>
       <Routes>
       <Route path = "/user-register" element={<UserRegisterScreen/>}/>
       <Route path = "/user-login" element={<UserLoginScreen/>} />
       <Route path = "/innovation" element={<Innovation/>} />
-      </Routes>
-        
-          
+      <Route path = "/innovationAll" element={<AllInnovation/>} />
+      </Routes>    
        </main>
        
     </BrowserRouter>
