@@ -4,8 +4,8 @@ const asyncHandler = require('express-async-handler');
 //Get Video controller
 const getVideo =  asyncHandler(
     async(req,res)=>{
-        const Videos = await Videos.find()
-        res.json(Videos);
+        const Video = await Videos.find()
+        res.json(Video);
     }
 )
 
@@ -17,7 +17,7 @@ const  createVideo = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Video = new Videos({ user: req.user._id, videoCategory,videoFile, videoTitle, videoCaption,dateofUpload });
+    const Video = new Videos({  videoCategory,videoFile, videoTitle, videoCaption,dateofUpload });
 
     const createdVideo = await Video.save();
 
