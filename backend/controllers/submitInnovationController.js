@@ -62,5 +62,5 @@ module.exports = {
      getInnovation,
      getInnovationById,
      createInnovation,
-     deleteInnovation
+
 }

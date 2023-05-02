@@ -7,18 +7,16 @@ import InnovationHome from "./screens/InnovationManagment/InnovationHome";
 import Innovation from "./screens/InnovationManagment/Innovation";
 
 
+
 const App = () => {
   return (
     <BrowserRouter>
-      
        <main>
       <Routes>
       <Route path = "/user-register" element={<UserRegisterScreen/>}/>
       <Route path = "/user-login" element={<UserLoginScreen/>} />
       <Route path = "/innovation" element={<Innovation/>} />
-      </Routes>
-        
-          
+      </Routes> 
        </main>
        
     </BrowserRouter>
