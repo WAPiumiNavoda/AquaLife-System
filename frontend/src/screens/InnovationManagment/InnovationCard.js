@@ -37,7 +37,7 @@ const { userInfo } = user_Login;
               advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do{innovation.innovationDes}</p>
-           <Button className='px-5' style={{marginLeft:'90px'}}>Learn More</Button>
+           <Button className='px-5' style={{marginLeft:'90px'}} href="/oneInnovation">Learn More</Button>
          </Col>
          <Col className=' text-center'>
          <Image 
