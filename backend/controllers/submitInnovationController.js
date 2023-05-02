@@ -56,37 +56,11 @@ const deleteInnovation = asyncHandler(async (req, res) => {
   }
 });
 
-//Update category controller
-const updateInnovation = asyncHandler(async (req, res) => {
-  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile } = req.body;
-
-  const innovation = await Innovations.findById(req.params.id);
-
-  if (innovation.user.toString() !== req.user._id.toString()) {
-    res.status(401);
-    throw new Error("You can't perform this action");
-  }
-
-  if (innovation) {
-    innovation.innovationType = innovationType;
-    innovation.innovationTitle = innovationTitle;
-    innovation.innovationDes = innovationDes;
-    innovation.innovationImage = innovationImage;
-    innovation.innovationFile = innovationFile
-
-    const updatedInnovation = await innovation.save();
-    res.json(updatedInnovation);
-  } else {
-    res.status(404);
-    throw new Error("Innovation not found");
-  }
-});
 
 //export all functions
 module.exports = {
      getInnovation,
      getInnovationById,
      createInnovation,
-     deleteInnovation,
-     updateInnovation
+
 }
