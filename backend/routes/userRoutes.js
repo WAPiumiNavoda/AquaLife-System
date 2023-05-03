@@ -1,6 +1,6 @@
 const express = require("express");
 const { registerUser, authUser, getUserProfile, updateUserProfile} = require("../controllers/userController");
-const { createProject,getProjectById, updateProject,getProjects} = require("../controllers/projectController");
+const { createProject,getProjectById, updateProject,getProjects,deleteProject} = require("../controllers/projectController");
 const { protect } = require("../middleware/authUserMiddleware");
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router
 	.route("/getProject/:id")
 	.get(getProjectById)
 	.put(updateProject)
-	// .delete(protect, deleteTrainerLeave);
+	.delete(deleteProject);
 
 
 

@@ -72,17 +72,17 @@ const updateProject = asyncHandler(async (req, res) => {
 	}
 });
 
-// const deleteTrainerLeave = asyncHandler(async (req, res) => {
-// 	const leave = await TrainerLeave.findById(req.params.id);
+const deleteProject = asyncHandler(async (req, res) => {
+	const project = await Project.findById(req.params.id);
 
-// 	if (leave) {
-// 		await leave.remove();
-// 		res.json({ message: "Leave Removed" });
-// 	} else {
-// 		res.status(404);
-// 		throw new Error("Leave not Found");
-// 	}
-// });
+	if (project) {
+		await project.remove();
+		res.json({ message: "Project Removed" });
+	} else {
+		res.status(404);
+		throw new Error("project not Found");
+	}
+});
 
 // const approveTrainerLeaveByAdmin = asyncHandler(async (req, res) => {
 // 	const { approved } = req.body;
@@ -104,6 +104,7 @@ module.exports = {
     getProjects,
 	createProject,
 	getProjectById,
-	updateProject
+	updateProject,
+	deleteProject
 	
 };
