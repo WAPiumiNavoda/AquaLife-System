@@ -17,7 +17,7 @@ const ProjectView=()=>{
                         </div>
                     </div>
                 </div>
-
+               
                 <div className="col-md-3">
                     <div class="card">
                         <img src="https://www.shutterstock.com/image-photo/water-scarcity-clean-projects-africa-260nw-246601225.jpg"class="card-img-top" alt="Card image cap"/>
