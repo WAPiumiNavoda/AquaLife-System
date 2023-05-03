@@ -1,6 +1,6 @@
 const express = require("express");
-const { registerUser, authUser, getUserProfile, updateUserProfile } = require("../controllers/userController");
-const { createProject, getProjectForEachAdmin,getProjectById} = require("../controllers/projectController");
+const { registerUser, authUser, getUserProfile, updateUserProfile} = require("../controllers/userController");
+const { createProject,getProjectById, updateProject,getProjects} = require("../controllers/projectController");
 const { protect } = require("../middleware/authUserMiddleware");
 const router = express.Router();
 
@@ -12,11 +12,11 @@ router.route("/edit").put(protect, updateUserProfile);
 
 //Routes for Admin Project management Operations
 router.route("/projectCreate").post(createProject);
-router.route("/getProjects/:id").get(getProjectForEachAdmin);
+router.route("/getProjects").get(getProjects);
 router
 	.route("/getProject/:id")
-	.get(protect, getProjectById)
-	// .put(protect, updateTrainerLeave)
+	.get(getProjectById)
+	.put(updateProject)
 	// .delete(protect, deleteTrainerLeave);
 
 
