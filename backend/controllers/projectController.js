@@ -7,13 +7,6 @@ const getProjects = asyncHandler(async (req, res) => {
 	res.json(project);
 });
 
-const getProjectForEachAdmin = asyncHandler(async (req, res) => {
-	const user = await User.findById(req.params.id);
-
-	const projects = await Project.find({ nic: user.nic });
-
-	res.json(projects);
-});
 
 const createProject = asyncHandler(async (req, res) => {
 	const {
@@ -55,35 +48,29 @@ const getProjectById = asyncHandler(async (req, res) => {
 	}
 });
 
-// const updateTrainerLeave = asyncHandler(async (req, res) => {
-// 	const {
-// 		fullName,
-// 		nic,
-// 		division,
-// 		number_of_days,
-// 		date_for_commencing_leave,
-// 		date_for_resuming_duties,
-// 		reasons_for_leave,
-// 	} = req.body;
+const updateProject = asyncHandler(async (req, res) => {
+	const {
+		name,
+        description,
+        price,
+		photo,
+	} = req.body;
 
-// 	const leave = await TrainerLeave.findById(req.params.id);
+	const project = await Project.findById(req.params.id);
 
-// 	if (leave) {
-// 		leave.fullName = fullName;
-// 		leave.nic = nic;
-// 		leave.division = division;
-// 		leave.number_of_days = number_of_days;
-// 		leave.date_for_commencing_leave = date_for_commencing_leave;
-// 		leave.date_for_resuming_duties = date_for_resuming_duties;
-// 		leave.reasons_for_leave = reasons_for_leave;
-
-// 		const updatedLeave = await leave.save();
-// 		res.json(updatedLeave);
-// 	} else {
-// 		res.status(404);
-// 		throw new Error("Leave not Found");
-// 	}
-// });
+	if (project) {
+		project.name = name;
+		project.description = description;
+		project.price = price;
+		project.photo = photo;
+		
+		const updatedProject = await project.save();
+		res.json(updatedProject);
+	} else {
+		res.status(404);
+		throw new Error("Project not Found");
+	}
+});
 
 // const deleteTrainerLeave = asyncHandler(async (req, res) => {
 // 	const leave = await TrainerLeave.findById(req.params.id);
@@ -114,9 +101,9 @@ const getProjectById = asyncHandler(async (req, res) => {
 // });
 
 module.exports = {
-  getProjects,
-	getProjectForEachAdmin,
+    getProjects,
 	createProject,
 	getProjectById,
+	updateProject
 	
 };
