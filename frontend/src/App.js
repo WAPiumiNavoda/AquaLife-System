@@ -19,13 +19,22 @@ const App = () => {
     <BrowserRouter>
        <main>
       <Routes>
+
+      {/* user task managment */}
       <Route path = "/user-register" element={<UserRegisterScreen/>}/>
       <Route path = "/user-login" element={<UserLoginScreen/>} />
+
+      {/* innovation managment */}
       <Route path = "/innovation" element={<Innovation/>} />
       <Route path = "/innovationAll" element={<AllInnovation/>} />
       <Route path = "/oneInnovation/:id" element={<OneInnovation/>} />
 
+      {/* artical managment */}
+      <Route path = "/ArticleForm" element={<ArticleForm/>} />
+      <Route path = "/articleAll" element={<AllArticle/>} />
+      <Route path = "/oneArticle" element={<OneArticle/>} />
       </Routes> 
+      
        </main>
        
     </BrowserRouter>

@@ -9,17 +9,14 @@ import {
 	//userUpdateReducer,
 } from "./reducers/userReducers";
 import {innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
-
-
-
+import {articleListReducer}  from './reducers/articleReducers';
 
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
 	userRegistration: userRegisterReducer,
 	innovationList: innovationListReducer,
-	innovationOne: innovationOneReducer
-
-	
+	innovationOne: innovationOneReducer,
+	articleList: articleListReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
