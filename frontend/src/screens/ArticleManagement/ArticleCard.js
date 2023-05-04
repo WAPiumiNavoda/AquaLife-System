@@ -4,56 +4,44 @@ import Col from 'react-bootstrap/esm/Col';
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import { useDispatch,useSelector } from 'react-redux';
-import {listInnoation} from '../../actions/innovationActions'
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import {listArticle} from '../../actions/articleActions'
+import Table from 'react-bootstrap/Table';
 
-const InnovationCard = ({history,search,props}) => {
+const ArticleCard = ({history,search}) => {
 
  const dispatch = useDispatch();
- const innovationList = useSelector((state) => state.innovationList);
- const { loading,innovation,error} = innovationList; 
- const navigate = useNavigate();
- const [FrontInnovation, setFrontInnovation] = useState([]);
- const user_Login = useSelector(state =>state.user_Login)
- const { userInfo } = user_Login;
+ const articleList = useSelector((state) => state.articleList);
+ const { loading,article,error} = articleList; 
 
-  const [innovationType, setinnovationType] = useState();
-  const [innovationTitle, setinnovationTitle] = useState("");
-  const [innovationDes, setinnovationDes] = useState("");
-  const [innovationImage, setinnovationImage] = useState();
-  const [innovationFile, setinnovationFile] = useState();
+ const user_Login = useSelector(state =>state.user_Login)
+const { userInfo } = user_Login;
 
  
     useEffect(() => {
-      dispatch(listInnoation())
+      dispatch(listArticle())
     }, [dispatch])
-
 
   return (
 
 <div>
    {
-      innovation?.reverse().map((innovation,index)=>(  
+      article?.reverse().map((article,index)=>(  
     <Row className='m-5 shadow p-3 mb-5 bg-body rounded'>
         <Col>
-           <p className='pt-3 mx-5' style={{fontSize:'30px'}}>{innovation.innovationType}</p>
-           <p className='pt-0 mx-5' style={{fontSize:'20px'}}>{innovation.innovationTitle}</p>
+           <p className='pt-3 mx-5' style={{fontSize:'30px'}}>{article.articleType}</p>
+           <p className='pt-0 mx-5' style={{fontSize:'20px'}}>{article.articleTitle}</p>
            <p className='pt-0 mx-5' style={{fontSize:'15px'}}>The advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do 
               The advertisers and user guarantees that his or her Content do The
               advertisers and user guarantees that his or her Content do The
               advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do{innovation.innovationDes}</p>
-           <Button className='px-5' style={{marginLeft:'90px'}} 
-                   href= {`/oneInnovation/${innovation._id}`}
-                   
-           >Learn More</Button>
+              The advertisers and user guarantees that his or her Content do{article.innovationDes}</p>
+           <Button className='px-5' style={{marginLeft:'90px'}}>Learn More</Button>
          </Col>
          <Col className=' text-center'>
          <Image 
-          src="https://i.ibb.co/7Jt1bHD/images.jpg" 
+          src="https://lh3.googleusercontent.com/_VynPK3wauy6ESwA5ccm3GmQNMM2ljuCZRsWo2v6pHIia0zoo2mvU96MHv8XFrvG54IraB1GfLEwpmZM1LgWHRg82PHFXL69guEWcBzex-JlI39cNU5_lmgQDdn6P0K_MWFd6Jnh" 
           class="rounded float-right w-80" 
           style={{width: '30%'}} 
           alt="image" />
@@ -110,4 +98,4 @@ const InnovationCard = ({history,search,props}) => {
   )
 }
 
-export default InnovationCard
+export default ArticleCard

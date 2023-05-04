@@ -10,6 +10,6 @@ const {getInnovation,
 
 router.route('/').get(getInnovation);
 router.route('/create').post(createInnovation);
-router.route('/:id').get(getInnovationById).delete(deleteInnovation).put(updateInnovation);
+router.route('/:id').get(getInnovationById);
 
 module.exports = router;

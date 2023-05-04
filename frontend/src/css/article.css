@@ -1,0 +1,39 @@
+.form-group-article{
+    padding: 10px;
+    background: #F4F4F4;
+    border-radius: 10px;
+}
+
+.form-group-article:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-submit{
+    background: #1896EB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    color: white;
+    border-color: #093D8C;
+}
+
+.btn-primary-submit:hover{
+    background-color: #093D8C;
+}
+
+#Title{
+/* Share your Knowledge among the community */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 72px;
+    /* identical to box height, or 112% */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #093D8C;
+
+}
+
