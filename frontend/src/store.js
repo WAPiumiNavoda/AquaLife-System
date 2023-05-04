@@ -9,13 +9,15 @@ import {
 	//userUpdateReducer,
 } from "./reducers/userReducers";
 import {innovationListReducer} from './reducers/innovationReducers';
+import {articleListReducer}  from './reducers/articleReducers';
 
 
 
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
 	userRegistration: userRegisterReducer,
-	innovationList: innovationListReducer
+	innovationList: innovationListReducer,
+	articleList: articleListReducer
 	
 });
 
