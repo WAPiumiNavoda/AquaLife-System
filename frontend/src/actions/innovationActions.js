@@ -2,7 +2,9 @@ import axios from "axios";
 import {
     INNOVATION_LIST_REQUEST,
     INNOVATION_LIST_SUCCESS,
-    INNOVATION_LIST_FAIL
+    INNOVATION_LIST_FAIL,
+    INNOVAIONONE_SUCCESS,
+    INNOVATION_REQUEST
 } from '../constants/innovationConstants'
 
 
@@ -39,5 +41,25 @@ export const listInnoation = () => async (dispatch, getState) => {
       payload: message,
     });
   }
+};
+
+//all note list
+export const listInnoationOne = (id,innovationType,innovationTitle, innovationDes, innovationImage,innovationFile) => async (dispatch, getState) => {
+   dispatch({
+      type:  INNOVATION_REQUEST,
+    });
+
+    const { data } = await axios.get(`http://localhost:5000/innovation/${id}`,{
+       innovationType,
+       innovationTitle,
+       innovationDes,
+       innovationImage,
+       innovationFile 
+    }     
+    );
+    dispatch({
+      type:  INNOVAIONONE_SUCCESS,
+      payload: data,
+    });
 };
 

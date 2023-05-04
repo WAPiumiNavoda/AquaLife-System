@@ -8,8 +8,8 @@ import {
 	//userViewReducer,
 	//userUpdateReducer,
 } from "./reducers/userReducers";
-import {innovationListReducer} from './reducers/innovationReducers';
-import {articleListReducer}  from './reducers/articleReducers';
+import {innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
+
 
 
 
@@ -17,7 +17,8 @@ const reducer = combineReducers({
 	user_Login: userLoginReducer,
 	userRegistration: userRegisterReducer,
 	innovationList: innovationListReducer,
-	articleList: articleListReducer
+	innovationOne: innovationOneReducer
+
 	
 });
 

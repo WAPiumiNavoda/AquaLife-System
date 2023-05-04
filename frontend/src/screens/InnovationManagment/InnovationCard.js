@@ -5,21 +5,30 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import { useDispatch,useSelector } from 'react-redux';
 import {listInnoation} from '../../actions/innovationActions'
-import Table from 'react-bootstrap/Table';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
-const InnovationCard = ({history,search}) => {
+const InnovationCard = ({history,search,props}) => {
 
  const dispatch = useDispatch();
  const innovationList = useSelector((state) => state.innovationList);
  const { loading,innovation,error} = innovationList; 
-
+ const navigate = useNavigate();
+ const [FrontInnovation, setFrontInnovation] = useState([]);
  const user_Login = useSelector(state =>state.user_Login)
-const { userInfo } = user_Login;
+ const { userInfo } = user_Login;
+
+  const [innovationType, setinnovationType] = useState();
+  const [innovationTitle, setinnovationTitle] = useState("");
+  const [innovationDes, setinnovationDes] = useState("");
+  const [innovationImage, setinnovationImage] = useState();
+  const [innovationFile, setinnovationFile] = useState();
 
  
     useEffect(() => {
       dispatch(listInnoation())
     }, [dispatch])
+
 
   return (
 
@@ -37,7 +46,10 @@ const { userInfo } = user_Login;
               advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do
               The advertisers and user guarantees that his or her Content do{innovation.innovationDes}</p>
-           <Button className='px-5' style={{marginLeft:'90px'}}>Learn More</Button>
+           <Button className='px-5' style={{marginLeft:'90px'}} 
+                   href= {`/oneInnovation/${innovation._id}`}
+                   
+           >Learn More</Button>
          </Col>
          <Col className=' text-center'>
          <Image 
