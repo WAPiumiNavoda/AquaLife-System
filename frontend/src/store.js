@@ -12,11 +12,13 @@ import {innovationListReducer,innovationOneReducer} from './reducers/innovationR
 
 
 
+
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
 	userRegistration: userRegisterReducer,
 	innovationList: innovationListReducer,
 	innovationOne: innovationOneReducer
+
 	
 });
 
