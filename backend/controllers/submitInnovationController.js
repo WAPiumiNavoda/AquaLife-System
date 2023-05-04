@@ -34,7 +34,7 @@ const getInnovationById= asyncHandler(async (req,res)=>{
      }else{
       res.status(404).json({message: "Innovation Item is not found"});
      }
-     res.json(note);
+     res.json(innovation);
   }
 )
 

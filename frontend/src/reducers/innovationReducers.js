@@ -2,7 +2,8 @@
 import {
     INNOVATION_LIST_REQUEST,
     INNOVATION_LIST_SUCCESS,
-    INNOVATION_LIST_FAIL
+    INNOVATION_LIST_FAIL,
+    INNOVAIONONE_SUCCESS
 } from '../constants/innovationConstants'
 
 
@@ -20,4 +21,14 @@ export const innovationListReducer = (state = { innovation: [] }, action) => {
       return state;
   }
 };
+
+  //get innovation by id
+  export const innovationOneReducer = (state = { innovation: [] }, action) => {
+  switch (action.type) {
+    case INNOVAIONONE_SUCCESS:
+      return { loading: true };
+    default:
+      return state;
+  }
+}
 
