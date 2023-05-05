@@ -6,7 +6,8 @@ const app = express();
 const connectDB = require("./config/db");
 const adminRoutes = require("./routes/adminRoutes");
 const userRoutes = require("./routes/userRoutes");
-const submitInnovations = require("./routes/sunmitInnovationRoutes");
+const submitInnovations = require("./routes/submitInnovationRoutes");
+const supportInnovation = require("./routes/supportInnovationRoutes")
 const videoSubmit = require("./routes/videoRoutes")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
@@ -23,7 +24,7 @@ app.use("/user/admin", adminRoutes);
 app.use("/user",userRoutes)
 app.use("/innovation",submitInnovations);
 app.use("/video",videoSubmit)
-
+app.use("/supportInnovation", supportInnovation)
 
 app.use(notFound);
 app.use(errorHandler);
