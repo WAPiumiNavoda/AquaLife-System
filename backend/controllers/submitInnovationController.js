@@ -17,7 +17,7 @@ const  createInnovation = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Innovation = new Innovations({ user: req.user._id, innovationType,innovationTitle, innovationDes, innovationImage,innovationFile });
+    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile });
 
     const createdInnovation = await Innovation.save();
 
