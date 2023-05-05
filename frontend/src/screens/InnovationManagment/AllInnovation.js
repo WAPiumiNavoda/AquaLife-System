@@ -1,12 +1,14 @@
 import React from 'react'
 import InnovationHome from './InnovationHome'
 import InnovationCard from './InnovationCard'
+import About from '../InnovationManagment/about/About'
 
 const AllInnovation = () => {
   return (
-    <div>
+    <div style={{backgroundColor:"#f0f5f5"}}>
         <InnovationHome />
         <InnovationCard />
+        <About />
     </div>
   )
 }

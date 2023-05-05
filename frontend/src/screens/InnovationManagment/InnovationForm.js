@@ -71,7 +71,8 @@ const InnovationForm = () => {
       <img src="https://i.ibb.co/dfQ5PT4/innovation-5161494-1920.jpg" alt="Image" class="img-fluid"/>
     </div>
     <div class="col-md-6">
-      <form>
+
+      {/* <form>
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
@@ -81,11 +82,75 @@ const InnovationForm = () => {
           <input type="email" class="form-control" id="email" placeholder="Enter email"/>
         </div>
         <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
+        </div>
+         <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
+        </div>
+         <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </form> */}
+
+       <Form >
+           
+            <Form.Group controlId="title">
+              <Form.Label>Product Name</Form.Label>
+              <Form.Control
+                type="title"
+                placeholder="Enter the food name"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="title">
+               <Form.Label>Food Price</Form.Label>
+               <Form.Control
+                type="title"
+                placeholder="Enter the price"
+              />
+            </Form.Group>
+
+              <Form.Group controlId="title">
+               <Form.Label>Food Price</Form.Label>
+               <Form.Control
+                type="title"
+                placeholder="Enter the price"
+              />
+            </Form.Group>
+
+            
+          <Form.Group controlId="pic">
+            <Form.Label>Profile Picture</Form.Label>
+            <Form.Control
+              id="custom-file"
+              type="file"
+              label="Upload Profile Picture"
+              custom
+            />
+          </Form.Group>
+
+
+          <Form.Group controlId="pic">
+            <Form.Label>Profile Picture</Form.Label>
+            <Form.Control
+              id="custom-file"
+              type="file"
+              label="Upload Profile Picture"
+              custom
+            />
+          </Form.Group>
+
+            <Button type="submit" variant="primary" className="my-4">
+            Create Product
+            </Button>
+            <Button className="mx-5"  variant="danger">
+            Reset Feilds
+            </Button>
+        </Form>
     </div>
   </div>
 </div>
