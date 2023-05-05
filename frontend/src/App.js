@@ -13,9 +13,7 @@ import Footer from "./Footer";
 import ArticleForm from "./screens/ArticleManagement/ArticleForm";
 import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
-
-
-
+import ProjectView from "./screens/projectManagement/ProjectViewPage";
 
 
 const App = () => {
@@ -40,6 +38,9 @@ const App = () => {
       <Route path = "/ArticleForm" element={<ArticleForm/>} />
       <Route path = "/articleAll" element={<AllArticle/>} />
       <Route path = "/oneArticle" element={<OneArticle/>} />
+
+      <Route path = "/user-projectView" element={<ProjectView/>} />
+
       </Routes> 
       
        </main>
