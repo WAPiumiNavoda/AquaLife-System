@@ -89,8 +89,7 @@ export const createInnovationAction = ( innovationType,innovationTitle, innovati
 
     const { data } = await axios.post(
       `/innovation/create`,
-      { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile },
-      config
+      { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile }
     );
 
     dispatch({
