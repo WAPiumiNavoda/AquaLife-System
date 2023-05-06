@@ -2,17 +2,28 @@ import React,{useState,useEffect} from 'react'
 import Sidebar from './Sidebar'
 import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
-import {listInnoation} from '../../actions/innovationActions'
+import {listInnoation, approveInnovationAction} from '../../actions/innovationActions'
 
 const InnovationAdmin = () => {
 
-  const dispatch = useDispatch();
+
+  //list all inovation
+ const dispatch = useDispatch();
  const innovationList = useSelector((state) => state.innovationList);
  const { loading,innovation,error} = innovationList; 
 
   useEffect(() => {
       dispatch(listInnoation())
     }, [dispatch])
+
+
+    //approve innovation
+ const innovationApproveOne = useSelector((state) => state.innovationApprove);
+ const { loadings,innovationApprove,errors} = innovationApproveOne; 
+
+    const approveInnovation = (id) =>{
+       dispatch(approveInnovationAction(id))
+    }
 
   return (
    <div className="admin-dashboard">
@@ -85,7 +96,7 @@ const InnovationAdmin = () => {
                   <td>{innovation.innovationFile}</td>
                  <td>
                 <div className="user-actions">
-                  <button className="btn btn-primary">Approve</button>
+                  <button className="btn btn-primary" onClick={() => approveInnovation(innovation._id)}>Approve</button>
                   <button className="btn btn-danger">Deny</button>
                 </div>
               </td>
