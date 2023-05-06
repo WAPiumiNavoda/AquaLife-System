@@ -19,8 +19,11 @@ import Treatment from "./screens/WaterTreatment/Treatment";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+
+import OneProject from "./screens/projectManagement/ProjectOne";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import InnovationMain from "./screens/InnovationManagment/InnovationMain";
+
 
 const App = () => {
   const hideHeaderFooterRoutes = ["/dashboard",
@@ -54,11 +57,17 @@ const App = () => {
           <Route path="/articleAll" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
 
+          {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path = "/admin-createProject" element={<ProjectCreate/>} />
+          <Route path = "/oneProject" element={<OneProject/>}/>
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
+
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+          <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+
            <Route path="/innovationAdmin" element={<InnovationAdmin />} />
             <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
              <Route path="/innovationApprove" element={<InnovationApprove />} />
