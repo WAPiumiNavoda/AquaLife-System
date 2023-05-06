@@ -8,8 +8,20 @@ import {
 	//userViewReducer,
 	//userUpdateReducer,
 } from "./reducers/userReducers";
-import {InnovationCreateReducer, innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
+import {InnovationCreateReducer,
+	 innovationListReducer,
+	 innovationOneReducer,
+	 InnovationAcceptReducer, 
+	  InnovationApproveListReducer,
+	 InnovationDenyReducer} from './reducers/innovationReducers';
 import {articleListReducer}  from './reducers/articleReducers';
+
+import { InnovationSupportCreateReducer,
+	     InnovationSupportListReducer,
+		
+		 } from "./reducers/innovationSupportReducers";
+import { ProjectCreateReducer } from "./reducers/projectReducers";
+
 
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
@@ -17,7 +29,13 @@ const reducer = combineReducers({
 	innovationList: innovationListReducer,
 	innovationOne: innovationOneReducer,
 	articleList: articleListReducer,
-	innovationCreate: InnovationCreateReducer
+	innovationCreate: InnovationCreateReducer,
+	innovationSupportCreate: InnovationSupportCreateReducer,
+	innovationSupportList: InnovationSupportListReducer,
+	projectCreate:ProjectCreateReducer,
+	innovationApprove:InnovationAcceptReducer,
+	innovationDeny: InnovationDenyReducer,
+    innovationSet : InnovationApproveListReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;

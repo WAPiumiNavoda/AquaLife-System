@@ -56,6 +56,15 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.services h3{
+  color: #534f4f;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .service-container {
   margin-top: 50px;
   display: flex;

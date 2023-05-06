@@ -17,8 +17,14 @@ import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
 import Treatment from "./screens/WaterTreatment/Treatment";
 
+
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard"];
+  const hideHeaderFooterRoutes = ["/dashboard",
+  "/innovationAdmin",
+  "/innovationSupAdmin",
+  "/innovationApprove"
+];
+  
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -45,12 +51,14 @@ const App = () => {
           <Route path="/oneArticle" element={<OneArticle />} />
 
           <Route path="/user-projectView" element={<ProjectView />} />
+          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
 
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
+
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
