@@ -15,6 +15,7 @@ import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
+import Treatment from "./screens/WaterTreatment/Treatment";
 
 const App = () => {
   const hideHeaderFooterRoutes = ["/dashboard"];
@@ -47,6 +48,9 @@ const App = () => {
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
+
+          {/* Wastewater Treatment */}
+          <Route path="/services" element={<Treatment />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
