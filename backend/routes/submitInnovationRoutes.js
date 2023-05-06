@@ -6,6 +6,7 @@ const {getInnovation,
        createInnovation,
        innovationApprove,
        innovationDeny,
+       innovationApproveList,
        deleteInnovation,
        updateInnovation
        } = require('../controllers/submitInnovationController');
@@ -15,5 +16,6 @@ router.route('/create').post(createInnovation);
 router.route('/:id').get(getInnovationById);
 router.route('/:id').post(innovationApprove);
 router.route('/deny/:id').post(innovationDeny);
+router.route('/approved').get(innovationApproveList);
 
 module.exports = router;

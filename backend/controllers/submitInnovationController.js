@@ -94,6 +94,15 @@ try {
   }
 });
 
+const innovationApproveList = asyncHandler(async(req, res)=>{
+ try {
+    const approvedData = await Innovations.find({ status: 'approved' });
+    res.json(approvedData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+})
 
 
 //export all functions
@@ -102,5 +111,6 @@ module.exports = {
      getInnovationById,
      createInnovation,
      innovationApprove,
-     innovationDeny
+     innovationDeny,
+     innovationApproveList 
 }
