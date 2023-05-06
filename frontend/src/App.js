@@ -14,37 +14,42 @@ import ArticleForm from "./screens/ArticleManagement/ArticleForm";
 import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
-
+import AdminDashboard from "./components/Admin/Dashboard";
 
 const App = () => {
+  const hideHeaderFooterRoutes = ["/dashboard"];
+
+  const shouldHideHeaderFooter = () =>
+    hideHeaderFooterRoutes.includes(window.location.pathname);
+
   return (
     <BrowserRouter>
-
-      <Header />
+      {!shouldHideHeaderFooter() && <Header />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
 
-      {/* user task managment */}
-      <Route path = "/user-register" element={<UserRegisterScreen/>}/>
-      <Route path = "/user-login" element={<UserLoginScreen/>} />
+          {/* user task managment */}
+          <Route path="/user-register" element={<UserRegisterScreen />} />
+          <Route path="/user-login" element={<UserLoginScreen />} />
 
-      {/* innovation managment */}
-      <Route path = "/innovation" element={<Innovation/>} />
-      <Route path = "/innovationAll" element={<AllInnovation/>} />
-      <Route path = "/oneInnovation/:id" element={<OneInnovation/>} />
+          {/* innovation managment */}
+          <Route path="/innovation" element={<Innovation />} />
+          <Route path="/innovationAll" element={<AllInnovation />} />
+          <Route path="/oneInnovation/:id" element={<OneInnovation />} />
 
-      {/* artical managment */}
-      <Route path = "/ArticleForm" element={<ArticleForm/>} />
-      <Route path = "/articleAll" element={<AllArticle/>} />
-      <Route path = "/oneArticle" element={<OneArticle/>} />
+          {/* artical managment */}
+          <Route path="/ArticleForm" element={<ArticleForm />} />
+          <Route path="/articleAll" element={<AllArticle />} />
+          <Route path="/oneArticle" element={<OneArticle />} />
 
-      <Route path = "/user-projectView" element={<ProjectView/>} />
+          <Route path="/user-projectView" element={<ProjectView />} />
 
-      </Routes> 
-      
-       </main>
-     <Footer />
+          {/* Admin */}
+          <Route path="/dashboard" element={<AdminDashboard />} />
+        </Routes>
+      </main>
+      {!shouldHideHeaderFooter() && <Footer />}
     </BrowserRouter>
   );
 };
