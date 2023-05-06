@@ -18,6 +18,7 @@ import AdminDashboard from "./components/Admin/Dashboard";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+import OneProject from "./screens/projectManagement/ProjectOne";
 
 
 const App = () => {
@@ -48,8 +49,10 @@ const App = () => {
           <Route path="/articleAll" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
 
+          {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path = "/admin-createProject" element={<ProjectCreate/>} />
+          <Route path = "/oneProject" element={<OneProject/>}/>
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
