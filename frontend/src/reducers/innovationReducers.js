@@ -6,7 +6,10 @@ import {
     INNOVAIONONE_SUCCESS,
     INNOVATION_CREATE_REQUEST,
     INNOVATION_CREATE_SUCCESS,
-    INNOVATION_CREATE_FAIL
+    INNOVATION_CREATE_FAIL,
+    INNOVATION_APPROVE_REQUEST,
+    INNOVATION_APPROVE_SUCCESS,
+    INNOVATION_APPROVE_FAIL
 } from '../constants/innovationConstants'
 
 
@@ -43,6 +46,20 @@ export const InnovationCreateReducer = (state = {}, action) => {
     case INNOVATION_CREATE_SUCCESS:
       return { loading: false, success: true };
     case INNOVATION_CREATE_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+//create innovations
+export const InnovationAcceptReducer = (state = {}, action) => {
+  switch (action.type) {
+    case INNOVATION_APPROVE_REQUEST:
+      return { loading: true };
+    case INNOVATION_APPROVE_SUCCESS:
+      return { loading: false, success: true };
+    case INNOVATION_APPROVE_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;
