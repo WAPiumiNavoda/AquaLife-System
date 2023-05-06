@@ -10,6 +10,7 @@ import OneInnovation from "./screens/InnovationManagment/OneInnovation";
 import Home from "./components/Home/Home";
 import Header from "./components/Home/Header";
 import Footer from "./Footer";
+import Article from "./screens/ArticleManagement/Article";
 import ArticleForm from "./screens/ArticleManagement/ArticleForm";
 import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
@@ -17,6 +18,7 @@ import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
+import ArticleAdmin from "./components/Admin/ArticleAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
 
 
@@ -44,6 +46,7 @@ const App = () => {
           <Route path="/oneInnovation/:id" element={<OneInnovation />} />
 
           {/* artical managment */}
+          <Route path="/article" element={<Article />} />
           <Route path="/ArticleForm" element={<ArticleForm />} />
           <Route path="/articleAll" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
@@ -54,7 +57,8 @@ const App = () => {
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+          <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+          <Route path="/articleAdmin" element={<ArticleAdmin />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
