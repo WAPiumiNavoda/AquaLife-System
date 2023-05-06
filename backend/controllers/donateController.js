@@ -14,6 +14,7 @@ const createDonate = asyncHandler(async (req, res) => {
         cardNumber,
         date,
 		cvc,
+        donatePrice,
         cardName,
         country
 	} = req.body;
@@ -23,6 +24,7 @@ const createDonate = asyncHandler(async (req, res) => {
 		!cardNumber ||
 		!date ||
 		!cvc ||
+        !donatePrice ||
         !cardName ||
         !country
 		
@@ -35,6 +37,7 @@ const createDonate = asyncHandler(async (req, res) => {
             cardNumber,
             date,
 		    cvc,
+            donatePrice,
             cardName,
             country
 		});
@@ -60,6 +63,7 @@ const updateDonate = asyncHandler(async (req, res) => {
         cardNumber,
         date,
 		cvc,
+        donatePrice,
         cardName,
         country
 	} = req.body;
@@ -71,6 +75,7 @@ const updateDonate = asyncHandler(async (req, res) => {
 		donate.cardNumber = cardNumber;
 		donate.date = date;
 		donate.cvc = cvc;
+        donate.donatePrice = donatePrice;
         donate.cardName = cardName;
         donate.country = country;
 		
