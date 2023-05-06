@@ -20,7 +20,7 @@ const Login = () => {
         .then((response) => {
           console.log(response);
           if (response.data.role === "Admin") {
-            navigate("/admin-home");
+            navigate("/dashboard");
           } else if (response.data.role === "User") {
             navigate("/user-home");
           }
