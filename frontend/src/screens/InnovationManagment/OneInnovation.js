@@ -7,8 +7,9 @@ import { Form } from "react-bootstrap";
 import {Route, Link, Routes, useLocation} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { useParams, useNavigate } from "react-router-dom";
-import {listInnoationOne} from '../../actions/innovationActions'
+import { createSupportInnovationAction } from '../../actions/innovationSupportAction'
 import axios from 'axios';
+
 
 const OneInnovation = ({ match,props }) => {
 
@@ -35,11 +36,20 @@ const OneInnovation = ({ match,props }) => {
   }, [id]);
 
   //create a support
-  
+  const [supportName, setsupportName] = useState("");
+  const [supportEmail, setsupportEmail] = useState("");
+  const [supportPhone, setsupportPhone] = useState("");
+  const [price , setprice] = useState("");
+ 
+  const dispatch = useDispatch();
+  const innovationSupportCreate = useSelector((state) => state.innovationCreate);
+  // const { loading, innovationSup ,error} =createSupportInnovationAction;
 
-
-
-
+   //submit form
+  const submitSupportHandler = (e) => {
+    e.preventDefault();
+    dispatch(createSupportInnovationAction( supportName,supportEmail,supportPhone, price ));
+  };
 
 
   //   const { id } = useParams();
@@ -76,26 +86,38 @@ const OneInnovation = ({ match,props }) => {
          className='p-5'
          style={{backgroundColor:"#f5f5f0", marginRight:'15px'}}>
          <h3 className='pb-2' style={{marginLeft:"70px",marginRight:"70px"}}>Support Form</h3>
-      <form style={{marginLeft:"70px",marginRight:"70px"}}>
-        <div class="form-group">
-          <label for="name">Your Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
-        </div>
-        <div class="form-group">
-          <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email"/>
-        </div>
+      <Form style={{marginLeft:"70px",marginRight:"70px"}}
+       onSubmit={submitSupportHandler}
+      >
+        <Form.Group controlId="title">
+              <Form.Label>Soppotor Name</Form.Label>
+              <Form.Control
+                type="title"
+                value={supportName}
+                placeholder="Enter your name"
+                onChange={(e) => setsupportName(e.target.value)}
+              />
+            </Form.Group>
+         <Form.Group controlId="title">
+              <Form.Label>Suppotor Email</Form.Label>
+              <Form.Control
+                type="title"
+                value={supportEmail}
+                placeholder="Enter your email"
+                onChange={(e) => setsupportEmail(e.target.value)}
+              />
+            </Form.Group>
          {/* <div class="form-group">
           <label for="name">Address:</label>
           <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
         </div> */}
           <Form.Group controlId="title">
-              <Form.Label>Innovation Name</Form.Label>
+              <Form.Label>Suppotor Phone</Form.Label>
               <Form.Control
                 type="title"
-                value={innovationTitle}
-                placeholder="Enter the food name"
-                onChange={(e) => setinnovationTitle(e.target.value)}
+                value={supportPhone}
+                placeholder="Enter your phone number"
+                onChange={(e) => setsupportPhone(e.target.value)}
               />
             </Form.Group>
          <Form.Group controlId="title">
@@ -103,16 +125,21 @@ const OneInnovation = ({ match,props }) => {
               <Form.Control
                 type="title"
                 value={innovationType}
-                placeholder="Enter the food name"
+                placeholder="Innovation Type"
                 onChange={(e) => setinnovationTitle(e.target.value)}
               />
             </Form.Group>
-         <div class="form-group">
-          <label for="name">Price - Donate:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
-        </div>
+          <Form.Group controlId="title">
+              <Form.Label>Donate Price: </Form.Label>
+              <Form.Control
+                type="title"
+                value={price}
+                placeholder="Enter price"
+                onChange={(e) => setprice(e.target.value)}
+              />
+            </Form.Group>
         <button type="submit" class="btn btn-primary">Submit Support</button>
-      </form>
+      </Form>
          </Col>
     </Row>
 
