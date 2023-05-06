@@ -41,6 +41,12 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
             </NavLink>
           </li>
+          <li>
+          
+            <NavLink to="/admin-createProject" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Projects management
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>
