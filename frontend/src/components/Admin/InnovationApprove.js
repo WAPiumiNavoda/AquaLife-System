@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import Button from 'react-bootstrap/Button';
 import Sidebar from './Sidebar'
 import { useHistory } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
@@ -64,7 +65,7 @@ const InnovationApprove = () => {
                 <td>gbgb</td>
                  <td>
                 <div className="user-actions">
-                  <button className="btn btn-primary" >Approve</button>
+                  <button variant="outline-success">Approve</button>
                   <button className="btn btn-danger">Deny</button>
                 </div>
               </td>
