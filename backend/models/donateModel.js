@@ -19,6 +19,11 @@ const donateSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
+
+    donatePrice:{
+        type: String,
+        required: true,
+    },
     
     cardName: {
         type: String,
