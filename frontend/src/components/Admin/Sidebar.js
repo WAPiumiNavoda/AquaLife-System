@@ -11,24 +11,34 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-nav">
         <ul className="sidebar-links">
+           <li>
+            <NavLink to="/" exact activeClassName="active-link">
+              <i className="fa fa-home" aria-hidden="true"></i> Users
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/" exact activeClassName="active-link">
-              <i className="fa fa-home" aria-hidden="true"></i> Products
+              <i className="fa fa-home" aria-hidden="true"></i> Water Treatments
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeClassName="active-link">
-              <i className="fa fa-info" aria-hidden="true"></i> Users
+            <NavLink to="/innovationAdmin" activeClassName="active-link">
+              <i className="fa fa-info" aria-hidden="true"></i> Innovations
             </NavLink>
           </li>
           <li>
-            <NavLink to="/services" activeClassName="active-link">
-              <i className="fa fa-cog" aria-hidden="true"></i> Customers
+            <NavLink to="/innovationSupAdmin" activeClassName="active-link">
+              <i className="fa fa-cog" aria-hidden="true"></i> Innovation Support
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact" activeClassName="active-link">
-              <i className="fa fa-envelope" aria-hidden="true"></i> Reviews
+              <i className="fa fa-envelope" aria-hidden="true"></i> Donations
+            </NavLink>
+          </li>
+           <li>
+            <NavLink to="/contact" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Educational
             </NavLink>
           </li>
         </ul>

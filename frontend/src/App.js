@@ -15,11 +15,13 @@ import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
+
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
 
 
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard"];
+  const hideHeaderFooterRoutes = ["/dashboard","/innovationAdmin","/innovationSupAdmin"];
+  
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -50,6 +52,8 @@ const App = () => {
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
