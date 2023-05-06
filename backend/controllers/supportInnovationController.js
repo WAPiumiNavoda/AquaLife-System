@@ -17,7 +17,7 @@ const  createSupportInnovation = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const SupportInnovation = new SupportInnovations({ suppotorName,suppotorEmail,suppotorEmail,supportorPhone });
+    const SupportInnovation = new SupportInnovations({ suppotorName,suppotorEmail,suppotorEmail,supportorPhone,price });
 
     const createdSupportInnovation = await SupportInnovation.save();
 
