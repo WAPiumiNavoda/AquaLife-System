@@ -10,6 +10,7 @@ import {
 } from "./reducers/userReducers";
 import {InnovationCreateReducer, innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
 import {articleListReducer}  from './reducers/articleReducers';
+import { InnovationSupportCreateReducer } from "./reducers/innovationSupportReducers";
 
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
@@ -17,7 +18,8 @@ const reducer = combineReducers({
 	innovationList: innovationListReducer,
 	innovationOne: innovationOneReducer,
 	articleList: articleListReducer,
-	innovationCreate: InnovationCreateReducer
+	innovationCreate: InnovationCreateReducer,
+	innovationSupportCreate: InnovationSupportCreateReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
