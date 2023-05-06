@@ -10,8 +10,10 @@ import {
 } from "./reducers/userReducers";
 import {InnovationCreateReducer, innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
 import {articleListReducer}  from './reducers/articleReducers';
-import { InnovationSupportCreateReducer,
-	     InnovationSupportListReducer } from "./reducers/innovationSupportReducers";
+
+import { InnovationSupportCreateReducer } from "./reducers/innovationSupportReducers";
+import { ProjectCreateReducer } from "./reducers/projectReducers";
+
 
 const reducer = combineReducers({
 	user_Login: userLoginReducer,
@@ -21,7 +23,7 @@ const reducer = combineReducers({
 	articleList: articleListReducer,
 	innovationCreate: InnovationCreateReducer,
 	innovationSupportCreate: InnovationSupportCreateReducer,
-	innovationSupportList: InnovationSupportListReducer
+	projectCreate:ProjectCreateReducer
 
 });
 

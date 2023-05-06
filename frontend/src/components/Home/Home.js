@@ -29,7 +29,9 @@ function Home() {
         <div className="service-container">
           <img src={img2} alt="Donate" className="service-image" />
           <div className="service-text">
-            <h3>Donate Now</h3>
+          <a href="/user-projectView" className="tab">
+           <h3> Donate Now </h3>
+        </a>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               suscipit sagittis velit eu porttitor.
