@@ -222,6 +222,11 @@ export const denyInnovationAction = ( id ) => async (
 
 
 //innovation deny action
-export const setApprovedData = ( data ) => {
-  return { type: SET_APPROVED_DATA, payload: data };
-}
+export const setApprovedData = () => async (dispatch) => {
+  try {
+    const res = await axios.get('/api/data/approved');
+    dispatch({ type: SET_APPROVED_DATA, payload: res.data });
+  } catch (error) {
+    console.error(error);
+  }
+};

@@ -138,7 +138,7 @@ const OneInnovation = ({ match,props }) => {
                 onChange={(e) => setprice(e.target.value)}
               />
             </Form.Group>
-        <button type="submit" class="btn btn-primary">Submit Support</button>
+        <button type="submit" class="mt-4 btn btn-primary">Submit Support</button>
       </Form>
          </Col>
     </Row>
