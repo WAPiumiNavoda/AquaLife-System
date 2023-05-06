@@ -25,8 +25,27 @@ const  createSupportInnovation = asyncHandler(async (req, res) => {
   }
 });
 
+
+//approve support innovations
+const innovationSupportApprove = asyncHandler(async (req, res) => {
+try {
+    const data = await SupportInnovations.findById(req.params.id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the approved status
+    data.status = 'approved';
+    await data.save();
+    res.json({ message: 'Innovation Support Data approved successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 //export all functions
 module.exports = {
      createSupportInnovation,
-     getSupportInnovation
+     getSupportInnovation,
+     innovationSupportApprove
 }
