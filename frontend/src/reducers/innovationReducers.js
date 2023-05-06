@@ -9,7 +9,10 @@ import {
     INNOVATION_CREATE_FAIL,
     INNOVATION_APPROVE_REQUEST,
     INNOVATION_APPROVE_SUCCESS,
-    INNOVATION_APPROVE_FAIL
+    INNOVATION_APPROVE_FAIL,
+    INNOVATION_DENY_REQUEST,
+    INNOVATION_DENY_SUCCESS,
+    INNOVATION_DENY_FAIL
 } from '../constants/innovationConstants'
 
 
@@ -52,7 +55,7 @@ export const InnovationCreateReducer = (state = {}, action) => {
   }
 };
 
-//create innovations
+//approve innovations
 export const InnovationAcceptReducer = (state = {}, action) => {
   switch (action.type) {
     case INNOVATION_APPROVE_REQUEST:
@@ -60,6 +63,20 @@ export const InnovationAcceptReducer = (state = {}, action) => {
     case INNOVATION_APPROVE_SUCCESS:
       return { loading: false, success: true };
     case INNOVATION_APPROVE_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+//deny innovations
+export const InnovationDenyReducer = (state = {}, action) => {
+  switch (action.type) {
+    case INNOVATION_DENY_REQUEST:
+      return { loading: true };
+    case INNOVATION_DENY_SUCCESS:
+      return { loading: false, success: true };
+    case INNOVATION_DENY_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;
