@@ -54,7 +54,7 @@ const App = () => {
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+          <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
