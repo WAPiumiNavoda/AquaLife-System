@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 import {
     INNOVATION_LIST_REQUEST,
     INNOVATION_LIST_SUCCESS,
@@ -91,6 +92,13 @@ export const createInnovationAction = ( innovationType,innovationTitle, innovati
       `http://localhost:5000/innovation/create`,
       { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile }
     );
+     swal({
+			title: "Success !!!",
+			text: "Your innovation details added successfully.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 
     dispatch({
       type: INNOVATION_CREATE_SUCCESS,
