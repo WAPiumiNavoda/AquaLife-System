@@ -22,8 +22,8 @@ const InnovationDes = () => {
             Through collaboration, WaterStart drives practical action to address 
             real-world problems using real-world solutions. The result - more, safer, cheaper water.
             </p>
-            <Button className="mx-5"  variant="dark">
-            Reset Feilds
+            <Button className="mx-5"href='/innovationAll' variant="dark">
+             Learn More
             </Button>
           </div>
         </div>
