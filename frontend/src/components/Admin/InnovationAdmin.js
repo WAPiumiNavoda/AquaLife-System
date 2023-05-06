@@ -2,7 +2,12 @@ import React,{useState,useEffect} from 'react'
 import Sidebar from './Sidebar'
 import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
-import {listInnoation, approveInnovationAction} from '../../actions/innovationActions'
+import {
+  listInnoation, 
+  approveInnovationAction,
+  denyInnovationAction,
+  setApprovedData
+} from '../../actions/innovationActions'
 
 const InnovationAdmin = () => {
 
@@ -25,14 +30,36 @@ const InnovationAdmin = () => {
        dispatch(approveInnovationAction(id))
     }
 
+    //deny innovation
+    useSelector((state) => state.innovationDeny);
+    const denyInnovation = (id) =>{
+      dispatch(denyInnovationAction(id));
+    }
+    const { data } = useSelector((state) => state.innovationDeny);
+
+    //approve innovations
+    const approveListInnovation = () =>{
+       const approveInnovationAction = data?.filter((item) => item.status === 'approved');
+       dispatch(setApprovedData(approveInnovationAction));
+       setTimeout(function () {
+				window.location.href = "/innovationApprove";
+			}, 2000);
+    }
+
   return (
    <div className="admin-dashboard">
        <Sidebar />
 
           <div className="admin-content">
+
+            
         <div className="admin-header">
           <h1>All Innovation Requests</h1>
         </div>
+
+         <button 
+         className="btn btn-primary mb-3" 
+         onClick={approveListInnovation}>Approve List</button>
 
         {/* <div className="admin-metrics">
           <div className="metric">
@@ -97,7 +124,7 @@ const InnovationAdmin = () => {
                  <td>
                 <div className="user-actions">
                   <button className="btn btn-primary" onClick={() => approveInnovation(innovation._id)}>Approve</button>
-                  <button className="btn btn-danger">Deny</button>
+                  <button className="btn btn-danger" onClick={() => denyInnovation(innovation._id)}>Deny</button>
                 </div>
               </td>
                 </tr>

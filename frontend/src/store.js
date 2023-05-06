@@ -11,11 +11,14 @@ import {
 import {InnovationCreateReducer,
 	 innovationListReducer,
 	 innovationOneReducer,
-	 InnovationAcceptReducer } from './reducers/innovationReducers';
+	 InnovationAcceptReducer, 
+	  InnovationApproveListReducer,
+	 InnovationDenyReducer} from './reducers/innovationReducers';
 import {articleListReducer}  from './reducers/articleReducers';
 
 import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer,
+		
 		 } from "./reducers/innovationSupportReducers";
 import { ProjectCreateReducer } from "./reducers/projectReducers";
 
@@ -30,8 +33,9 @@ const reducer = combineReducers({
 	innovationSupportCreate: InnovationSupportCreateReducer,
 	innovationSupportList: InnovationSupportListReducer,
 	projectCreate:ProjectCreateReducer,
-	innovationApprove:InnovationAcceptReducer
-
+	innovationApprove:InnovationAcceptReducer,
+	innovationDeny: InnovationDenyReducer,
+    innovationSet : InnovationApproveListReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;

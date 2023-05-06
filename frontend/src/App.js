@@ -18,10 +18,15 @@ import AdminDashboard from "./components/Admin/Dashboard";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+import InnovationApprove from "./components/Admin/InnovationApprove";
 
 
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard","/innovationAdmin","/innovationSupAdmin"];
+  const hideHeaderFooterRoutes = ["/dashboard",
+  "/innovationAdmin",
+  "/innovationSupAdmin",
+  "/innovationApprove"
+];
   
 
   const shouldHideHeaderFooter = () =>
@@ -55,6 +60,7 @@ const App = () => {
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
             <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+             <Route path="/innovationApprove" element={<InnovationApprove />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

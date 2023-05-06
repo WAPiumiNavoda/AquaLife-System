@@ -12,7 +12,8 @@ import {
     INNOVATION_APPROVE_FAIL,
     INNOVATION_DENY_REQUEST,
     INNOVATION_DENY_SUCCESS,
-    INNOVATION_DENY_FAIL
+    INNOVATION_DENY_FAIL,
+    SET_APPROVED_DATA
 } from '../constants/innovationConstants'
 
 
@@ -61,13 +62,30 @@ export const InnovationAcceptReducer = (state = {}, action) => {
     case INNOVATION_APPROVE_REQUEST:
       return { loading: true };
     case INNOVATION_APPROVE_SUCCESS:
-      return { loading: false, success: true };
+       const updatedData = state.data.map((item) => {
+        if (item._id === action.payload) {
+          return { ...item, status: action.type === INNOVATION_APPROVE_SUCCESS ? 'approved' : 'denied' };
+        }
+        return item;
+      });
+      return { ...state, data: updatedData };
+      // return { loading: false, success: true };
     case INNOVATION_APPROVE_FAIL:
       return { loading: false, error: action.payload };
+    
     default:
       return state;
   }
 };
+
+export const InnovationApproveListReducer = (state = { data: [] } , action) => { 
+   switch (action.type) {
+    case SET_APPROVED_DATA:
+      return { approvedData: action.payload };
+    default:
+      return state;
+  }
+}
 
 //deny innovations
 export const InnovationDenyReducer = (state = {}, action) => {

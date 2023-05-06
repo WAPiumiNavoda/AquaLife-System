@@ -14,7 +14,8 @@ import {
     INNOVATION_APPROVE_FAIL,
     INNOVATION_DENY_REQUEST,
     INNOVATION_DENY_SUCCESS,
-    INNOVATION_DENY_FAIL
+    INNOVATION_DENY_FAIL,
+    SET_APPROVED_DATA
 } from '../constants/innovationConstants'
 
 
@@ -171,7 +172,8 @@ export const approveInnovationAction = ( id ) => async (
   }
 };
 
-export const approveDenyAction = ( id ) => async (
+//innovation approve action
+export const denyInnovationAction = ( id ) => async (
   dispatch,
   getState
 ) => {
@@ -196,7 +198,7 @@ export const approveDenyAction = ( id ) => async (
     );
      swal({
 			title: "Success !!!",
-			text: "Your innovation approved.",
+			text: "Your innovation denied.",
 			icon: "success",
 			timer: 2000,
 			button: false,
@@ -217,3 +219,9 @@ export const approveDenyAction = ( id ) => async (
     });
   }
 };
+
+
+//innovation deny action
+export const setApprovedData = ( data ) => {
+  return { type: SET_APPROVED_DATA, payload: data };
+}
