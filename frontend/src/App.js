@@ -16,7 +16,10 @@ import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
 import Treatment from "./screens/WaterTreatment/Treatment";
-
+import InnovationAdmin from "./components/Admin/InnovationAdmin";
+import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
+import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+import InnovationApprove from "./components/Admin/InnovationApprove";
 
 const App = () => {
   const hideHeaderFooterRoutes = ["/dashboard",
@@ -55,6 +58,9 @@ const App = () => {
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
+           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+             <Route path="/innovationApprove" element={<InnovationApprove />} />
 
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
