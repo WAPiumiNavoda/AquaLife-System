@@ -80,10 +80,13 @@ const InnovationForm = () => {
   };
 
   return (
-    <div class="container p-5">
+    <div class="container p-4">
       <div class="row">
       <div class="col-md-6">
-      <img src="https://i.ibb.co/dfQ5PT4/innovation-5161494-1920.jpg" alt="Image" class="img-fluid"/>
+      <img src="https://i.ibb.co/VwQGYCB/depositphotos-18685161-stock-photo-evolution-of-an-idea.webp"
+       alt="Image"
+       style={{height:"400px",width:'700px',paddingRight:'50px'}}
+       class="img-fluid"/>
     </div>
     <div class="col-md-6">
 
