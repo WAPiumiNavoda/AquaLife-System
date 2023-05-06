@@ -1,5 +1,8 @@
 const Innovations = require('../models/submitInnovationModel');
 const asyncHandler = require('express-async-handler');
+const express = require('express');
+const router = express.Router();
+
 
 //Get Innovations controller
 const getInnovation =  asyncHandler(
@@ -56,11 +59,33 @@ const deleteInnovation = asyncHandler(async (req, res) => {
   }
 });
 
+const innovationApprove = asyncHandler(async (req, res) => {
+try {
+    const data = await Innovations.findById(req.params.id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the approved status
+    data.status = 'approved';
+    await data.save();
+    res.json({ message: 'Data approved successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+//approve innovations
+router.post('/:id', async (req, res) => {
+  
+});
+
+
 
 //export all functions
 module.exports = {
      getInnovation,
      getInnovationById,
      createInnovation,
-
+     innovationApprove
 }
