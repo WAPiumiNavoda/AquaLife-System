@@ -23,12 +23,12 @@ export const InnovationSupportCreateReducer = (state = {}, action) => {
 };
 
 //get all innovation support
-export const innovationSupportListReducer = (state = { innovation: [] }, action) => {
+export const InnovationSupportListReducer = (state = { innovationSup: [] }, action) => {
   switch (action.type) {
     case INNOVATIONSUPPORT_LIST_REQUEST:
       return { loading: true };
     case INNOVATIONSUPPORT_LIST_SUCCESS:
-      return { loading: false, innovation: action.payload };
+      return { loading: false, innovationSup: action.payload };
     case INNOVATIONSUPPORT_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:
