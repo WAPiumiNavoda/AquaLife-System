@@ -59,6 +59,8 @@ const deleteInnovation = asyncHandler(async (req, res) => {
   }
 });
 
+
+//approve innovations
 const innovationApprove = asyncHandler(async (req, res) => {
 try {
     const data = await Innovations.findById(req.params.id);
@@ -75,9 +77,21 @@ try {
   }
 });
 
-//approve innovations
-router.post('/:id', async (req, res) => {
-  
+//deny innovations
+const innovationDeny = asyncHandler(async (req, res) => {
+try {
+    const data = await Innovations.findById(req.params.id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the denied status
+    data.status = 'denied';
+    await data.save();
+    res.json({ message: 'Data denied successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
 });
 
 
@@ -87,5 +101,6 @@ module.exports = {
      getInnovation,
      getInnovationById,
      createInnovation,
-     innovationApprove
+     innovationApprove,
+     innovationDeny
 }
