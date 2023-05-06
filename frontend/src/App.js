@@ -26,7 +26,8 @@ import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 
 
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard",
+  const hideHeaderFooterRoutes = [
+  "/dashboard",
   "/innovationAdmin",
   "/innovationSupAdmin",
   "/innovationApprove"
