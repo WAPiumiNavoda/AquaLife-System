@@ -8,7 +8,10 @@ import {
     INNOVATION_REQUEST,
     INNOVATION_CREATE_REQUEST,
     INNOVATION_CREATE_SUCCESS,
-    INNOVATION_CREATE_FAIL
+    INNOVATION_CREATE_FAIL,
+    INNOVATION_APPROVE_REQUEST,
+    INNOVATION_APPROVE_SUCCESS,
+    INNOVATION_APPROVE_FAIL
 } from '../constants/innovationConstants'
 
 
@@ -111,6 +114,55 @@ export const createInnovationAction = ( innovationType,innovationTitle, innovati
         : error.message;
     dispatch({
       type: INNOVATION_CREATE_FAIL,
+      payload: message,
+    });
+  }
+};
+
+
+//approve innovation
+export const approveInnovationAction = ( id ) => async (
+  dispatch,
+  getState
+) => {
+  try {
+    dispatch({
+      type: INNOVATION_APPROVE_REQUEST,
+    });
+
+    // const {
+    //   userLogin: { userInfo },
+    // } = getState();
+
+    // const config = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${userInfo.token}`,
+    //   },
+    // };
+
+    const { data } = await axios.post(
+      `http://localhost:5000/innovation/${id}`,
+    );
+     swal({
+			title: "Success !!!",
+			text: "Your innovation approved.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+
+    dispatch({
+      type: INNOVATION_APPROVE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type: INNOVATION_APPROVE_FAIL,
       payload: message,
     });
   }
