@@ -45,6 +45,7 @@ const App = () => {
           <Route path="/articleAll" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
 
+            {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path = "/admin-createProject" element={<ProjectCreate/>} />
 
