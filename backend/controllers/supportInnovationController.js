@@ -2,7 +2,12 @@ const SupportInnovations = require('../models/supportInnovationModel');
 const asyncHandler = require('express-async-handler');
 
 //Get innovation support controller
- 
+const getSupportInnovation =  asyncHandler(
+    async(req,res)=>{
+        const innovationsSupport = await SupportInnovations.find()
+        res.json(innovationsSupport);
+    }
+)
 
 //Create innovation support controller
 const  createSupportInnovation = asyncHandler(async (req, res) => {
@@ -22,5 +27,6 @@ const  createSupportInnovation = asyncHandler(async (req, res) => {
 
 //export all functions
 module.exports = {
-     createSupportInnovation
+     createSupportInnovation,
+     getSupportInnovation
 }

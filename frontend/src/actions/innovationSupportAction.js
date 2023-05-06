@@ -51,3 +51,37 @@ export const createSupportInnovationAction = ( suppotorName,suppotorEmail,suppor
 };
 
 
+//all innovation support list
+export const listSupportInnoation = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: INNOVATIONSUPPORT_LIST_REQUEST,
+    });
+
+    // const {
+    //   userLogin: { userInfo },
+    // } = getState();
+
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${userInfo.token}`,
+    //   },
+    // };
+
+    const { data } = await axios.get("http://localhost:5000/supportInnovation");
+
+    dispatch({
+      type: INNOVATIONSUPPORT_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type: INNOVATIONSUPPORT_LIST_FAIL,
+      payload: message,
+    });
+  }
+};
