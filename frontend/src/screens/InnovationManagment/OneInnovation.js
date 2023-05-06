@@ -19,6 +19,8 @@ const OneInnovation = ({ match,props }) => {
   const [innovationFile, setinnovationFile] = useState();
   const { id } = useParams();
 
+
+  //get one innoation
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.get(`http://localhost:5000/innovation/${id}`);
@@ -31,6 +33,9 @@ const OneInnovation = ({ match,props }) => {
     };
     fetching();
   }, [id]);
+
+  //create a support
+  
 
 
 

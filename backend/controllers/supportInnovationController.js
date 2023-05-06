@@ -1,7 +1,10 @@
 const SupportInnovations = require('../models/supportInnovationModel');
 const asyncHandler = require('express-async-handler');
 
-//Create innovation controller
+//Get innovation support controller
+ 
+
+//Create innovation support controller
 const  createSupportInnovation = asyncHandler(async (req, res) => {
   const { suppotorName,suppotorEmail,supportorPhone, price } = req.body;
 
