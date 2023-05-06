@@ -15,14 +15,22 @@ import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
+import Treatment from "./screens/WaterTreatment/Treatment";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+
 import OneProject from "./screens/projectManagement/ProjectOne";
+import InnovationApprove from "./components/Admin/InnovationApprove";
+import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 
 
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard","/innovationAdmin","/innovationSupAdmin"];
+  const hideHeaderFooterRoutes = ["/dashboard",
+  "/innovationAdmin",
+  "/innovationSupAdmin",
+  "/innovationApprove"
+];
   
 
   const shouldHideHeaderFooter = () =>
@@ -56,8 +64,18 @@ const App = () => {
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
+
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
           <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+
+           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+             <Route path="/innovationApprove" element={<InnovationApprove />} />
+             <Route path="/innovationmain" element={<InnovationMain />} />
+
+          {/* Wastewater Treatment */}
+          <Route path="/services" element={<Treatment />} />
+
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
