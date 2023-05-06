@@ -15,6 +15,8 @@ import AllArticle from "./screens/ArticleManagement/AllArticle";
 import OneArticle from "./screens/ArticleManagement/OneArticle";
 import ProjectView from "./screens/projectManagement/ProjectViewPage";
 import AdminDashboard from "./components/Admin/Dashboard";
+import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
+
 
 const App = () => {
   const hideHeaderFooterRoutes = ["/dashboard"];
@@ -44,6 +46,7 @@ const App = () => {
           <Route path="/oneArticle" element={<OneArticle />} />
 
           <Route path="/user-projectView" element={<ProjectView />} />
+          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
