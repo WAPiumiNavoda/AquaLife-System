@@ -6,7 +6,14 @@ import {
     INNOVAIONONE_SUCCESS,
     INNOVATION_CREATE_REQUEST,
     INNOVATION_CREATE_SUCCESS,
-    INNOVATION_CREATE_FAIL
+    INNOVATION_CREATE_FAIL,
+    INNOVATION_APPROVE_REQUEST,
+    INNOVATION_APPROVE_SUCCESS,
+    INNOVATION_APPROVE_FAIL,
+    INNOVATION_DENY_REQUEST,
+    INNOVATION_DENY_SUCCESS,
+    INNOVATION_DENY_FAIL,
+    SET_APPROVED_DATA
 } from '../constants/innovationConstants'
 
 
@@ -43,6 +50,51 @@ export const InnovationCreateReducer = (state = {}, action) => {
     case INNOVATION_CREATE_SUCCESS:
       return { loading: false, success: true };
     case INNOVATION_CREATE_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+//approve innovations
+export const InnovationAcceptReducer = (state = {}, action) => {
+  switch (action.type) {
+    case INNOVATION_APPROVE_REQUEST:
+      return { loading: true };
+    case INNOVATION_APPROVE_SUCCESS:
+       const updatedData = state.data.map((item) => {
+        if (item._id === action.payload) {
+          return { ...item, status: action.type === INNOVATION_APPROVE_SUCCESS ? 'approved' : 'denied' };
+        }
+        return item;
+      });
+      return { ...state, data: updatedData };
+      // return { loading: false, success: true };
+    case INNOVATION_APPROVE_FAIL:
+      return { loading: false, error: action.payload };
+    
+    default:
+      return state;
+  }
+};
+
+export const InnovationApproveListReducer = (state = { data: [] } , action) => { 
+   switch (action.type) {
+    case SET_APPROVED_DATA:
+      return { approvedData: action.payload };
+    default:
+      return state;
+  }
+}
+
+//deny innovations
+export const InnovationDenyReducer = (state = {}, action) => {
+  switch (action.type) {
+    case INNOVATION_DENY_REQUEST:
+      return { loading: true };
+    case INNOVATION_DENY_SUCCESS:
+      return { loading: false, success: true };
+    case INNOVATION_DENY_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;

@@ -53,9 +53,10 @@ const InnovationCard = ({history,search,props}) => {
          </Col>
          <Col className=' text-center' >
          <Image 
-          src="https://i.ibb.co/7Jt1bHD/images.jpg" 
+          src={innovation.innovationImage}
           class="rounded float-right w-80" 
-          style={{width: '40%'}} 
+          style={{width: '40%', objectFit: "cover",
+                    height: "250px"}} 
           alt="image" />
          </Col>
     </Row>

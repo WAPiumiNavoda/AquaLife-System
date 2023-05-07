@@ -80,10 +80,15 @@ const InnovationForm = () => {
   };
 
   return (
-    <div class="container p-5">
+    <>
+       <h1 style={{textAlign: "center", color:"#1D267D"}}>Submit Your Innovation Request</h1>
+    <div class="container p-4">
       <div class="row">
       <div class="col-md-6">
-      <img src="https://i.ibb.co/dfQ5PT4/innovation-5161494-1920.jpg" alt="Image" class="img-fluid"/>
+      <img src="https://i.ibb.co/VwQGYCB/depositphotos-18685161-stock-photo-evolution-of-an-idea.webp"
+       alt="Image"
+       style={{height:"400px",width:'700px',paddingRight:'50px'}}
+       class="img-fluid"/>
     </div>
     <div class="col-md-6">
 
@@ -134,7 +139,7 @@ const InnovationForm = () => {
 
 
           <Form.Group controlId="file">
-            <Form.Label>Relevent Files</Form.Label>
+            <Form.Label>Relevent Files Screen Shot</Form.Label>
             <Form.Control
               id="custom-file"
               type="file"
@@ -143,6 +148,7 @@ const InnovationForm = () => {
               custom
             />
           </Form.Group>
+          
 
             <Button type="submit" variant="primary" className="my-4">
             Create Product
@@ -154,7 +160,7 @@ const InnovationForm = () => {
     </div>
   </div>
 </div>
-
+</>
   )
 }
 

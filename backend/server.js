@@ -11,6 +11,7 @@ const supportInnovation = require("./routes/supportInnovationRoutes")
 const videoSubmit = require("./routes/videoRoutes")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
+
 dotenv.config();
 connectDB();
 app.use(express.json());
@@ -25,6 +26,7 @@ app.use("/user",userRoutes)
 app.use("/innovation",submitInnovations);
 app.use("/video",videoSubmit)
 app.use("/supportInnovation", supportInnovation)
+
 
 app.use(notFound);
 app.use(errorHandler);
