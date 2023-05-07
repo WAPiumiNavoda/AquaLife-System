@@ -37,10 +37,16 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Donations
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/contact" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
-            </NavLink>
+           </NavLink>
+           </li>
+           <li>
+            <NavLink to="/articleAdmin" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Article
+           </NavLink>
           </li>
         </ul>
       </div>

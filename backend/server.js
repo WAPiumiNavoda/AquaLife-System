@@ -12,6 +12,7 @@ const videoSubmit = require("./routes/videoRoutes");
 const qualityTest = require("./routes/qualityTestRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
+
 dotenv.config();
 connectDB();
 app.use(express.json());
@@ -27,6 +28,7 @@ app.use("/innovation", submitInnovations);
 app.use("/video", videoSubmit);
 app.use("/supportInnovation", supportInnovation);
 app.use("/qualityTest", qualityTest);
+
 
 app.use(notFound);
 app.use(errorHandler);

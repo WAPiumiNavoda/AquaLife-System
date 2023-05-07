@@ -90,7 +90,7 @@ const UserRegisterScreen = () => {
 	};
 	if (userInfo) {
 		return (
-			<div className="registerBg">
+			<div className="registerBg  m-5">
 				<br></br>
 				<div>
 					<Button

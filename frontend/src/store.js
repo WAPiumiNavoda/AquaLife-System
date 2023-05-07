@@ -1,32 +1,29 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-
 import {
   userLoginReducer,
   userRegisterReducer,
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
-import {
-  InnovationCreateReducer,
-  innovationListReducer,
-  innovationOneReducer,
-  InnovationAcceptReducer,
-  InnovationApproveListReducer,
-  InnovationDenyReducer,
-} from "./reducers/innovationReducers";
-import { articleListReducer } from "./reducers/articleReducers";
-
-import {
-  InnovationSupportCreateReducer,
-  InnovationSupportListReducer,
+import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
+import {InnovationCreateReducer,
+	 innovationListReducer,
+	 innovationOneReducer,
+	 InnovationAcceptReducer, 
+	  InnovationApproveListReducer,
+	 InnovationDenyReducer} from './reducers/innovationReducers';
+import { InnovationSupportCreateReducer,
+	     InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
-import { ProjectCreateReducer } from "./reducers/projectReducers";
 import {
   qualityListReducer,
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
+
+import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
+import { qualityListReducer } from "./reducers/qualityTestReducers";
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -43,6 +40,7 @@ const reducer = combineReducers({
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
+
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
