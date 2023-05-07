@@ -7,26 +7,24 @@ const InnovationInstructions = () => {
           <div class="container p-1">
       <div class="row">
       <div class="col-md-6">
+        <h2 className='px-5'
+        style={{color:"#070A52",textDecoration: "underline",fontSize:"20px"}}
+        >Summery</h2>
       {/* <img src="https://i.ibb.co/VwQGYCB/depositphotos-18685161-stock-photo-evolution-of-an-idea.webp"
        alt="Image"
        style={{height:"400px",width:'700px',paddingRight:'50px'}}
        class="img-fluid"/> */}
-        <div>
-            <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-3.svg" />
-            <h5>Review and Evaluate</h5>
-            <p>Evaluate and score ideas in order to provide valuable feedback for improvement.</p>
-        </div>
-          <div>
-            <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-6.svg" /> 
-            <h5>Upload pitch decks</h5>
-            <p>Upload and share pitch ideas to be reviewed</p>
-        </div>
-          <div>
-             <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-5.svg" />
-            <h5>Source Ideas</h5>
-            <p>Process hundreds or thousands of applications with a modern application process.</p>
-        </div>
-        
+        <p className='pt-0' style={{paddingLeft:"50px",paddingRight:"50px",marginTop:'45px'}}>
+             Our various strategic partnerships across the globe allow us to bridge the gap to implementations, 
+             enabling technology companies to work closely with first adopters, helping to scale effective solutions, faster.
+
+             Our activities are largely funded by public or philanthropic agencies with a goal of stimulating 
+            opportunities for industry development and enhanced water sustainability.
+            As fresh water becomes increasingly scarce, water resource management and sustainability will be 
+            vital to maintaining the quality of life and economic development in communities around the world. 
+            Through collaboration, WaterStart drives practical action to address 
+            real-world problems using real-world solutions. The result - more, safer, cheaper water.
+            </p>  
     </div>
     <div class="col-md-6">
  <h2 className='px-5'

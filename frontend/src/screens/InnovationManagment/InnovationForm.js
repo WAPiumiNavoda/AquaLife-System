@@ -82,12 +82,12 @@ const InnovationForm = () => {
   return (
     <>
        <h1 style={{textAlign: "center", color:"#1D267D"}}>Submit Your Innovation Request</h1>
-    <div class="container p-4">
+    <div class="container p-1">
       <div class="row">
       <div class="col-md-6">
       <img src="https://i.ibb.co/VwQGYCB/depositphotos-18685161-stock-photo-evolution-of-an-idea.webp"
        alt="Image"
-       style={{height:"400px",width:'700px',paddingRight:'50px'}}
+       style={{height:"400px",width:'700px',paddingRight:'50px',paddingTop:"5px"}}
        class="img-fluid"/>
     </div>
     <div class="col-md-6">
