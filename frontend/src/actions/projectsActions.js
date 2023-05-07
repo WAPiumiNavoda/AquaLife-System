@@ -72,6 +72,16 @@ export const createProjects = ( name,description,price,photo) => async (
 		type: PROJECT_CREATE_SUCCESS,
 		payload: data,
 	  });
+
+	  swal({
+		title: "Success !!!",
+		text: "Your Projects added successfully.",
+		icon: "success",
+		timer: 2000,
+		button: false,
+	});
+	  
+
 	} catch (error) {
 	  const message =
 		error.response && error.response.data.message

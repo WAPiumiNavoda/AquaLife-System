@@ -4,7 +4,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { useDispatch, useSelector } from "react-redux";
 import { createProjects } from '../../actions/projectsActions';
 
-const ProjectCreate = () => {
+const LabourCreate = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -52,7 +52,7 @@ const ProjectCreate = () => {
 
   return (
     <div class="card p-5">
-   <h2 className='m-3' style={{fontSize:'45px', color:"#57aade"}}>Add Your New Projects</h2>
+   <h2 className='m-3' style={{fontSize:'45px', color:"#57aade"}}>Add Your Information</h2>
 
    <div class="card-header" style={{fontSize:'20px'}}>
    Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
@@ -67,9 +67,9 @@ const ProjectCreate = () => {
 
        <Form onSubmit={submitHandler}>
             <Form.Group controlId="title">
-              <Form.Label>Project Title</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
-                type="title"
+                type="email"
                 value={name}
                 placeholder="Enter Project Title"
                 onChange={(e) => setName(e.target.value)}
@@ -77,9 +77,9 @@ const ProjectCreate = () => {
             </Form.Group>
 
             <Form.Group controlId="title">
-               <Form.Label>Description</Form.Label>
+               <Form.Label>Name</Form.Label>
                <Form.Control
-                as="textarea"
+                type="name"
                 placeholder="Enter Project Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -87,9 +87,9 @@ const ProjectCreate = () => {
             </Form.Group>
 
               <Form.Group controlId="title">
-               <Form.Label>Price</Form.Label>
+               <Form.Label>Phone Number</Form.Label>
                <Form.Control
-                type="price"
+                type="number"
                 placeholder="Enter the Project value"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
@@ -99,19 +99,30 @@ const ProjectCreate = () => {
               {picMessage && (
             <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
           )}
-          <Form.Group controlId="pic">
-            <Form.Label>Project Image</Form.Label>
-            <Form.Control
-              id="custom-file"
-              type="file"
-              label="Upload Project Picture"
-              onChange={(e) => postDetails(e.target.files[0])}
-              custom
-            />
-          </Form.Group>
+         
+         <Form.Group controlId="title">
+               <Form.Label>Your Avalable Date</Form.Label>
+               <Form.Control
+                type="Date"
+                placeholder="Enter the Project value"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="title">
+               <Form.Label>Country</Form.Label>
+               <Form.Control
+                type=""
+                placeholder="Enter the Project value"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </Form.Group>
+
 
           <Button type="submit" variant="primary" className="my-4">
-            Create New Project
+            Submit
             </Button>
             <Button className="mx-5"  variant="danger">
             Reset Feilds
@@ -126,4 +137,4 @@ const ProjectCreate = () => {
 }
 
 
-export default ProjectCreate
+export default LabourCreate

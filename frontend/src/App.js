@@ -19,10 +19,14 @@ import Treatment from "./screens/WaterTreatment/Treatment";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
-
-import OneProject from "./screens/projectManagement/ProjectOne";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import InnovationMain from "./screens/InnovationManagment/InnovationMain";
+import Dashboard from "./screens/donateManagement/DonateSelection"
+import Project from "./components/Admin/projects";
+import ProjectsView from "./components/Admin/ViewProjects";
+import LabourCreate from "./screens/donateManagement/LaborCreatePage";
+// import PaymentForm from "./screens/donateManagement/Payment";
+
 
 
 const App = () => {
@@ -30,7 +34,10 @@ const App = () => {
   "/dashboard",
   "/innovationAdmin",
   "/innovationSupAdmin",
-  "/innovationApprove"
+  "/innovationApprove",
+  "/projects",
+  
+
 ];
   
 
@@ -60,8 +67,14 @@ const App = () => {
 
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
-          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
-          <Route path = "/oneProject" element={<OneProject/>}/>
+          <Route path = "/createProject" element={<ProjectCreate/>} />
+          <Route path = "/selection" element={<Dashboard/>}/>
+          <Route path = "/projects" element={<Project/>}/>
+          <Route path = "/veiwProjets" element={<ProjectsView/>}/>
+
+          {/* Donate management */}
+          <Route path = "/createLabour" element={<LabourCreate/>}/>
+          {/* <Route path = "/createPayment" element ={<PaymentForm/>}/> */}
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
