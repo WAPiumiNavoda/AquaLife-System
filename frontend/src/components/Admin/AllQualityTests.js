@@ -3,6 +3,7 @@ import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { listQuality } from "./../../actions/qualityTestActions";
 import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
 
 const QualityAdmin = () => {
   //list all quality tests
@@ -65,8 +66,9 @@ const QualityAdmin = () => {
                       <td>{quality.mobile}</td>
                       <td>{quality.district}</td>
                       <td className="user-actions">
-                        <button className="btn btn-primary">Approve</button>
-                        <button className="btn btn-danger">Delete</button>
+                        <Link to={`/quality/${quality._id}`}>
+                          <button className="btn btn-primary">View</button>
+                        </Link>
                       </td>
                     </tr>
                   ))

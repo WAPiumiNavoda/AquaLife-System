@@ -22,6 +22,7 @@ import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import Quality from "./screens/WaterTreatment/QualityTest";
 import AllQualityTests from "./components/Admin/AllQualityTests";
+import QualityDetails from "./components/Admin/QualityDetails";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -72,6 +73,7 @@ const App = () => {
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
           <Route path="/allquality" element={<AllQualityTests />} />
+          <Route path="/quality/:id" element={<QualityDetails />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

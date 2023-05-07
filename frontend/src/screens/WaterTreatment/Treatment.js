@@ -58,14 +58,14 @@ function Treatment() {
         </div>
         <div className="card1">
           <img src={img6} alt="purification" />
-          <h2>Purification & Filtration Plants</h2>
+          <h2>Water Quality Monitoring</h2>
           <p>
             Our purification and filtration plants use advanced technologies to
             remove impurities from water, making it safe and clean for use in
             homes and businesses. We offer a range of solutions for both small
             and large-scale applications.
           </p>
-          <Link to="/purification">Learn More</Link>
+          <Link to="/quality">Learn More</Link>
         </div>
         <div className="card1">
           <img src={img7} alt="maintenance" />

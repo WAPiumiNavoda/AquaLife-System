@@ -23,7 +23,10 @@ import {
   InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
 import { ProjectCreateReducer } from "./reducers/projectReducers";
-import { qualityListReducer } from "./reducers/qualityTestReducers";
+import {
+  qualityListReducer,
+  qualityOneReducer,
+} from "./reducers/qualityTestReducers";
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -39,6 +42,7 @@ const reducer = combineReducers({
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
+  qualityOne: qualityOneReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
