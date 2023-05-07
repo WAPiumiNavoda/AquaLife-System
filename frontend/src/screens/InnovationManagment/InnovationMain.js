@@ -15,13 +15,13 @@ const InnovationMain = () => {
             <Row>
                  <div className='mainTopIntro'>
                     <h1>
-          <span className="banner1__wastewater">Innovation Support</span>
+          <span className="banner1__inno">Innovation Support</span>
           <h1>
-          <span className="banner1__treatment">Request &</span>
+          <span className="banner1__sup">Request &</span>
         </h1>
         </h1>
         <h1>
-          <span className="banner1__treatment">Innovation Support</span>
+          <span className="banner1__sup">Innovation Support</span>
         </h1>
                  </div>
             </Row>

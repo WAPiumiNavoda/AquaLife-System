@@ -1,4 +1,4 @@
-.mainTop {
+.mainTopIno{
     align-items: center;
     display: flex;
     min-height: 83vh;
@@ -53,3 +53,21 @@
     text-align: center;
     line-height: 0.3em;
 }
+
+ .banner1 h1 {
+     color: rgb(12, 137, 220);
+     font-size: 65px;
+     margin-bottom: 0;
+     padding: 0;
+     font-weight: bold;
+     text-shadow: 0 0 10px rgba(0, 0, 0, 0.663);
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+
+ .banner1__inno {
+     color: rgb(12, 137, 220);
+ }
+
+ .banner1__sup {
+     color: white;
+ }

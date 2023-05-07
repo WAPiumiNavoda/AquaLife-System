@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 
 const InnovationHome = () => {
   return (
-      <div className='mainTop'>
+      <div className='mainTopIno'>
         <Container>
             <Row>
                  <div className='mainTopIntro'>
