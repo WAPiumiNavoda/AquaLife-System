@@ -41,11 +41,6 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/video" activeClassName="active-link">
-              <i className="fa fa-envelope" aria-hidden="true"></i> Videos
-            </NavLink>
-          </li>
         </ul>
       </div>
     </div>

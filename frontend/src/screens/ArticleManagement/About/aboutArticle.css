@@ -4,18 +4,18 @@
     display: flex;
     justify-content: center;
 }
-.meta {
+.meta_article {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.meta p{
+.meta_article p{
     color: #7E7E7E;
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 25px;
 }
-.meta span{
+.meta_article span{
     font-family: "Roboto";
     padding: 20px 0px;
     color: #253D4E;
@@ -36,7 +36,7 @@
 .ProductDetails{
     padding: 2vh!important;
 }
-.second{
+.article_second{
     width: 100%;
     padding: 30px 0px;
 }
@@ -46,23 +46,23 @@
     object-fit: contain;
     height: 70vh;
 }
-.about__page{
+.article_about__page{
     padding: 30px 0px;
 }
-.heading{
+.article_heading{
     width: 100%;
 }
-.col__3{
+.article_col__3{
     margin: 15px;
 }
 
-.col_3_img{
-    width: 450px;
-    height: 300px;
+.article_col_3_img{
+    width: 100px;
+    height: 50px;
     margin: 15px;
 }
 
-.col__3 > div > span{
+.article_col__3 > div > span{
     color: #253D4E;
     font-size: 25px;
     padding: 15px 0;
@@ -71,14 +71,14 @@
     text-align: center;
     display: block;
 }
-.col__3 > div > p{
+.article_col__3 > div > p{
     color: #7E7E7E;
     font-size: 1rem;
     line-height: 1.5;
     text-align: center;
     padding: 15px 0;
 }
-.heading{
+.article_heading{
     background-image: url(http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/wave.png);
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -87,7 +87,7 @@
 .image{
     width: 100%;
 }
-.heading h2{
+.article_heading h2{
     text-align: center;
     color: #253D4E;
     font-weight: 700;
@@ -102,7 +102,7 @@
         width: 100%;
         height: 100%;
     }
-    .col__3{
+    .article_col__3{
         width: 29%;
     }
     li{
@@ -205,7 +205,7 @@
    .moreOption{
     display: flex!important;
   }
-    .col__3{
+    .article_col__3{
         width: 44%;
     }
     .col__2{
@@ -252,12 +252,10 @@
     p.stock__meta{
         text-align: center;
     }
-    .about__page{
+    .article_about__page{
         padding: 0;
     }
-    .searchBox > input[type="text"]{
-        width: 50%;
-    }
+    
 }
 @media only screen and (max-width: 560px) {
     .loginForm > div > input, .signUpForm > div > input{
@@ -319,7 +317,7 @@
         height: 100vh!important;
         border-radius: 0;
     }
-    .col__3{
+    .article_col__3{
         width: 80%;
     }
     .MuiRating-decimal{
@@ -373,3 +371,23 @@
     z-index: 10;
 }
 }
+
+
+/*card for categories*/
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 500px;
+    height: 500px;
+    margin-left:3%;
+    margin-bottom: 2%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }

@@ -6,10 +6,10 @@ import '../../css/article.css';
 
 const ArticleHome = () => {
   return (
-    <div className='mainTop'>
+    <div className='mainTop_article'>
         <Container>
             <Row>
-                 <div className='mainTopIntro'>
+                 <div className='mainTopIntro_article'>
                     <div>
                     
                     </div>
