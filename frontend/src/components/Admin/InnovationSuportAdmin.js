@@ -39,6 +39,7 @@ const InnovationSuportAdmin = () => {
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Price</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,8 +52,8 @@ const InnovationSuportAdmin = () => {
                   <td>{innovationSup.price}</td>
                  
                 <td className="user-actions">
-                  <button className="btn btn-primary">Approve</button>
-                  <button className="btn btn-danger">Delete</button>
+                  <button class="btn btn-outline-primary" fdprocessedid="3ah475">Approve</button>
+                  <button class="btn btn-outline-danger" fdprocessedid="eb6yb">Delete</button>
                 </td>
               
                 </tr>
