@@ -118,13 +118,13 @@ const InnovationAdmin = () => {
                 <tr>
                   <td>{innovation.innovationType}</td>
                   <td>J{innovation.innovationTitle}</td>
-                  <td>{innovation.innovationDes}</td>
-                  <td >{innovation.innovationImage}</td>
-                  <td>{innovation.innovationFile}</td>
+                  <td>{innovation.innovationDes.slice(0, 40)}</td>
+                  <td >{innovation.innovationImage.slice(0, 40)}</td>
+                  <td>{innovation.innovationFile.slice(0, 40)}</td>
                  <td>
                 <div className="user-actions">
-                  <button className="btn btn-primary" onClick={() => approveInnovation(innovation._id)}>Approve</button>
-                  <button className="btn btn-danger" onClick={() => denyInnovation(innovation._id)}>Deny</button>
+                  <button type="button" class="btn btn-outline-primary" fdprocessedid="3ah475" onClick={() => approveInnovation(innovation._id)}>Approve</button>
+                  <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" onClick={() => denyInnovation(innovation._id)}>Deny</button>
                 </div>
               </td>
                 </tr>

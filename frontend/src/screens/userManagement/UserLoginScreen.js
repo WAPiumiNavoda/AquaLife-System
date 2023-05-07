@@ -20,9 +20,9 @@ const Login = () => {
         .then((response) => {
           console.log(response);
           if (response.data.role === "Admin") {
-            navigate("/admin-home");
+            navigate("/dashboard");
           } else if (response.data.role === "User") {
-            navigate("/user-home");
+            navigate("/");
           }
         })
         .catch((error) => {
@@ -35,15 +35,9 @@ const Login = () => {
       <>
         <section className="vh-100">
           <div className="container-fluid h-custom">
-            <div className="row d-flex justify-content-center align-items-center h-100">
-              <div className="col-md-9 col-lg-6 col-xl-5">
-                <img
-                  src="https://res.cloudinary.com/flocktogether/image/upload/v1680779080/6528419_i3qj6v.png"
-                  className="img-fluid"
-                  alt="Sample image"
-                />
-              </div>
-              <div className="col-md-10 col-lg-8 col-xl-5 offset-xl-1">
+            <div style={{paddingTop:'200px'}} className=" row d-flex justify-content-center align-items-center h-100">
+              
+              <div className="bg-light p-5 col-md-10 col-lg-8 col-xl-5 offset-xl-1">
                 <form>
                   <div className="form-outline mb-4">
                     {/* EMAIL INPUT */}

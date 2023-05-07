@@ -69,18 +69,9 @@ const OneInnovation = ({ match,props }) => {
 
         <p className='px-5' 
         style={{fontSize:"25px"}}>{innovationTitle}</p> 
-
-        <p className='px-5' style={{fontSize:"20px"}}>{innovationTitle}</p>
            <p className='pt-4 mx-5 pb-4'>The advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do 
-              The advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do 
-              The advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do {innovationDes} </p>
+               {innovationDes} </p>
+               <img src={innovationImage} style={{paddingLeft:'40px', width:"400px"}} />
          </Col>
          <Col 
          className='p-5'
@@ -138,7 +129,7 @@ const OneInnovation = ({ match,props }) => {
                 onChange={(e) => setprice(e.target.value)}
               />
             </Form.Group>
-        <button type="submit" class="btn btn-primary">Submit Support</button>
+        <button type="submit" class="mt-4 btn btn-primary">Submit Support</button>
       </Form>
          </Col>
     </Row>

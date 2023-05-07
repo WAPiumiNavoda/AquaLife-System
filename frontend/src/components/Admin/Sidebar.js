@@ -37,9 +37,25 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Donations
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/contact" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
+    </NavLink>
+           <li>
+            <NavLink to="/articleAdmin" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Article
+           
+          </li>
+          <li>
+            <NavLink to="/video" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Videos
+            </NavLink>
+          </li>
+          <li>
+          
+            <NavLink to="/admin-createProject" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Projects management
             </NavLink>
           </li>
         </ul>

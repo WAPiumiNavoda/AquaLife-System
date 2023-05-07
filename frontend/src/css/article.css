@@ -1,39 +1,66 @@
-.form-group-article{
+#form{
     padding: 10px;
     background: #F4F4F4;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .form-group-article:hover{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.btn-primary-submit{
-    background: #1896EB;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    color: white;
-    border-color: #093D8C;
-}
 
-.btn-primary-submit:hover{
-    background-color: #093D8C;
-}
 
 #Title{
-/* Share your Knowledge among the community */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 72px;
-    /* identical to box height, or 112% */
+    /* Share your Knowledge among the community */
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 72px;
+        /* identical to box height, or 112% */
+    
+        text-align: center;
+        letter-spacing: 0.02em;
+    
+        color: #093D8C;
+ }
+    
+.Content{
+        width: 470px;
+        height: 500px;
+}
+    
+.col-md-6 img{
+        padding-top: 20%;
+        width: 200%;
+        height: 100%;
+}
+    
+.mainTop{
+    align-items: center;
+    display: flex;
+    min-height: 83vh;
+    background-image: url('https://i.ibb.co/NF1RFRX/article-writing.jpg');
+    background-size: cover;
+    color: #9bd3f8;
+    opacity: 0.9;
+    background-position: center;
+}
 
+
+.mainTopHead {
+    font-size: 60px;
     text-align: center;
-    letter-spacing: 0.02em;
+}
 
-    color: #093D8C;
+.mainTopIntro {
+    font-size: 20px;
+    text-align: center;
+}
 
+.mainTopPhara {
+    padding-top: 20px;
+    text-align: center;
+    line-height: 0.3em;
 }
 

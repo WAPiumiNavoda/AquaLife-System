@@ -8,15 +8,21 @@ import {
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
-import {
-  InnovationCreateReducer,
-  innovationListReducer,
-  innovationOneReducer,
-  InnovationAcceptReducer,
-  InnovationApproveListReducer,
-  InnovationDenyReducer,
-} from "./reducers/innovationReducers";
-import { articleListReducer } from "./reducers/articleReducers";
+
+
+import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
+import {InnovationCreateReducer,
+	 innovationListReducer,
+	 innovationOneReducer,
+	 InnovationAcceptReducer, 
+	  InnovationApproveListReducer,
+	 InnovationDenyReducer} from './reducers/innovationReducers';
+import { InnovationSupportCreateReducer,
+	     InnovationSupportListReducer,
+		
+		 } from "./reducers/innovationSupportReducers";
+import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
+
 
 import {
   InnovationSupportCreateReducer,
@@ -39,6 +45,7 @@ const reducer = combineReducers({
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
+
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
