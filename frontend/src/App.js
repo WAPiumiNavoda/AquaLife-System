@@ -20,14 +20,17 @@ import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
 import InnovationApprove from "./components/Admin/InnovationApprove";
+import Quality from "./screens/WaterTreatment/QualityTest";
+import AllQualityTests from "./components/Admin/AllQualityTests";
 
 const App = () => {
-  const hideHeaderFooterRoutes = ["/dashboard",
-  "/innovationAdmin",
-  "/innovationSupAdmin",
-  "/innovationApprove"
-];
-  
+  const hideHeaderFooterRoutes = [
+    "/dashboard",
+    "/innovationAdmin",
+    "/innovationSupAdmin",
+    "/innovationApprove",
+    "/allquality",
+  ];
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -54,17 +57,21 @@ const App = () => {
           <Route path="/oneArticle" element={<OneArticle />} />
 
           <Route path="/user-projectView" element={<ProjectView />} />
-          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
+          <Route path="/admin-createProject" element={<ProjectCreate />} />
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
-           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
-             <Route path="/innovationApprove" element={<InnovationApprove />} />
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
+          />
+          <Route path="/innovationApprove" element={<InnovationApprove />} />
 
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
-
+          <Route path="/quality" element={<Quality />} />
+          <Route path="/allquality" element={<AllQualityTests />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
