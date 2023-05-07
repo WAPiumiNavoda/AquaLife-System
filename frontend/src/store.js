@@ -8,8 +8,10 @@ import {
 	//userViewReducer,
 	//userUpdateReducer,
 } from "./reducers/userReducers";
+
 import {InnovationCreateReducer, innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
-import {articleListReducer}  from './reducers/articleReducers';
+
+import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
 
 import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer } from "./reducers/innovationSupportReducers";
@@ -22,7 +24,9 @@ const reducer = combineReducers({
 	innovationList: innovationListReducer,
 	innovationOne: innovationOneReducer,
 	articleList: articleListReducer,
+	articleCreate: articleCreateReducer,
 	innovationCreate: InnovationCreateReducer,
+	articleOne: articleOneReducer,
 	innovationSupportCreate: InnovationSupportCreateReducer,
 	innovationSupportList: InnovationSupportListReducer,
 	projectCreate:ProjectCreateReducer

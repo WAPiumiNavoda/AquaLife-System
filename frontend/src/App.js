@@ -48,7 +48,7 @@ const App = () => {
           {/* artical managment */}
           <Route path="/article" element={<Article />} />
           <Route path="/ArticleForm" element={<ArticleForm />} />
-          <Route path="/articleAll" element={<AllArticle />} />
+          <Route path="/articleHome" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
 
           <Route path="/user-projectView" element={<ProjectView />} />

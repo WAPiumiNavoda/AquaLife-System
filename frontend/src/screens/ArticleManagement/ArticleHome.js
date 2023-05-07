@@ -1,15 +1,22 @@
 import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row';
-import '../../css/innovation.css';
-import Button from 'react-bootstrap/Button';
+import '../../css/article.css';
 
 
 const ArticleHome = () => {
   return (
-    <div>
-    <aboutArticles/>
-</div>
+    <div className='mainTop'>
+        <Container>
+            <Row>
+                 <div className='mainTopIntro'>
+                    <div>
+                    
+                    </div>
+                 </div>
+            </Row>
+        </Container>
+    </div>
   )
 }
 
