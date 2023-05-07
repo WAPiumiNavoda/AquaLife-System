@@ -33,15 +33,14 @@ const InnovationMain = () => {
           <div className="service-text pt-5">
             <h3 className='pt-5'>Innovation Support Request</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
+              Innovation often refers to something new, such as an invention, or
+               the practice of developing and introducing new things. In the tech world,
+                an innovation is usually a new product, but it can also be a new way of
+                 doing something or even a new way of thinking. At the Foundation, and 
+                 through our BOLT and Research programs, we are learning that innovation 
+                 looks many different ways, and take a number of different forms. 
+                 For example, Dr. Chomora Mikeka in Malawi is developing a 
+              solution to “green” the way in which garbage is collected in cities.
             </p>
             <Button className='px-5 mx-3' href='/innovationAll'>Learn More</Button>
           </div>
@@ -52,15 +51,12 @@ const InnovationMain = () => {
           <div className="service-text pt-5">
             <h3 className='pt-5'>Innovation Support</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              suscipit sagittis velit eu porttitor.
+              Mechanical filtration is the process of physically removing sediment,
+               dirt, or particles from water using a barrier. It can be anything from 
+               a basic mesh to a ceramic filter with a complex pore structure for 
+               ultra-fine filtration of pathogenic organisms. Filters are usually given 
+               a micron rating, which indicates how effective they
+               are in terms of the size of the particles they are capable of removing.
             </p>
             <Button className='px-5 mx-3' href='/innovation'>Learn More</Button>
           </div>
