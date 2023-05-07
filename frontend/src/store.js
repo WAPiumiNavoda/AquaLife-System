@@ -17,6 +17,11 @@ import {InnovationCreateReducer,
 import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
+import {
+  qualityListReducer,
+  qualityOneReducer,
+} from "./reducers/qualityTestReducers";
+
 import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
 import { qualityListReducer } from "./reducers/qualityTestReducers";
 
@@ -34,6 +39,7 @@ const reducer = combineReducers({
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
+  qualityOne: qualityOneReducer,
 
 });
 
