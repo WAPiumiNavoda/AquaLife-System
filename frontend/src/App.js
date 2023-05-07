@@ -21,7 +21,7 @@ import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ArticleAdmin from "./components/Admin/ArticleAdmin";
 import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
-
+import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 import OneProject from "./screens/projectManagement/ProjectOne";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import Quality from "./screens/WaterTreatment/QualityTest";
@@ -36,17 +36,6 @@ const App = () => {
     "/allquality",
   ];
 
-import InnovationMain from "./screens/InnovationManagment/InnovationMain";
-
-
-const App = () => {
-  const hideHeaderFooterRoutes = [
-  "/dashboard",
-  "/innovationAdmin",
-  "/innovationSupAdmin",
-  "/innovationApprove"
-];
-  
 
 
   const shouldHideHeaderFooter = () =>

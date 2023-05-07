@@ -1,15 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-
 import {
   userLoginReducer,
   userRegisterReducer,
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
-
-
 import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
 import {InnovationCreateReducer,
 	 innovationListReducer,
@@ -19,16 +16,8 @@ import {InnovationCreateReducer,
 	 InnovationDenyReducer} from './reducers/innovationReducers';
 import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer,
-		
-		 } from "./reducers/innovationSupportReducers";
-import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
-
-
-import {
-  InnovationSupportCreateReducer,
-  InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
-import { ProjectCreateReducer } from "./reducers/projectReducers";
+import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
 import { qualityListReducer } from "./reducers/qualityTestReducers";
 
 const reducer = combineReducers({
