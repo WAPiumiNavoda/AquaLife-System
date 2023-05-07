@@ -46,7 +46,7 @@ function Home() {
               suscipit sagittis velit eu porttitor.
             </p>
           </div>
-          <img src={img3} alt="Education" className="service-image" />
+          <img src={img3} href="/article" alt="Education" className="service-image" />
         </div>
         <div className="service-container" style={{paddingLeft:"20px"}}>
           <img src={img4} alt="Build" className="service-image"  />

@@ -11,7 +11,13 @@ const getArticle =  asyncHandler(
 
 //Create Article controller
 const  createArticle = asyncHandler(async (req, res) => {
-  const { articleType, articleImage, articleTitle, articleContent, authorName, dateofPublish } = req.body;
+  const { articleType, 
+          articleImage, 
+          articleTitle, 
+          articleContent, 
+          authorName, 
+          dateofPublish 
+        } = req.body;
 
   if (! articleType || !articleImage || !articleTitle || !articleContent || !authorName || !dateofPublish) {
     res.status(400);
