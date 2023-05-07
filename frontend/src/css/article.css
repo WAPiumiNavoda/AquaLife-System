@@ -36,7 +36,7 @@
         height: 100%;
 }
     
-.mainTop{
+.mainTop_article{
     align-items: center;
     display: flex;
     min-height: 83vh;
@@ -53,7 +53,7 @@
     text-align: center;
 }
 
-.mainTopIntro {
+.mainTopIntro_article {
     font-size: 20px;
     text-align: center;
 }
