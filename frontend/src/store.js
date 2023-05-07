@@ -20,7 +20,7 @@ import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer,
 		
 		 } from "./reducers/innovationSupportReducers";
-import { ProjectCreateReducer } from "./reducers/projectReducers";
+import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
 
 
 const reducer = combineReducers({
@@ -33,6 +33,7 @@ const reducer = combineReducers({
 	innovationSupportCreate: InnovationSupportCreateReducer,
 	innovationSupportList: InnovationSupportListReducer,
 	projectCreate:ProjectCreateReducer,
+	projectList:ProjectListReducer,
 	innovationApprove:InnovationAcceptReducer,
 	innovationDeny: InnovationDenyReducer,
     innovationSet : InnovationApproveListReducer

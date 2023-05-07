@@ -15,17 +15,18 @@ export const listProjects = () => async (dispatch, getState) => {
 			type: PROJECT_LIST_REQUEST,
 		});
 
-		const {
-			user_Login: { userInfo },
-		} = getState();
+		// const {
+		// 	user_Login: { userInfo },
+		// } = getState();
 
-		const config = {
-			headers: {
-				Authorization: `Bearer ${userInfo.token}`,
-			},
-		};
+		// const config = {
+		// 	headers: {
+		// 		Authorization: `Bearer ${userInfo.token}`,
+		// 	},
+		// };
 
-		const { data } = await axios.get(`user/getProject/${userInfo._id}`, config);
+		const { data } = await axios.get(`http://localhost:5000/user/admin/getProjects`);
+		console.log("Checkeddata",data)
 
 		dispatch({
 			type: PROJECT_LIST_SUCCESS,
@@ -49,21 +50,23 @@ export const createProjects = ( name,description,price,photo) => async (
 		type: PROJECT_CREATE_REQUEST,
 	  });
   
-	  const {
-	    userLogin: { userInfo },
-	  } = getState();
+	//   const {
+	//     userLogin: { userInfo },
+	//   } = getState();
   
-	  const config = {
-	    headers: {
-	      "Content-Type": "application/json",
-	      Authorization: `Bearer ${userInfo.token}`,
-	    },
-	  };
+	//   const config = {
+	//     headers: {
+	//       "Content-Type": "application/json",
+	//       Authorization: `Bearer ${userInfo.token}`,
+	//     },
+	//   };
   
 	  const { data } = await axios.post(
-		`http://localhost:5000/user/projectCreate`,
+		`http://localhost:5000/user/admin/projectCreate`,
 		{ name,description,price,photo}
+		
 	  );
+	  console.log("data",data)
   
 	  dispatch({
 		type: PROJECT_CREATE_SUCCESS,
