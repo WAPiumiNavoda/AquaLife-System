@@ -1,5 +1,8 @@
 const Innovations = require('../models/submitInnovationModel');
 const asyncHandler = require('express-async-handler');
+const express = require('express');
+const router = express.Router();
+
 
 //Get Innovations controller
 const getInnovation =  asyncHandler(
@@ -57,10 +60,57 @@ const deleteInnovation = asyncHandler(async (req, res) => {
 });
 
 
+//approve innovations
+const innovationApprove = asyncHandler(async (req, res) => {
+try {
+    const data = await Innovations.findById(req.params.id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the approved status
+    data.status = 'approved';
+    await data.save();
+    res.json({ message: 'Data approved successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+//deny innovations
+const innovationDeny = asyncHandler(async (req, res) => {
+try {
+    const data = await Innovations.findById(req.params.id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the denied status
+    data.status = 'denied';
+    await data.save();
+    res.json({ message: 'Data denied successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+const innovationApproveList = asyncHandler(async(req, res)=>{
+ try {
+    const approvedData = await Innovations.find({ status: 'approved' });
+    res.json(approvedData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+})
+
+
 //export all functions
 module.exports = {
      getInnovation,
      getInnovationById,
      createInnovation,
-
+     innovationApprove,
+     innovationDeny,
+     innovationApproveList 
 }

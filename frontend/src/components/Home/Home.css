@@ -16,7 +16,6 @@
   .banner h1 {
     color: rgb(12, 137, 220);
     font-size: 138px;
-    margin-top: 40px;
     margin-bottom: 10px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -49,6 +48,7 @@
 
 .services h2{
   color: #093d8c;
+  margin: auto;
   font-size: 40px;
   font-weight: bold;
   text-align: center;

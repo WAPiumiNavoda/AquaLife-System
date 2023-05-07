@@ -264,3 +264,232 @@ color: #fff;
 .btn-danger:hover {
 background-color: #c82333;
 }
+
+/* Treatment Page */
+.banner1 {
+  background-image: url("./Assets/banner1.jpg");
+  background-size: cover;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.banner1 h1 {
+  color: rgb(12, 137, 220);
+  font-size: 65px;
+  margin-bottom: 0;
+  padding: 0;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.banner1__wastewater {
+  color: rgb(12, 137, 220);
+}
+
+.banner1__treatment {
+  color: white;
+}
+
+.banner1 p {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  padding: 0;
+  margin-right: 30px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.description {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.description-1 {
+  margin-top: 30px;
+  border-right: 3px solid #ccc;
+}
+
+.description h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.description + .description {
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.navigation {
+  display: flex;
+  background-color: rgba(244, 244, 244, 1);
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card1 {
+  background-color: white;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.card1:hover {
+  transform: translateY(-10px);
+}
+
+.card1 img {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.card1 h2 {
+  margin: 20px 0;
+}
+
+.card1 a {
+  display: inline-block;
+  background-color: #0052cc;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.card1 a:hover {
+  background-color: #003d91;
+}
+
+/* Quality Page */
+.banner1 {
+  background-image: url("./Assets/banner1.jpg");
+  background-size: cover;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.banner1 h1 {
+  color: rgb(12, 137, 220);
+  font-size: 65px;
+  margin-bottom: 0;
+  padding: 0;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.banner1__wastewater {
+  color: rgb(12, 137, 220);
+}
+
+.banner1__treatment {
+  color: white;
+}
+
+.banner1 p {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  padding: 0;
+  margin-right: 30px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+  width: 90%;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.form-group select {
+  margin-bottom: 20px;
+}
+
+select option:first-of-type {
+  display: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0c89dc;
+}
+
+button[type="submit"] {
+  background-color: #0c89dc;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #055fa7;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+

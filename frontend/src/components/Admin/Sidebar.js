@@ -11,13 +11,13 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-nav">
         <ul className="sidebar-links">
-           <li>
+          <li>
             <NavLink to="/" exact activeClassName="active-link">
               <i className="fa fa-home" aria-hidden="true"></i> Users
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" exact activeClassName="active-link">
+            <NavLink to="/allquality" exact activeClassName="active-link">
               <i className="fa fa-home" aria-hidden="true"></i> Water Treatments
             </NavLink>
           </li>
@@ -28,7 +28,8 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink to="/innovationSupAdmin" activeClassName="active-link">
-              <i className="fa fa-cog" aria-hidden="true"></i> Innovation Support
+              <i className="fa fa-cog" aria-hidden="true"></i> Innovation
+              Support
             </NavLink>
           </li>
           <li>
@@ -36,10 +37,15 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Donations
             </NavLink>
           </li>
+
+          <li>
+            <NavLink to="/contact" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Educational
+    </NavLink>
            <li>
             <NavLink to="/articleAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
-            </NavLink>
+           
           </li>
         </ul>
       </div>
