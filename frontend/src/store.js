@@ -9,9 +9,6 @@ import {
 	//userUpdateReducer,
 } from "./reducers/userReducers";
 
-
-import {InnovationCreateReducer, innovationListReducer,innovationOneReducer} from './reducers/innovationReducers';
-
 import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
 import {InnovationCreateReducer,
 	 innovationListReducer,
@@ -19,8 +16,6 @@ import {InnovationCreateReducer,
 	 InnovationAcceptReducer, 
 	  InnovationApproveListReducer,
 	 InnovationDenyReducer} from './reducers/innovationReducers';
-import {articleListReducer}  from './reducers/articleReducers';
-
 import { InnovationSupportCreateReducer,
 	     InnovationSupportListReducer,
 		
