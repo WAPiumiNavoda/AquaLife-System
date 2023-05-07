@@ -24,6 +24,18 @@ import ProjectCreate from "./screens/projectManagement/ProjectCreatePage";
 
 import OneProject from "./screens/projectManagement/ProjectOne";
 import InnovationApprove from "./components/Admin/InnovationApprove";
+import Quality from "./screens/WaterTreatment/QualityTest";
+import AllQualityTests from "./components/Admin/AllQualityTests";
+
+const App = () => {
+  const hideHeaderFooterRoutes = [
+    "/dashboard",
+    "/innovationAdmin",
+    "/innovationSupAdmin",
+    "/innovationApprove",
+    "/allquality",
+  ];
+
 import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 
 
@@ -35,6 +47,7 @@ const App = () => {
   "/innovationApprove"
 ];
   
+
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -63,6 +76,16 @@ const App = () => {
 
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
+          <Route path="/admin-createProject" element={<ProjectCreate />} />
+
+          {/* Admin */}
+          <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
+          />
+          <Route path="/innovationApprove" element={<InnovationApprove />} />
           <Route path = "/admin-createProject" element={<ProjectCreate/>} />
           <Route path = "/oneProject" element={<OneProject/>}/>
 
@@ -80,7 +103,8 @@ const App = () => {
 
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
-
+          <Route path="/quality" element={<Quality />} />
+          <Route path="/allquality" element={<AllQualityTests />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
