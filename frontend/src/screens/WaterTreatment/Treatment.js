@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import img5 from "../../Assets/machine.png";
 import img6 from "../../Assets/purification.png";
 import img7 from "../../Assets/maintenance.png";
-import "./Treatment.css";
 
 function Treatment() {
   return (
