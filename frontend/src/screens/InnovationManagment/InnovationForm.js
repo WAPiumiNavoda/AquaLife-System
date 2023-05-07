@@ -80,6 +80,8 @@ const InnovationForm = () => {
   };
 
   return (
+    <>
+       <h1 style={{textAlign: "center", color:"#1D267D"}}>Submit Your Innovation Request</h1>
     <div class="container p-4">
       <div class="row">
       <div class="col-md-6">
@@ -137,7 +139,7 @@ const InnovationForm = () => {
 
 
           <Form.Group controlId="file">
-            <Form.Label>Relevent Files</Form.Label>
+            <Form.Label>Relevent Files Screen Shot</Form.Label>
             <Form.Control
               id="custom-file"
               type="file"
@@ -158,7 +160,7 @@ const InnovationForm = () => {
     </div>
   </div>
 </div>
-
+</>
   )
 }
 
