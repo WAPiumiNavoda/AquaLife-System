@@ -23,7 +23,7 @@ const  createArticle = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Article = new Articles({ user: req.user._id, articleType, articleImage, articleTitle, articleContent, authorName, dateofPublish });
+    const Article = new Articles({ articleType, articleImage, articleTitle, articleContent, authorName, dateofPublish });
 
     const createArticle = await Article.save();
 

@@ -17,5 +17,4 @@ router.route('/:id').get(getInnovationById);
 router.route('/:id').post(innovationApprove);
 router.route('/deny/:id').post(innovationDeny);
 router.route('/approved').get(innovationApproveList);
-
 module.exports = router;

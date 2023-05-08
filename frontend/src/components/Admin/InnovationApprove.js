@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Sidebar from './Sidebar'
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import {
@@ -27,9 +28,46 @@ const InnovationApprove = () => {
 
      const innovationApproveOne = useSelector((state) => state.innovationSet);
      const { loadings,updatedData,errors} = innovationApproveOne; 
+
+     const [approvedData, setApprovedData] = useState([]);
+
+  useEffect(() => {
+    fetchApprovedData();
+  }, []);
+
+  const fetchApprovedData = async () => {
+    try {
+      const response = await axios.get('/api/innovation/list');
+      const data = response.data;
+      setApprovedData(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const [approvedInnovations, setApprovedInnovations] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+  const fetchApprovedInnovations = async () => {
+    try {
+      const response = await fetch('/api/innovation/approved');
+      const data = await response.json();
+      setApprovedInnovations(data.approvedInnovations);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      // Handle error
+      setLoading(false);
+    }
+  };
+
+  fetchApprovedInnovations();
+}, []);
+
   return (
 
-    
+  
 
     <div className="admin-dashboard">
        <Sidebar />
@@ -60,9 +98,9 @@ const InnovationApprove = () => {
                 </tr>
               </thead>
               <tbody>
-              
+              {approvedInnovations.map((innovation) => (
                 <tr>
-                <td>gbgb</td>
+                <td>{innovation.innovationType}</td>
                  <td>
                 <div className="user-actions">
                   <button variant="outline-success">Approve</button>
@@ -70,6 +108,7 @@ const InnovationApprove = () => {
                 </div>
               </td>
                 </tr>
+                 ))}
               </tbody>
               
             </table>

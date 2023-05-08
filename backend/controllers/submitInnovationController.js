@@ -14,9 +14,9 @@ const getInnovation =  asyncHandler(
 
 //Create innovation controller
 const  createInnovation = asyncHandler(async (req, res) => {
-  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile } = req.body;
+  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
 
-  if (! innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile) {
+  if (! innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
@@ -62,25 +62,53 @@ const deleteInnovation = asyncHandler(async (req, res) => {
 
 //approve innovations
 const innovationApprove = asyncHandler(async (req, res) => {
-try {
-    const data = await Innovations.findById(req.params.id);
-    if (!data) {
-      return res.status(404).json({ message: 'Data not found' });
+
+  // try {
+  //   const innovation = await Innovations.findById(req.params.id);
+
+  //   if (!innovation) {
+  //     return res.status(404).json({ error: 'Innovation not found' });
+  //   }
+
+  //   innovation.IsApproved = true;
+
+  //   await innovation.save();
+
+  //   res.json({ status: 'Innovation Request Approved successfully!' });
+  // } catch (error) {
+  //   console.error(error);
+  //   res.status(500).json({ error: 'Server Error' });
+  // }
+
+  try {
+    const innovation = await Innovations.findById(req.params.id);
+
+    if (!innovation) {
+      return res.status(404).json({ error: 'Innovation not found' });
     }
-    // Update the data with the approved status
-    data.status = 'approved';
-    await data.save();
-    res.json({ message: 'Data approved successfully' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server Error' });
+
+    innovation.IsApproved = true;
+
+    await innovation.save();
+
+    // Fetch all approved innovations
+    const approvedInnovations = await Innovations.find({ IsApproved: true });
+
+    res.json({
+      message: 'Innovation Request Approved successfully!',
+      approvedInnovations: approvedInnovations,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
   }
+  
 });
 
 //deny innovations
 const innovationDeny = asyncHandler(async (req, res) => {
 try {
-    const data = await Innovations.findById(req.params.id);
+    const data = await Innovations.findById(req.params._id);
     if (!data) {
       return res.status(404).json({ message: 'Data not found' });
     }
@@ -95,12 +123,13 @@ try {
 });
 
 const innovationApproveList = asyncHandler(async(req, res)=>{
- try {
-    const approvedData = await Innovations.find({ status: 'approved' });
+   try {
+    const approvedData = await Innovations.find({ IsApproved:true });
+    console.log(approvedData)
     res.json(approvedData);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server Error' });
+    res.status(500).json({ error: 'Server Error' });
   }
 })
 
@@ -112,5 +141,5 @@ module.exports = {
      createInnovation,
      innovationApprove,
      innovationDeny,
-     innovationApproveList 
+     innovationApproveList,
 }

@@ -10,6 +10,7 @@ const submitInnovations = require("./routes/submitInnovationRoutes");
 const supportInnovation = require("./routes/supportInnovationRoutes");
 const videoSubmit = require("./routes/videoRoutes");
 const qualityTest = require("./routes/qualityTestRoutes");
+const artical = require("./routes/articleRoutes")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 
@@ -28,6 +29,7 @@ app.use("/innovation", submitInnovations);
 app.use("/video", videoSubmit);
 app.use("/supportInnovation", supportInnovation);
 app.use("/qualityTest", qualityTest);
+app.use("/artical",artical);
 
 
 app.use(notFound);
