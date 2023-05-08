@@ -27,7 +27,7 @@ app.use("/user/admin", adminRoutes);
 app.use("/user", userRoutes);
 // app.use("/innovation", submitInnovations);
 app.use("/video", videoSubmit);
-app.use("/supportInnovation", supportInnovation);
+// app.use("/supportInnovation", supportInnovation);
 app.use("/qualityTest", qualityTest);
 app.use("/artical",artical);
 
