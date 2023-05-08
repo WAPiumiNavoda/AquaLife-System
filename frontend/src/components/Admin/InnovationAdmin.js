@@ -118,9 +118,20 @@ const InnovationAdmin = () => {
                 <tr>
                   <td>{innovation.innovationType}</td>
                   <td>J{innovation.innovationTitle}</td>
-                  <td>{innovation.innovationDes.slice(0, 40)}</td>
-                  <td >{innovation.innovationImage.slice(0, 40)}</td>
-                  <td>{innovation.innovationFile.slice(0, 40)}</td>
+                  <td>{innovation.innovationDes.slice(0, 20)}</td>
+                  <td >
+                    <img
+                  style={{
+                    objectFit: "cover",
+                    height: "40px",
+                    width:"60px"
+                  }}
+                  src={innovation.innovationImage}
+                  // src="https://i.ibb.co/w73cvYc/istockphoto-1019835828-612x612.jpg"
+                  alt=""
+                />
+                  </td>
+                  <td>{innovation.innovationFile.slice(0, 25)}</td>
                  <td>
                 <div className="user-actions">
                   <button type="button" class="btn btn-outline-primary" fdprocessedid="3ah475" onClick={() => approveInnovation(innovation._id)}>Approve</button>

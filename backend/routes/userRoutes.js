@@ -9,6 +9,23 @@ const {createDonate ,
 
 const { protect } = require("../middleware/authUserMiddleware");
 const router = express.Router();
+const {getInnovation,
+       getInnovationById,
+       createInnovation,
+       innovationApprove,
+       innovationDeny,
+       innovationApproveList,
+       deleteInnovation,
+       updateInnovation
+       } = require('../controllers/submitInnovationController');
+const {
+      createSupportInnovation,
+      getSupportInnovation,
+      innovationSupportApprove,
+      deleteInnovationSupport
+       } = require('../controllers/supportInnovationController');
+
+
 
 //Routes for user Account Operations
 router.route("/register").post(registerUser);
@@ -25,6 +42,23 @@ router
 	.get(getDonateById)
 	.put(updateDonate)
 	.delete(deleteDonate);
+
+//innovation user routes
+router.route('/innovation').get(getInnovation);
+router.route('/innovation/create').post(createInnovation);
+router.route('/innovation/:id').get(getInnovationById);
+router.route('/innovation/:id').post(innovationApprove);
+router.route('/innovation/deny/:id').post(innovationDeny);
+router.route('/innovation/approved').get(innovationApproveList);
+
+
+
+router.route('/supportInnovation/create').post(createSupportInnovation);
+router.route('/supportInnovation').get(getSupportInnovation);
+router.route('/supportInnovation/:id').post(innovationSupportApprove);
+router.route('/supportInnovation/delete/:id').delete(deleteInnovationSupport);
+
+
 
 
 module.exports = router;
