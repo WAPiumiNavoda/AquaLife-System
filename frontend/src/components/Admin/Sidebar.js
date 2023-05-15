@@ -39,7 +39,7 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <NavLink to="/contact" activeClassName="active-link">
+            <NavLink to="/education" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
            </NavLink>
            </li>
