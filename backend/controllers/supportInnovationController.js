@@ -13,11 +13,11 @@ const getSupportInnovation =  asyncHandler(
 const  createSupportInnovation = asyncHandler(async (req, res) => {
   const { suppotorName,suppotorEmail,supportorPhone, price } = req.body;
 
-  if (! suppotorName || !suppotorEmail || !supportorPhone|| !price ) {
+  if (!suppotorName || !suppotorEmail || !supportorPhone|| !price ) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const SupportInnovation = new SupportInnovations({ suppotorName,suppotorEmail,suppotorEmail,supportorPhone,price });
+    const SupportInnovation = new SupportInnovations({ suppotorName,suppotorEmail,supportorPhone,price });
 
     const createdSupportInnovation = await SupportInnovation.save();
 
@@ -28,8 +28,11 @@ const  createSupportInnovation = asyncHandler(async (req, res) => {
 
 //approve support innovations
 const innovationSupportApprove = asyncHandler(async (req, res) => {
+
+   const data = await SupportInnovations.findById(req.params.id);
+   
 try {
-    const data = await SupportInnovations.findById(req.params.id);
+   
     if (!data) {
       return res.status(404).json({ message: 'Data not found' });
     }
