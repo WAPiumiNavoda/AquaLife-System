@@ -28,8 +28,11 @@ const  createSupportInnovation = asyncHandler(async (req, res) => {
 
 //approve support innovations
 const innovationSupportApprove = asyncHandler(async (req, res) => {
+
+   const data = await SupportInnovations.findById(req.params.id);
+   
 try {
-    const data = await SupportInnovations.findById(req.params.id);
+   
     if (!data) {
       return res.status(404).json({ message: 'Data not found' });
     }

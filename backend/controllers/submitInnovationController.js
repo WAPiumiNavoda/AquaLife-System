@@ -16,11 +16,11 @@ const getInnovation =  asyncHandler(
 const  createInnovation = asyncHandler(async (req, res) => {
   const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
 
-  if (! innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
+  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile });
+    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved });
 
     const createdInnovation = await Innovation.save();
 
@@ -123,15 +123,20 @@ try {
 });
 
 const innovationApproveList = asyncHandler(async(req, res)=>{
-   try {
-    const approvedData = await Innovations.find({ IsApproved:true });
-    console.log(approvedData)
-    res.json(approvedData);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server Error' });
-  }
-})
+  //  try {
+  //   const approvedData = await Innovations.find({ IsApproved:true });
+  //   console.log(approvedData)
+  //   res.json(approvedData);
+  // } catch (error) {
+  //   console.error(error);
+  //   res.status(500).json({ error: 'Server Error' });
+  // }
+
+   Innovations.find({ IsApproved: false }, (err, data) => {
+    if (err) res.status(500).json({ error: err });
+    res.status(200).json(data);
+  });
+})    
 
 
 //export all functions

@@ -23,7 +23,7 @@ import {
 } from "./reducers/qualityTestReducers";
 
 import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
-import { qualityListReducer } from "./reducers/qualityTestReducers";
+
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,

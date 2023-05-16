@@ -49,7 +49,7 @@ router.route('/innovation/create').post(createInnovation);
 router.route('/innovation/:id').get(getInnovationById);
 router.route('/innovation/:id').post(innovationApprove);
 router.route('/innovation/deny/:id').post(innovationDeny);
-router.route('/innovation/approved').get(innovationApproveList);
+router.route('/innovation/approved/:id').get(innovationApproveList);
 
 
 
