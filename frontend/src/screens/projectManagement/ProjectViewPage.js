@@ -3,6 +3,7 @@ import { listProjects } from "../../actions/projectsActions";
 import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import "./project.css"
 
 
 const ProjectView = ({history,search,props}) => {
@@ -23,30 +24,46 @@ const ProjectView = ({history,search,props}) => {
     // })   
    
     return (
-        <div className="card p-5">
-          <h2 className='m-3' style={{ fontSize: '45px', color: "#57aade" }}>Our Available Projects</h2>
-          <div className="card-header" style={{ fontSize: '20px' }}>
-            Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
-          </div>
-          <div className="container">
-            <div className="row">
-              {project && project.map((p) => (
-                <div className="col-md-3" key={p._id}>
-                  <div className="card">
-                    <img src={p.photo} className="card-img-top" alt="Card image cap" />
-                    <div className="card-body">
-                      <h5 className="card-title">{p.name}</h5>
-                      <p className="card-text">{p.description}</p>
-                      <p className="card-text">{p.price}</p>
-                      <a href="#" className="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-              ))}
+      
+        <>
+      <br/><br/>
+      <div className="card-header">
+         <h2 className='m-4' style={{ fontSize: '55px', color: "#57aade",textAlign:"center" }}>Our Available Projects</h2>
+        <div className="card-header-text" style={{ fontSize: '25px',color: "#57aade",textAlign:"center"   }}>
+          Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
+        </div>
+      </div>
+      
+
+    <div className="container">
+      <div className="row">
+        {project && project.map((p) => (
+          <div className="col-md-3" key={p.id}>
+            <div className="card bg-light mb-5 h-100">
+              <img src={p.photo} className="card-img-top" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">{p.name}</h5>
+                <p className="card-text">{p.description}</p>
+                <p className="card-text">{p.price}</p>
+                <a href="/selection" className="btn btn-primary">Donate</a>
+              </div>
             </div>
           </div>
-        </div>
-      );
+        ))}
+      </div>
+    </div>
+  </>
+);
+
+
+       
+
+      
+        
+  
+      
+
+  
               }
 
 
