@@ -67,6 +67,13 @@ export const createProjects = ( name,description,price,photo) => async (
 		
 	  );
 	  console.log("data",data)
+	  swal({
+        title: "Success !!!",
+        text: "Your Project details added successfully.",
+        icon: "success",
+        timer: 2000,
+        button: false,
+      });
   
 	  dispatch({
 		type: PROJECT_CREATE_SUCCESS,
