@@ -8,7 +8,6 @@ const Innovation = () => {
   return (
     <div>
         <InnovationHome />
-        <InnovationDes />
         <InnovationInstructions />
         <InnovationForm />
     </div>
