@@ -25,8 +25,9 @@ import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 import OneProject from "./screens/projectManagement/ProjectOne";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import Quality from "./screens/WaterTreatment/QualityTest";
-import AllQualityTests from "./components/Admin/AllQualityTests";
 import QualityDetails from "./components/Admin/QualityDetails";
+import QualityAdmin from "./components/Admin/AllQualityTests";
+import Product from "./screens/WaterTreatment/Products";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -36,8 +37,6 @@ const App = () => {
     "/innovationApprove",
     "/allquality",
   ];
-
-
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -76,26 +75,33 @@ const App = () => {
             element={<InnovationSuportAdmin />}
           />
           <Route path="/innovationApprove" element={<InnovationApprove />} />
-          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
-          <Route path = "/oneProject" element={<OneProject/>}/>
+          <Route path="/admin-createProject" element={<ProjectCreate />} />
+          <Route path="/oneProject" element={<OneProject />} />
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
 
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-          <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
+          />
           <Route path="/articleAdmin" element={<ArticleAdmin />} />
 
-           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
-             <Route path="/innovationApprove" element={<InnovationApprove />} />
-             <Route path="/innovationmain" element={<InnovationMain />} />
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
+          />
+          <Route path="/innovationApprove" element={<InnovationApprove />} />
+          <Route path="/innovationmain" element={<InnovationMain />} />
 
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
-          <Route path="/allquality" element={<AllQualityTests />} />
+          <Route path="/allquality" element={<QualityAdmin />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
+          <Route path="/products" element={<Product />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

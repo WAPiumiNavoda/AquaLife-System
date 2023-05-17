@@ -47,14 +47,13 @@ function Treatment() {
       <div className="navigation">
         <div className="card1">
           <img src={img5} alt="machines" />
-          <h2>Industrial Wastewater Treatment Machines</h2>
+          <h2>Wastewater Treatment Machines</h2>
           <p>
-            Our industrial wastewater treatment machines are designed to meet
-            the needs of any size facility, providing effective and reliable
-            solutions for treating industrial wastewater and meeting regulatory
-            requirements.
+            Our wastewater treatment machines are designed to meet the needs of
+            facility, providing effective, reliable solutions for treating
+            industrial wastewater.
           </p>
-          <Link to="/machines">Learn More</Link>
+          <Link to="/products">Learn More</Link>
         </div>
         <div className="card1">
           <img src={img6} alt="purification" />
