@@ -99,6 +99,7 @@ const InnovationForm = () => {
                 type="title"
                 value={innovationTitle}
                 placeholder="Enter innovation title"
+                required
                  onChange={(e) => setinnovationTitle(e.target.value)}
               />
             </Form.Group>
@@ -107,6 +108,7 @@ const InnovationForm = () => {
                <Form.Label>Innovation Type</Form.Label>
                <Form.Control
                 type="title"
+                required
                 placeholder="Enter innovation type"
                 value={innovationType}
                 onChange={(e) => setinnovationType(e.target.value)}
@@ -117,6 +119,7 @@ const InnovationForm = () => {
                <Form.Label>Innovation Description</Form.Label>
                <Form.Control
                 type="title"
+                required
                 placeholder="Enter the innovation description"
                 value={innovationDes}
                 onChange={(e) => setinnovationDes(e.target.value)}
@@ -131,6 +134,7 @@ const InnovationForm = () => {
             <Form.Control
               id="custom-file"
               type="file"
+              required
               label="Upload innovation Picture"
                onChange={(e) => postDetails(e.target.files[0])}
               custom
@@ -143,6 +147,7 @@ const InnovationForm = () => {
             <Form.Control
               id="custom-file"
               type="file"
+              required
               label="Upload innovation file"
               onChange={(e) => postFileDetails(e.target.files[0])}
               custom
