@@ -7,23 +7,32 @@ import {
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
-import {articleCreateReducer, articleListReducer, articleOneReducer}  from './reducers/articleReducers';
-import {InnovationCreateReducer,
-	 innovationListReducer,
-	 innovationOneReducer,
-	 InnovationAcceptReducer, 
-	  InnovationApproveListReducer,
-	 InnovationDenyReducer} from './reducers/innovationReducers';
-import { InnovationSupportCreateReducer,
-	     InnovationSupportListReducer,
+import {
+  articleCreateReducer,
+  articleListReducer,
+  articleOneReducer,
+} from "./reducers/articleReducers";
+import {
+  InnovationCreateReducer,
+  innovationListReducer,
+  innovationOneReducer,
+  InnovationAcceptReducer,
+  InnovationApproveListReducer,
+  InnovationDenyReducer,
+} from "./reducers/innovationReducers";
+import {
+  InnovationSupportCreateReducer,
+  InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
 import {
   qualityListReducer,
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
 
-import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
-import { qualityListReducer } from "./reducers/qualityTestReducers";
+import {
+  ProjectCreateReducer,
+  ProjectListReducer,
+} from "./reducers/projectReducers";
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -40,7 +49,6 @@ const reducer = combineReducers({
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
-
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
