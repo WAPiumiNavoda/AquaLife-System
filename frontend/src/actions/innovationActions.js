@@ -36,7 +36,7 @@ export const listInnoation = () => async (dispatch, getState) => {
     //   },
     // };
 
-    const { data } = await axios.get("http://localhost:5000/innovation");
+    const { data } = await axios.get("http://localhost:5000/user/innovation");
 
     dispatch({
       type: INNOVATION_LIST_SUCCESS,
@@ -60,7 +60,7 @@ export const listInnoationOne = (id,innovationType,innovationTitle, innovationDe
       type:  INNOVATION_REQUEST,
     });
 
-    const { data } = await axios.get(`http://localhost:5000/innovation/${id}`,{
+    const { data } = await axios.get(`http://localhost:5000/user/innovation/${id}`,{
        innovationType,
        innovationTitle,
        innovationDes,
@@ -96,7 +96,7 @@ export const createInnovationAction = ( innovationType,innovationTitle, innovati
     // };
 
     const { data } = await axios.post(
-      `http://localhost:5000/innovation/create`,
+      `http://localhost:5000//user/innovation/create`,
       { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile }
     );
      swal({
@@ -146,7 +146,7 @@ export const approveInnovationAction = ( id ) => async (
     // };
 
     const { data } = await axios.post(
-      `http://localhost:5000/innovation/${id}`,
+      `http://localhost:5000/user/innovation/${id}`,
     );
      swal({
 			title: "Success !!!",
@@ -194,7 +194,7 @@ export const denyInnovationAction = ( id ) => async (
     // };
 
     const { data } = await axios.post(
-      `http://localhost:5000/innovation/deny/${id}`,
+      `http://localhost:5000/user/innovation/deny/${id}`,
     );
      swal({
 			title: "Success !!!",

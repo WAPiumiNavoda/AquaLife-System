@@ -21,10 +21,13 @@ const submitInnovationSchema = mongoose.Schema(
       default:
       "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
+    IsApproved: {
+			type: Boolean,
+		},
+    // user: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    // },
   },
   {
     timestamps: true,

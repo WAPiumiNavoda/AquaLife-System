@@ -32,7 +32,7 @@ export const createSupportInnovationAction = ( suppotorName,suppotorEmail,suppor
     // };
 
     const { data } = await axios.post(
-      `http://localhost:5000/supportInnovation/create`,
+      `http://localhost:5000/user/supportInnovation/create`,
       { suppotorName,suppotorEmail,supportorPhone, price }
     );
 
@@ -79,7 +79,7 @@ export const listSupportInnoation = () => async (dispatch, getState) => {
     //   },
     // };
 
-    const { data } = await axios.get("http://localhost:5000/supportInnovation");
+    const { data } = await axios.get("http://localhost:5000/user/supportInnovation");
 
     dispatch({
       type: INNOVATIONSUPPORT_LIST_SUCCESS,
