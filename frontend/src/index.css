@@ -700,3 +700,23 @@ button[type="submit"]:hover {
 .service-maintenance-title{
   color: #0052cc;
 }
+
+
+/* Single Quality Test Request */
+.card-new {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(211, 211, 211);
+  width: 600px;
+}
+
+.card-new h2 {
+  margin-bottom: 10px;
+}
+
+.card-new p {
+  margin-bottom: 5px;
+}
+

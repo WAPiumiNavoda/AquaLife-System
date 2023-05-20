@@ -2,10 +2,12 @@ import {
   QUALITY_LIST_REQUEST,
   QUALITY_LIST_SUCCESS,
   QUALITY_LIST_FAIL,
-  QUALITYONE_SUCCESS,
   QUALITY_CREATE_REQUEST,
   QUALITY_CREATE_SUCCESS,
   QUALITY_CREATE_FAIL,
+  QUALITYONE_REQUEST,
+  QUALITYONE_SUCCESS,
+  QUALITYONE_FAILURE,
 } from "../constants/qualityTestConstants";
 
 //get quality test
@@ -23,10 +25,17 @@ export const qualityListReducer = (state = { quality: [] }, action) => {
 };
 
 //get quality test by id
-export const qualityOneReducer = (state = { quality: [] }, action) => {
+export const qualityOneReducer = (
+  state = { loading: false, quality: null, error: null },
+  action
+) => {
   switch (action.type) {
+    case QUALITYONE_REQUEST:
+      return { loading: true, quality: null, error: null };
     case QUALITYONE_SUCCESS:
-      return { loading: true };
+      return { loading: false, quality: action.payload, error: null };
+    case QUALITYONE_FAILURE:
+      return { loading: false, quality: null, error: action.payload };
     default:
       return state;
   }

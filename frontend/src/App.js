@@ -37,6 +37,7 @@ const App = () => {
     "/innovationSupAdmin",
     "/innovationApprove",
     "/allquality",
+    "/quality/:id",
   ];
 
   const shouldHideHeaderFooter = () =>
@@ -102,7 +103,7 @@ const App = () => {
           <Route path="/quality" element={<Quality />} />
           <Route path="/allquality" element={<QualityAdmin />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
-          <Route path="/products" element={<Product />} />
+          <Route path="/machines" element={<Product />} />
           <Route path="/maintenance" element={<Maintenance />} />
         </Routes>
       </main>

@@ -53,7 +53,7 @@ function Treatment() {
             facility, providing effective, reliable solutions for treating
             industrial wastewater.
           </p>
-          <Link to="/products">Learn More</Link>
+          <Link to="/machines">Learn More</Link>
         </div>
         <div className="card1">
           <img src={img6} alt="purification" />
