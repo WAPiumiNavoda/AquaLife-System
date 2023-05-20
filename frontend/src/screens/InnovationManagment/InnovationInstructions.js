@@ -3,7 +3,7 @@ import React from 'react'
 const InnovationInstructions = () => {
   return (
     <div>
-        <h1 style={{textAlign: "center", color:"#1D267D"}}> The Selection Process</h1>
+        <h1 style={{textAlign: "center", paddingTop:'20px', color:"#1D267D"}}> The Selection Process</h1>
           <div class="container p-1">
       <div class="row">
       <div class="col-md-6">
