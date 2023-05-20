@@ -28,6 +28,7 @@ import Quality from "./screens/WaterTreatment/QualityTest";
 import QualityDetails from "./components/Admin/QualityDetails";
 import QualityAdmin from "./components/Admin/AllQualityTests";
 import Product from "./screens/WaterTreatment/Products";
+import Maintenance from "./screens/WaterTreatment/Maintenance";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -103,6 +104,7 @@ const App = () => {
           <Route path="/allquality" element={<QualityAdmin />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
           <Route path="/machines" element={<Product />} />
+
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
