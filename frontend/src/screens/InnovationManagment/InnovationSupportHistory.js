@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from 'react'
-import Sidebar from './Sidebar'
 import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
 import {  listSupportInnoation } from '../../actions/innovationSupportAction'
-import { Button } from 'react-bootstrap';
-const InnovationSuportAdmin = () => {
+
+const InnovationSupportHistory = () => {
 
  const dispatch = useDispatch();
  const innovationSupportList = useSelector((state) => state.innovationSupportList);
@@ -17,14 +16,13 @@ const InnovationSuportAdmin = () => {
 
   return (
     <div className="admin-dashboard">
-          <Sidebar />
+    
 
           <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginLeft:"100px"}}>All Suppotors</h1>
+          <h1 style={{ marginTop:'100px', marginLeft:"100px"}}>Your History</h1>
         </div>
 
- <Button href='/innovationReport' style={{marginLeft: 5,marginBottom:'10px'}} size='sm'>Genarate Report</Button>
           <div className="content-box"
            style={{backgroundColor:"#f5f5f0",width:"900px", marginLeft:"100px"}}>
             <h2 className="content-box-title">List Of Requests</h2>
@@ -70,4 +68,4 @@ const InnovationSuportAdmin = () => {
   )
 }
 
-export default InnovationSuportAdmin
+export default InnovationSupportHistory
