@@ -46,6 +46,7 @@ const reducer = combineReducers({
   innovationSupportCreate: InnovationSupportCreateReducer,
   innovationSupportList: InnovationSupportListReducer,
   projectCreate: ProjectCreateReducer,
+  projectList:ProjectListReducer,
   innovationApprove: InnovationAcceptReducer,
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,

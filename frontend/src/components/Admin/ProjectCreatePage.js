@@ -3,6 +3,7 @@ import { Button, Card, Form } from "react-bootstrap";
 import ErrorMessage from '../../components/ErrorMessage';
 import { useDispatch, useSelector } from "react-redux";
 import { createProjects } from '../../actions/projectsActions';
+import Sidebar from './Sidebar'
 
 const ProjectCreate = () => {
 
@@ -51,19 +52,19 @@ const ProjectCreate = () => {
   };
 
   return (
-    <div class="card p-5">
-   <h2 className='m-3' style={{fontSize:'45px', color:"#57aade"}}>Add Your New Projects</h2>
+    <div className="admin-dashboard" style={{ backgroundColor: "lightblue" }}>
+       <Sidebar />
 
-   <div class="card-header" style={{fontSize:'20px'}}>
-   Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
-    </div>
+       
+       <div className="admin-content">
+        <div className="admin-header">
+          <h1 style={{ marginLeft:"100px",marginTop:"50px"}}>Add Your New Projects</h1><br/>
+        </div>
 
-    <div class="container p-5">
-      <div class="row">
-      <div class="col-md-6">
-      <img src="https://assets-news.housing.com/news/wp-content/uploads/2021/06/14175932/A-guide-to-water-conservation-methods-and-its-importance-FB-1200x700-compressed.jpg" alt="Image" class="img-fluid"/>
-    </div>
-    <div class="col-md-6">
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '58vh' }}>
+  
+    <Card>
+    <Card.Body>
 
        <Form onSubmit={submitHandler}>
             <Form.Group controlId="title">
@@ -110,17 +111,19 @@ const ProjectCreate = () => {
             />
           </Form.Group>
 
-          <Button type="submit" variant="primary" className="my-4">
-            Create New Project
-            </Button>
-            <Button className="mx-5"  variant="danger">
-            Reset Feilds
-            </Button>
+          <Button type="submit" variant="primary" className="my-4" >
+             Create New Project
+          </Button>
         </Form>
-    </div>
-  </div>
+ 
+
+  </Card.Body>
+  </Card>
+  
+ </div>
 </div>
 </div> 
+
 
   )
 }

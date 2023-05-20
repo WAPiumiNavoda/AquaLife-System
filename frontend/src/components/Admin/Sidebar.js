@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -39,8 +40,14 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <NavLink to="/contact" activeClassName="active-link">
+            <NavLink to="/" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
+           </NavLink>
+           </li>
+           
+          <li>
+            <NavLink to="/admin-createProject" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> projectManagement
            </NavLink>
            </li>
            <li>
