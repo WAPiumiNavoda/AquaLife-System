@@ -35,7 +35,7 @@ function Home() {
           </div>
           <img src={img1} alt="Water" className="service-image" />
         </div>
-        <div className="service-container">
+        <div className="service-container" style={{ paddingLeft: "20px" }}>
           <img src={img2} alt="Donate" className="service-image" />
           <div className="service-text">
             <a href="/user-projectView" className="tab">
