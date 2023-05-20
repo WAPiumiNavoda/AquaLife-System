@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createQualityAction } from "./../../actions/qualityTestActions";
 
@@ -12,6 +12,7 @@ function Quality() {
   const [errors, setErrors] = useState({});
 
   const dispatch = useDispatch();
+  const formRef = useRef();
 
   // Define a function to handle form submission
   const handleSubmit = (e) => {
@@ -45,6 +46,9 @@ function Quality() {
 
     // Submit form data
     dispatch(createQualityAction(token, name, email, mobile, district));
+
+    // Reset form field
+    formRef.current.reset();
   };
 
   return (
@@ -63,14 +67,13 @@ function Quality() {
       </div>
       <div className="form-container">
         <h2>Request Test Results</h2>
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="token">Token Number:</label>
             <input
               type="text"
               id="token"
               name="token"
-              value={token}
               onChange={(e) => setToken(e.target.value)}
               required
             />
@@ -82,7 +85,6 @@ function Quality() {
               type="text"
               id="name"
               name="name"
-              value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />

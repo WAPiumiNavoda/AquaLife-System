@@ -24,7 +24,6 @@ import ProjectCreate from "./components/Admin/ProjectCreatePage";
 import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import Quality from "./screens/WaterTreatment/QualityTest";
-import AllQualityTests from "./components/Admin/AllQualityTests";
 import QualityDetails from "./components/Admin/QualityDetails";
 import Dashboard from "./screens/donateManagement/DonateSelection";
 import LabourCreate from "./screens/donateManagement/LaborCreate";
@@ -85,19 +84,27 @@ const App = () => {
           <Route path="/dashboard" element={<AdminDashboard />} />
 
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-          <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
+          />
           <Route path="/articleAdmin" element={<ArticleAdmin />} />
 
-           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-            <Route path="/innovationSupAdmin" element={<InnovationSuportAdmin />} />
-             <Route path="/innovationApprove" element={<InnovationApprove />} />
-             <Route path="/innovationmain" element={<InnovationMain />} />
-
+          <Route path="/innovationAdmin" element={<InnovationAdmin />} />
+      
+          <Route path="/innovationApprove" element={<InnovationApprove />} />
+          <Route path="/innovationmain" element={<InnovationMain />} />
+           <Route path="/innovationhistory" element={<InnovationSupportHistory />} />
+            <Route path="/innovationReportList" element={<InnovationSupportReportList />} />
+           <Route path="/innovationReport" element={<InnovationSupportReport />} />
+           
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
-          <Route path="/allquality" element={<AllQualityTests />} />
+          <Route path="/allquality" element={<QualityAdmin />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
+          <Route path="/machines" element={<Product />} />
+          <Route path="/maintenance" element={<Maintenance />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

@@ -15,6 +15,7 @@ const {getInnovation,
        innovationApprove,
        innovationDeny,
        innovationApproveList,
+       UpdateInnovation,
        deleteInnovation,
        updateInnovation
        } = require('../controllers/submitInnovationController');
@@ -22,7 +23,8 @@ const {
       createSupportInnovation,
       getSupportInnovation,
       innovationSupportApprove,
-      deleteInnovationSupport
+      deleteInnovationSupport,
+      updateSupport
        } = require('../controllers/supportInnovationController');
 
 
@@ -49,6 +51,7 @@ router.route('/innovation/create').post(createInnovation);
 router.route('/innovation/:id').get(getInnovationById);
 router.route('/innovation/:id').post(innovationApprove);
 router.route('/innovation/deny/:id').post(innovationDeny);
+router.route('/innovation/update/:id').put(UpdateInnovation);
 router.route('/innovation/approved/:id').get(innovationApproveList);
 
 
@@ -57,6 +60,7 @@ router.route('/supportInnovation/create').post(createSupportInnovation);
 router.route('/supportInnovation').get(getSupportInnovation);
 router.route('/supportInnovation/:id').post(innovationSupportApprove);
 router.route('/supportInnovation/delete/:id').delete(deleteInnovationSupport);
+router.route('/supportInnovation/update/:id').put(updateSupport);
 
 
 

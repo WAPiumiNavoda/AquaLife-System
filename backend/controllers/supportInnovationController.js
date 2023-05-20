@@ -64,11 +64,34 @@ const deleteInnovationSupport = asyncHandler(async (req, res) => {
   }
 });
 
+//update submit innovations
+const updateSupport = asyncHandler(async (req, res) => {
+  const {  suppotorName,suppotorEmail,supportorPhone, price } = req.body;
+
+  const supportInnovation = await SupportInnovations.findById(req.params.id);
+
+  if (supportInnovation ) {
+    supportInnovation.suppotorName = suppotorName;
+    supportInnovation.suppotorEmail =suppotorEmail;
+    supportInnovation.supportorPhone = supportorPhone;
+    supportInnovation.price =  price;
+    
+
+    const updatedInnovation = await supportInnovation.save();
+    res.json(updatedInnovation);
+  } else {
+    res.status(404);
+    throw new Error("Support Details not found");
+  }
+});
+
+
 
 //export all functions
 module.exports = {
      createSupportInnovation,
      getSupportInnovation,
      innovationSupportApprove,
-     deleteInnovationSupport
+     deleteInnovationSupport,
+     updateSupport 
 }
