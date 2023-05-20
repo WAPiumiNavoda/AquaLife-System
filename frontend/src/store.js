@@ -33,6 +33,8 @@ import {
 import {
   ProjectCreateReducer,
   ProjectListReducer,
+  ProjectUpdateReducer,
+  ProjectDeleteReducer
 } from "./reducers/projectReducers";
 
 
@@ -52,6 +54,8 @@ const reducer = combineReducers({
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
+  projectUpdate:ProjectUpdateReducer,
+  projectDelete:ProjectDeleteReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
