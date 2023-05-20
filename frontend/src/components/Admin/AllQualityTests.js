@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { listQuality } from "./../../actions/qualityTestActions";
+import { listQuality, deleteQuality } from "./../../actions/qualityTestActions";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 
 const QualityAdmin = () => {
-  //list all quality tests
   const dispatch = useDispatch();
   const qualityList = useSelector((state) => state.qualityList);
   const { loading, quality, error } = qualityList;
@@ -14,6 +12,12 @@ const QualityAdmin = () => {
   useEffect(() => {
     dispatch(listQuality());
   }, [dispatch]);
+
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this quality test?")) {
+      dispatch(deleteQuality(id));
+    }
+  };
 
   return (
     <div className="admin-dashboard">
@@ -69,6 +73,12 @@ const QualityAdmin = () => {
                         <Link to={`/quality/${quality._id}`}>
                           <button className="btn btn-primary">View</button>
                         </Link>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => handleDelete(quality._id)}
+                        >
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   ))
