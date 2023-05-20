@@ -20,7 +20,7 @@ import Treatment from "./screens/WaterTreatment/Treatment";
 import InnovationAdmin from "./components/Admin/InnovationAdmin";
 import InnovationSuportAdmin from "./components/Admin/InnovationSuportAdmin";
 import ArticleAdmin from "./components/Admin/ArticleAdmin";
-import ProjectCreate from "./components/Admin/ProjectCreatePage";
+import ProjectCreate from "./components/Admin/project/ProjectCreatePage";
 import InnovationMain from "./screens/InnovationManagment/InnovationMain";
 import InnovationApprove from "./components/Admin/InnovationApprove";
 import Quality from "./screens/WaterTreatment/QualityTest";
@@ -28,6 +28,8 @@ import AllQualityTests from "./components/Admin/AllQualityTests";
 import QualityDetails from "./components/Admin/QualityDetails";
 import Dashboard from "./screens/donateManagement/DonateSelection";
 import LabourCreate from "./screens/donateManagement/LaborCreate";
+import ProjectListByAdmin from "./components/Admin/project/ProjectList"
+import ProjectUpdate from "./components/Admin/project/ProjectUpdate";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -36,7 +38,8 @@ const App = () => {
     "/innovationSupAdmin",
     "/innovationApprove",
     "/allquality",
-    "/admin-createProject"
+    "/admin-createProject",
+    "/projectList"
   ];
 
 
@@ -69,17 +72,19 @@ const App = () => {
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
           <Route path = "/selection" element={<Dashboard/>}/>
+          <Route path = "/project/:id" element={<ProjectUpdate/>}/>
 
            {/* Donate management */}
            <Route path = "/createLabour" element={<LabourCreate/>}/>
+           <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
 
-          {/* Admin */}
+          /* Admin */
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
           <Route path="/innovationSupAdmin"element={<InnovationSuportAdmin />}
           />
           <Route path="/innovationApprove" element={<InnovationApprove />} />
-          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
+       
         
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />

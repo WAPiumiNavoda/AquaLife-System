@@ -10,6 +10,7 @@ const getProjects = asyncHandler(async (req, res) => {
 
 const createProject = asyncHandler(async (req, res) => {
 	const {
+		
 		name,
         description,
         price,
@@ -17,6 +18,7 @@ const createProject = asyncHandler(async (req, res) => {
 	} = req.body;
 
 	if (
+		
 		!name ||
 		!description ||
 		!price ||
@@ -27,6 +29,7 @@ const createProject = asyncHandler(async (req, res) => {
 		throw new Error("Please Fill all the Fields");
 	} else {
 		const project = new Project({
+		
 			name,
             description,
             price,

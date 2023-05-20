@@ -49,8 +49,6 @@ const Sidebar = () => {
             <NavLink to="/admin-createProject" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> projectManagement
            </NavLink>
-           </li>
-           <li>
             <NavLink to="/articleAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
            </NavLink>

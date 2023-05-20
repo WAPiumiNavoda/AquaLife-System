@@ -19,9 +19,7 @@ const ProjectView = ({history,search,props}) => {
          dispatch(listProjects())
        }, [dispatch])
    
-    // project?.map((data) =>{
-    //     console.log("checkedMapData",data)
-    // })   
+       
    
     return (
       

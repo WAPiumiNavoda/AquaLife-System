@@ -22,7 +22,7 @@ import {
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
 
-import { ProjectCreateReducer, ProjectListReducer } from "./reducers/projectReducers";
+import { ProjectCreateReducer, ProjectListReducer,ProjectUpdateReducer,ProjectDeleteReducer } from "./reducers/projectReducers";
 
 
 const reducer = combineReducers({
@@ -41,6 +41,9 @@ const reducer = combineReducers({
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
+  projectUpdate:ProjectUpdateReducer,
+  projectDelete:ProjectDeleteReducer
+
 
 });
 

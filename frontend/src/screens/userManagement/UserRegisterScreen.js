@@ -27,6 +27,7 @@ const UserRegisterScreen = () => {
 
 	const user_Login = useSelector((state) => state.user_Login);
 	const { userInfo } = user_Login;
+	console.log("user",userInfo)
 
 	const submitHandler = async (e) => {
 		e.preventDefault();

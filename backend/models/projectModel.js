@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const projectSchema = new mongoose.Schema(
   {
+
     name: {
       type: String,
       required: true,
@@ -19,6 +20,7 @@ const projectSchema = new mongoose.Schema(
 			required: true,
 			default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     },
+
   },
   { timestamps: true }
 );
