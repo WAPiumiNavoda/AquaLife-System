@@ -104,7 +104,7 @@ const App = () => {
           <Route path="/allquality" element={<QualityAdmin />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
           <Route path="/machines" element={<Product />} />
-
+          <Route path="/maintenance" element={<Maintenance />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
