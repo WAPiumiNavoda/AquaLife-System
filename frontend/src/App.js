@@ -27,6 +27,9 @@ import Quality from "./screens/WaterTreatment/QualityTest";
 import QualityDetails from "./components/Admin/QualityDetails";
 import Dashboard from "./screens/donateManagement/DonateSelection";
 import LabourCreate from "./screens/donateManagement/LaborCreate";
+import InnovationSupportReportList from "./components/Report/InnovationSupportReportList";
+import InnovationSupportReport from "./components/Report/InnovationSupportReport";
+import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -101,10 +104,7 @@ const App = () => {
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
-          <Route path="/allquality" element={<QualityAdmin />} />
-          <Route path="/quality/:id" element={<QualityDetails />} />
-          <Route path="/machines" element={<Product />} />
-          <Route path="/maintenance" element={<Maintenance />} />
+         <Route path="/quality/:id" element={<QualityDetails />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}
