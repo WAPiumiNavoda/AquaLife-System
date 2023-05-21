@@ -17,7 +17,7 @@ const Maintenance = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          alert("Service Request Sent Successfully");
         },
         (error) => {
           console.log(error.text);
