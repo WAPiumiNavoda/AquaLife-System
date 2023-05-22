@@ -8,6 +8,7 @@ const QualityAdmin = () => {
   const dispatch = useDispatch();
   const qualityList = useSelector((state) => state.qualityList);
   const { loading, quality, error } = qualityList;
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     dispatch(listQuality());
@@ -19,13 +20,45 @@ const QualityAdmin = () => {
     }
   };
 
+  const filteredQuality =
+    quality &&
+    quality.filter((item) => {
+      return item.token.includes(searchTerm) || item.name.includes(searchTerm);
+    });
+
   return (
     <div className="admin-dashboard">
+      {/* Sidebar component */}
       <Sidebar />
+
       <div className="admin-content">
         <div className="admin-header">
           <h1 style={{ marginLeft: "100px" }}>All Consumers</h1>
         </div>
+
+        <br />
+
+        <input
+          type="text"
+          placeholder="Search.."
+          className="text111"
+          name="search2"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            backgroundColor: "white",
+            border: "1px solid black",
+            color: "black",
+            width: "400px",
+            height: "30px",
+            marginLeft: "190px",
+            padding: "5px 10px",
+            borderRadius: "5px",
+          }}
+        />
+
+        <br />
+        <br />
 
         <div
           className="content-box"
@@ -58,30 +91,31 @@ const QualityAdmin = () => {
                 <tr>
                   <td colSpan="6">{error}</td>
                 </tr>
+              ) : filteredQuality && filteredQuality.length === 0 ? (
+                <tr>
+                  <td colSpan="6">No matching results found.</td>
+                </tr>
               ) : (
-                quality
-                  .slice()
-                  .reverse()
-                  .map((quality, index) => (
-                    <tr key={index}>
-                      <td>{quality.token}</td>
-                      <td>{quality.name}</td>
-                      <td>{quality.email}</td>
-                      <td>{quality.mobile}</td>
-                      <td>{quality.district}</td>
-                      <td className="user-actions">
-                        <Link to={`/quality/${quality._id}`}>
-                          <button className="btn btn-primary">View</button>
-                        </Link>
-                        <button
-                          className="btn btn-danger"
-                          onClick={() => handleDelete(quality._id)}
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))
+                filteredQuality.map((quality) => (
+                  <tr key={quality._id}>
+                    <td>{quality.token}</td>
+                    <td>{quality.name}</td>
+                    <td>{quality.email}</td>
+                    <td>{quality.mobile}</td>
+                    <td>{quality.district}</td>
+                    <td className="user-actions">
+                      <Link to={`/quality/${quality._id}`}>
+                        <button className="btn btn-primary">View</button>
+                      </Link>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleDelete(quality._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
               )}
             </tbody>
           </table>
