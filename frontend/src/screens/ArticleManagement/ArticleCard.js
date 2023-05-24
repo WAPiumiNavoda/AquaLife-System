@@ -5,92 +5,63 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import { useDispatch,useSelector } from 'react-redux';
 import {listArticle} from '../../actions/articleActions'
-import Table from 'react-bootstrap/Table';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import "../ArticleManagement/About/style.css"
 
-const ArticleCard = ({history,search}) => {
+const ArticleCard = ({history,search,props}) => {
 
  const dispatch = useDispatch();
  const articleList = useSelector((state) => state.articleList);
  const { loading,article,error} = articleList; 
-
+ const navigate = useNavigate();
+ const [FrontArticle, setFrontArticle] = useState([]);
  const user_Login = useSelector(state =>state.user_Login)
-const { userInfo } = user_Login;
+ const { userInfo } = user_Login;
+
+ const [articleType, setarticleType] = useState("");
+ const [articleTitle, setarticleTitle] = useState("");
+ const [articleContent, setarticleContent] = useState("");
+ const [authorName, setauthorName] = useState("");
+ const [dateofPublish, setdateofPublish] = useState();
+ const [articleImage, setarticleImage] = useState();
 
  
     useEffect(() => {
       dispatch(listArticle())
     }, [dispatch])
 
+
   return (
 
-<div>
+<div class="articleCardFrame">
    {
-      article?.reverse().map((article,index)=>(  
-    <Row className='m-5 shadow p-3 mb-5 bg-body rounded'>
-        <Col>
-           <p className='pt-3 mx-5' style={{fontSize:'30px'}}>{article.articleType}</p>
-           <p className='pt-0 mx-5' style={{fontSize:'20px'}}>{article.articleTitle}</p>
-           <p className='pt-0 mx-5' style={{fontSize:'15px'}}>The advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do 
-              The advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do The
-              advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do
-              The advertisers and user guarantees that his or her Content do{article.articleDes}</p>
-           <Button className='px-5' style={{marginLeft:'90px'}}>Learn More</Button>
-         </Col>
-         <Col className=' text-center'>
-         <Image 
-          src="https://lh3.googleusercontent.com/_VynPK3wauy6ESwA5ccm3GmQNMM2ljuCZRsWo2v6pHIia0zoo2mvU96MHv8XFrvG54IraB1GfLEwpmZM1LgWHRg82PHFXL69guEWcBzex-JlI39cNU5_lmgQDdn6P0K_MWFd6Jnh" 
-          class="rounded float-right w-80" 
-          style={{width: '30%'}} 
-          alt="image" />
-         </Col>
-    </Row>
-        
-        ))
-      }
 
-     {/* <Table responsive>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Image</th>
-          <th>Product Name</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      {
-         innovation?.reverse().map((innovation,index)=>(
-        <tr>
-          <td>{index+1}</td>
-          <td><img
-                  style={{
-                    objectFit: "cover",
-                    height: "50px",
-                  }}
-                  src={innovation.pic}
-                  // src="https://i.ibb.co/w73cvYc/istockphoto-1019835828-612x612.jpg"
-                  alt=""
-                /></td>
-          <td>{innovation.innovationType}</td>
-          <td>{innovation.price}</td>
-          <td>{innovation.category}</td>
-          <td>
-              <Button href= "#" className="mx-4">Edit</Button>
-              <Button variant="danger">
-                Delete
-              </Button>
-          </td>
-        </tr>
-        
+      article?.reverse().map((article,index)=>(  
+
+          <div class="card" style={{width: "400px",
+                                    height: "500px",
+                                    margintop: "15px",
+                                    padding:"5px",
+                                    gridGap:"1rem",
+                                    
+          }}>
+            <img class="card-img-top" src={article.articleImage} style={{
+              width:"390px",
+              height:"200px",
+            }} alt="Card image cap"/>
+            <div class="card-body">
+              <h3>{article.articleTitle}</h3>
+              <p class="card-text">{article.articleContent}</p>
+            </div>
+            <Button type="submit" href= {`/oneArticle/${article._id}`} class="btn btn-primary" style={{
+                  marginLeft:"200px",
+                 width:"100px",
+                 height:"25px"
+              }}>Read More</Button>
+          </div>        
         ))
       }
-      </tbody>
-    </Table> */}
 
 </div>
 

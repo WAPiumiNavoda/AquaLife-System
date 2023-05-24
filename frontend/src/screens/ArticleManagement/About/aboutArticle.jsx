@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./aboutArticle.css";
 import Button from 'react-bootstrap/Button';
 
 const AboutArticle = () => {
@@ -9,20 +8,13 @@ const AboutArticle = () => {
 
     <div>
 
-    <div
-      style={{
+    <div   style={{
         width: "90%",
         margin: "0px auto",
-      }}
-    >
+      }}>
       <div className="article_about__page">
         {/* 1st verse */}
         <div className="row flex  rounded">
-          <div className="col__2">
-            <img src="https://i.ibb.co/7tWJDyC/i-Stock-1029427710.jpg"
-            style={{height:"550px",width:"600px"}}
-            />
-          </div>
           <div className="col__2">
             <div className="meta_article">
               <span
@@ -62,56 +54,60 @@ const AboutArticle = () => {
           </div>
           <div className="row flex p-2">
 
-          <div class="card">
-            <img src="https://i.ibb.co/XXHpp2Z/bottles-garbage-lake.webp" alt="Avatar" 
-            style={{width: "500px",
-                    height: "300px"}}/>
-            <div class="container">
-              <h4><b>Water Polutions</b></h4>
-              <p style={{
-                textAlign:"justify",
-              }}> Water pollution is the contamination of water bodies, such as rivers, lakes, oceans, and groundwater, with harmful substances. It is a serious global issue that affects not only aquatic ecosystems but also human health and the economy. Water pollution can be caused by a wide range of sources, including industrial activities, agricultural runoff, sewage discharge, and oil spills.</p> 
-              <Button type="submit" href="/oneArticle" class="btn btn-primary btn-floating mx-1" style={{
-                  marginLeft:"200px",
-              }}>Read More</Button>
+          <div class="card" style={{width: "400px",
+                                    height: "250px",
+                                    margin: "5px",
+                                    padding:"5px"
+          }}>
+            <img class="card-img-top" src="..." alt="Card image cap"/>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
+            <Button type="submit" href="/oneArticle" class="btn btn-primary" style={{
+                  marginLeft:"200px",
+                 width:"100px",
+                 height:"25px"
+              }}>Read More</Button>
           </div>
 
-          <div class="card">
-            <img src="https://i.ibb.co/Z13FmtT/Your-equipment-may-require.jpg" alt="Avatar" 
-            style={{width: "500px",
-                    height: "300px"}}/>
-            <div class="container">
-              <h4><b>Water Usages</b></h4>
-              <p style={{
-                textAlign:"justify",
-              }}> Water pollution is the contamination of water bodies, such as rivers, lakes, oceans, and groundwater, with harmful substances. It is a serious global issue that affects not only aquatic ecosystems but also human health and the economy. Water pollution can be caused by a wide range of sources, including industrial activities, agricultural runoff, sewage discharge, and oil spills.</p> 
-              <Button type="submit" href="/oneArticle" class="btn btn-primary btn-floating mx-1" style={{
-                  marginLeft:"200px",
-              }}>Read More</Button>
+          <div class="card" style={{width: "400px",
+                                    height: "250px",
+                                    margin: "5px",
+                                    padding:"5px"
+                                    
+          }}>
+            <img class="card-img-top" src="..." alt="Card image cap"/>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
+            <Button type="submit" href="/oneArticle" class="btn btn-primary" style={{
+                  marginLeft:"200px",
+                 width:"100px",
+                 height:"25px"
+              }}>Read More</Button>
           </div>
 
-          <div class="card">
-            <img src="https://i.ibb.co/kBRFQVS/Why-It-Matters-Clean-Water-and-Sanitation.png" alt="Avatar" 
-            style={{width: "500px",
-                    height: "300px"}}/>
-            <div class="container">
-              <h4><b>Water Sanitation</b></h4>
-              <p style={{
-                textAlign:"justify",
-              }}> Water pollution is the contamination of water bodies, such as rivers, lakes, oceans, and groundwater, with harmful substances. It is a serious global issue that affects not only aquatic ecosystems but also human health and the economy. Water pollution can be caused by a wide range of sources, including industrial activities, agricultural runoff, sewage discharge, and oil spills.</p> 
-              <Button type="submit" href="/oneArticle" class="btn btn-primary btn-floating mx-1" style={{
-                  marginLeft:"200px",
-              }}>Read More</Button>
+          <div class="card" style={{width: "400px",
+                                    height: "250px",
+                                    margin: "5px",
+                                    padding:"5px"
+          }}>
+            <img class="card-img-top" src="..." alt="Card image cap"/>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
+            <Button type="submit" href="/oneArticle" class="btn btn-primary" style={{
+                  marginLeft:"200px",
+                 width:"100px",
+                 height:"25px"
+              }}>Read More</Button>
           </div>
 
           </div>
         </div>
       </div>
     </div>
-
+ 
   </div>
     
   );

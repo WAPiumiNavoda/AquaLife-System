@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row';
-import '../../css/article.css';
+import ArticleAbout from '../ArticleManagement/About/aboutArticle';
 
 
 const ArticleHome = () => {
@@ -11,7 +11,7 @@ const ArticleHome = () => {
             <Row>
                  <div className='mainTopIntro_article'>
                     <div>
-                    
+                      ArticleAbout
                     </div>
                  </div>
             </Row>

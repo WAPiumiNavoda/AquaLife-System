@@ -40,10 +40,16 @@ const Sidebar = () => {
           </li>
 
           <li>
+            <NavLink to="/videoAdmin" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Videos
+            </NavLink>
+           </li>
+
+          <li>
             <NavLink to="/" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
            </NavLink>
-           </li>
+         </li>
            
           <li>
             <NavLink to="/admin-createProject" activeClassName="active-link">

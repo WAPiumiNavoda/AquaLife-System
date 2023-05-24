@@ -1,34 +1,44 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+
 import {
   userLoginReducer,
   userRegisterReducer,
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
-import {
-  articleCreateReducer,
-  articleListReducer,
-  articleOneReducer,
-} from "./reducers/articleReducers";
 
-import {
-  InnovationCreateReducer,
-  innovationListReducer,
-  innovationOneReducer,
-  InnovationAcceptReducer,
-  InnovationApproveListReducer,
-  InnovationDenyReducer,
-} from "./reducers/innovationReducers";
+
+//Article Reducers
+import {articleListReducer, 
+        articleCreateReducer,
+        articleOneReducer,
+        ArticleAcceptReducer,
+        ArticleApproveListReducer,
+        ArticleDenyReducer
+      }  from './reducers/articleReducers';
+
+
+import {InnovationCreateReducer,
+        innovationListReducer,
+        innovationOneReducer,
+        InnovationAcceptReducer, 
+        InnovationApproveListReducer,
+        InnovationDenyReducer} from './reducers/innovationReducers';
+
+
+
 import {
   InnovationSupportCreateReducer,
   InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
+
 import {
   qualityListReducer,
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
+
 
 
 import {
@@ -39,15 +49,21 @@ import {
 } from "./reducers/projectReducers";
 
 
+
 const reducer = combineReducers({
   user_Login: userLoginReducer,
   userRegistration: userRegisterReducer,
   innovationList: innovationListReducer,
   innovationOne: innovationOneReducer,
-  articleList: articleListReducer,
   innovationCreate: InnovationCreateReducer,
   innovationSupportCreate: InnovationSupportCreateReducer,
   innovationSupportList: InnovationSupportListReducer,
+  articleList: articleListReducer,
+  //articleOne :  articleOneReducer,
+  articleCreate : articleCreateReducer,
+  articleApproveList : ArticleApproveListReducer,
+  articleAccept : ArticleAcceptReducer,
+  articleDeny : ArticleDenyReducer,
   projectCreate: ProjectCreateReducer,
   projectList:ProjectListReducer,
   innovationApprove: InnovationAcceptReducer,
