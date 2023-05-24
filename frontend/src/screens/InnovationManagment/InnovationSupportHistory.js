@@ -20,7 +20,7 @@ const InnovationSupportHistory = () => {
 
           <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginTop:'100px', marginLeft:"100px"}}>Your History</h1>
+          <h1 style={{ marginTop:'100px', marginLeft:"600px"}}>Your History</h1>
         </div>
 
           <div className="content-box"

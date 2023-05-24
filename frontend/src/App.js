@@ -37,7 +37,8 @@ import Maintenance from "./screens/WaterTreatment/Maintenance";
 import QualityAdmin from "./components/Admin/AllQualityTests";
 
 const App = () => {
-  const hideHeaderFooterRoutes = [
+  const hideHeaderFooterRoutes =
+  [
     "/dashboard",
     "/innovationAdmin",
     "/innovationSupAdmin",
