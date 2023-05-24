@@ -32,7 +32,8 @@ import InnovationSupportReport from "./components/Report/InnovationSupportReport
 import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
 
 const App = () => {
-  const hideHeaderFooterRoutes = [
+  const hideHeaderFooterRoutes =
+  [
     "/dashboard",
     "/innovationAdmin",
     "/innovationSupAdmin",

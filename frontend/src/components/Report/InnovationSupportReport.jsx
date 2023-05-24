@@ -14,34 +14,22 @@ const handlePrint = useReactToPrint({
 });
 
  return (
-<div className="AdminLeaveReportbg">
 
-<div style={{ minHeight: '200px'  }}>
-<Card
- style={{
- marginTop:'100px',
- paddingBottom:'10px',
- width: "90%",
- borderRadius: 20,
- borderWidth: 0.8,
- background: "#E3F4F4",
- }}
->
+
+<div style={{marginTop:'100px'}}>
 <InnovationSupportReportList ref={componentRef} />
 <br></br>
 
 
  <br></br>
 <Button
- style={{ marginLeft: "80%", width: "15%", height: "20%", fontSize: 15 }}
+ style={{ marginLeft: "80%",marginBottom:'100px', width: "15%", height: "20%", fontSize: 15 }}
  onClick={handlePrint}
  variant="success"
 >
  Generate PDF
 </Button>
-</Card>
 <br />
-</div>
 </div>
  );
   
