@@ -66,12 +66,8 @@ const InnovationApprove = () => {
 }, []);
 
   return (
-
-  
-
     <div className="admin-dashboard">
        <Sidebar />
-
           <div className="admin-content">
 
             
@@ -103,7 +99,7 @@ const InnovationApprove = () => {
                 <td>{innovation.innovationType}</td>
                  <td>
                 <div className="user-actions">
-                  <button variant="outline-success">Approve</button>
+                  <button variant="outline-success" >Approve</button>
                   <button className="btn btn-danger">Deny</button>
                 </div>
               </td>
