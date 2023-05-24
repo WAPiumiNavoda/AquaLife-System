@@ -6,12 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import "./bootstrap.min.css";
 import store from "./store";
+import "@fortawesome/fontawesome-free/css/all.css";
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
 
-	document.getElementById("root")
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

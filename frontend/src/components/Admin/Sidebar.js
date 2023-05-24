@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -41,11 +42,28 @@ const Sidebar = () => {
           <li>
             <NavLink to="/videoAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Videos
+            </NavLink>
+           </li>
+
+          <li>
+            <NavLink to="/" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Educational
+           </NavLink>
+         </li>
+           
+          <li>
+            <NavLink to="/admin-createProject" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> projectManagement
            </NavLink>
            </li>
            <li>
             <NavLink to="/articleAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
+           </NavLink>
+          </li>
+           <li>
+            <NavLink to="/innovationReport" activeClassName="active-link">
+              <i className="fa fa-download" aria-hidden="true"></i> Report
            </NavLink>
           </li>
         </ul>

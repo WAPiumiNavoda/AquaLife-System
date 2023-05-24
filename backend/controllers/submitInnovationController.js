@@ -16,11 +16,11 @@ const getInnovation =  asyncHandler(
 const  createInnovation = asyncHandler(async (req, res) => {
   const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
 
-  if (! innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
+  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile });
+    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved });
 
     const createdInnovation = await Innovation.save();
 
@@ -62,23 +62,6 @@ const deleteInnovation = asyncHandler(async (req, res) => {
 
 //approve innovations
 const innovationApprove = asyncHandler(async (req, res) => {
-
-  // try {
-  //   const innovation = await Innovations.findById(req.params.id);
-
-  //   if (!innovation) {
-  //     return res.status(404).json({ error: 'Innovation not found' });
-  //   }
-
-  //   innovation.IsApproved = true;
-
-  //   await innovation.save();
-
-  //   res.json({ status: 'Innovation Request Approved successfully!' });
-  // } catch (error) {
-  //   console.error(error);
-  //   res.status(500).json({ error: 'Server Error' });
-  // }
 
   try {
     const innovation = await Innovations.findById(req.params.id);
@@ -123,15 +106,48 @@ try {
 });
 
 const innovationApproveList = asyncHandler(async(req, res)=>{
-   try {
-    const approvedData = await Innovations.find({ IsApproved:true });
-    console.log(approvedData)
-    res.json(approvedData);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server Error' });
+  //  try {
+  //   const approvedData = await Innovations.find({ IsApproved:true });
+  //   console.log(approvedData)
+  //   res.json(approvedData);
+  // } catch (error) {
+  //   console.error(error);
+  //   res.status(500).json({ error: 'Server Error' });
+  // }
+
+   Innovations.find({ IsApproved: false }, (err, data) => {
+    if (err) res.status(500).json({ error: err });
+    res.status(200).json(data);
+  });
+})    
+
+//Update category controller
+const UpdateInnovation = asyncHandler(async (req, res) => {
+  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
+
+  const inno = await Innovations.findById(req.params.id);
+
+  // if (product.user.toString() !== req.user._id.toString()) {
+  //   res.status(401);
+  //   throw new Error("You can't perform this action");
+  // }
+
+  if (inno) {
+   
+    inno.innovationType =innovationType;
+    inno.innovationTitle=innovationTitle;
+    inno.innovationDes=innovationDes;
+    inno.innovationImage=innovationImage;
+    inno.innovationFile=innovationFile;
+    inno.IsApproved=IsApproved;
+
+    const updatedInnovation = await inno.save();
+    res.json(updatedInnovation);
+  } else {
+    res.status(404);
+    throw new Error("Innovation not found");
   }
-})
+});
 
 
 //export all functions
@@ -141,5 +157,6 @@ module.exports = {
      createInnovation,
      innovationApprove,
      innovationDeny,
+     UpdateInnovation,
      innovationApproveList,
 }

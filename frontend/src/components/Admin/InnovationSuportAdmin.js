@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
 import {  listSupportInnoation } from '../../actions/innovationSupportAction'
-
+import { Button } from 'react-bootstrap';
 const InnovationSuportAdmin = () => {
 
  const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const InnovationSuportAdmin = () => {
           <h1 style={{ marginLeft:"100px"}}>All Suppotors</h1>
         </div>
 
+ <Button href='/innovationReport' style={{marginLeft: 5,marginBottom:'10px'}} size='sm'>Genarate Report</Button>
           <div className="content-box"
            style={{backgroundColor:"#f5f5f0",width:"900px", marginLeft:"100px"}}>
             <h2 className="content-box-title">List Of Requests</h2>
