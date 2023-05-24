@@ -39,8 +39,8 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <NavLink to="/education" activeClassName="active-link">
-              <i className="fa fa-envelope" aria-hidden="true"></i> Educational
+            <NavLink to="/videoAdmin" activeClassName="active-link">
+              <i className="fa fa-envelope" aria-hidden="true"></i> Videos
            </NavLink>
            </li>
            <li>

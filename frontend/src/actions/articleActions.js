@@ -47,16 +47,18 @@ export const listArticle = () => async (dispatch, getState) => {
 
 
 //all article one list
-export const listArticleOne = (id,category,title, content, name) => async (dispatch, getState) => {
+export const listArticleOne = (id, articleType, articleImage, articleTitle, articleContent,  authorName, dateofPublish ) => async (dispatch, getState) => {
   dispatch({
      type:  ARTICLE_REQUEST,
    });
 
    const { data } = await axios.get(`http://localhost:5000/article/${id}`,{
-      category,
-      title, 
-      content, 
-      name
+    articleType, 
+    articleImage, 
+    articleTitle, 
+    articleContent,  
+    authorName, 
+    dateofPublish
    }     
    );
    dispatch({
@@ -66,7 +68,7 @@ export const listArticleOne = (id,category,title, content, name) => async (dispa
 };
 
 //create article
-export const createArticleAction = ( category,title, content, name ) => async (
+export const createArticleAction = (articleType, articleImage, articleTitle, articleContent,  authorName, dateofPublish  ) => async (
  dispatch,
  getState
 ) => {
@@ -79,7 +81,7 @@ export const createArticleAction = ( category,title, content, name ) => async (
    const { data } = await axios.post(
      `http://localhost:5000/article/create`,
 
-     { category,title, content, name }
+     { articleType, articleImage, articleTitle, articleContent,  authorName, dateofPublish  }
 
    );
    

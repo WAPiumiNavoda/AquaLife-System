@@ -4,6 +4,7 @@ const articleSubmissionSchema = new mongoose.Schema(
   {
     articleType: {
       type: String,
+      required: true,
     },
 
     articleImage:{
@@ -28,7 +29,13 @@ const articleSubmissionSchema = new mongoose.Schema(
 
     dateofPublish:{
       type:String,
+      required: true,
     },
+
+    IsApproved: {
+			type: Boolean,
+		},
+    
   },
   {
     timestamps: true,
