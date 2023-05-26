@@ -77,7 +77,7 @@ const ProjectCreate = () => {
             </div>
             <br />
 
-      <h1 style={{ marginLeft: "100px", marginTop: "-10px",marginLeft:"400px"}}>Add Your New Projects</h1>
+      <h1 style={{ marginLeft: "100px", marginTop: "-10px",marginLeft:"400px",fontFamily:"poppins",fontSize:"40px"}}>Add Your New Projects</h1>
       <br />
     </div>
 

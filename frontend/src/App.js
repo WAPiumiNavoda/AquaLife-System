@@ -32,7 +32,9 @@ import InnovationSupportReport from "./components/Report/InnovationSupportReport
 import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
 import ProjectListByAdmin from "./components/Admin/project/ProjectList"
 import ProjectUpdate from "./components/Admin/project/ProjectUpdate";
-
+import PaymentForm from "./screens/donateManagement/Payment";
+import LaborList from "./screens/donateManagement/ViewLaborList";
+import LaborListForAdmin from "./components/Admin/donate/LaborListForAdmin";
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -42,7 +44,8 @@ const App = () => {
     "/innovationApprove",
     "/allquality",
     "/admin-createProject",
-    "/projectList"
+    "/projectList",
+    "/laborListForAdmin"
   ];
 
 
@@ -74,13 +77,16 @@ const App = () => {
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
-          <Route path = "/selection" element={<Dashboard/>}/>
+          <Route path = "/selection/:id" element={<Dashboard/>}/>
           <Route path = "/project/:id" element={<ProjectUpdate/>}/>
+          <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
 
 
           {/* Donate management */}
           <Route path = "/createLabour" element={<LabourCreate/>}/>
-          <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
+          <Route path = "/laborList" element={<LaborList/>}/>
+          <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
+       {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />

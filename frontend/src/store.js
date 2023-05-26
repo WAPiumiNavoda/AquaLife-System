@@ -37,6 +37,12 @@ import {
   ProjectDeleteReducer
 } from "./reducers/projectReducers";
 
+import {
+  DonateCreateReducer,
+  DonateListReducer,
+  DonateDeleteReducer
+} from "./reducers/donateReducers";
+
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -49,13 +55,17 @@ const reducer = combineReducers({
   innovationSupportList: InnovationSupportListReducer,
   projectCreate: ProjectCreateReducer,
   projectList:ProjectListReducer,
+  projectUpdate:ProjectUpdateReducer,
+  projectDelete:ProjectDeleteReducer,
   innovationApprove: InnovationAcceptReducer,
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
-  projectUpdate:ProjectUpdateReducer,
-  projectDelete:ProjectDeleteReducer
+  laborCreate: DonateCreateReducer,
+  laborList:DonateListReducer,
+  laborDelete:DonateDeleteReducer
+ 
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

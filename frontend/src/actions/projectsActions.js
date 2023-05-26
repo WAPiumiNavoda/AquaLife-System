@@ -98,14 +98,7 @@ export const createProjects = ( name,description,price,photo) => async (
 	}
   };
 
-  export const updateProjectAction =
-	(
-		id,
-		name,
-        description,
-        price,
-		photo,
-	) =>
+  export const updateProjectAction =(id,updatedProject) =>
 	async (dispatch, getState) => {
 		try {
 			dispatch({ type: PROJECT_UPDATE_REQUEST });
@@ -118,18 +111,25 @@ export const createProjects = ( name,description,price,photo) => async (
 			// 		Authorization: `Bearer ${trainerInfo.token}`,
 			// 	},
 			// };
-			const { data } = await axios.put(
-				`http://localhost:5000/user/admin/getProject/${id}`,
-				{
-					name,
-                    description,
-                    price,
-		            photo,
-				},
+			// const { data } = await axios.put(
+			// 	`http://localhost:5000/user/admin/getProject/${id}`,
+			
+			// 	{
+			// 		name,
+            //         description,
+            //         price,
+		    //         photo,
+			// 	},
+			
 				
-			);
+			// );
 
-			swal({
+			axios
+			.put(`http://localhost:5000/user/admin/getProject/${id}`, updatedProject)
+			.then((response) => {
+			  // Handle successful response
+			  console.log(response.data);
+			  swal({
 				title: "Success !!!",
 				text: "Project Update Successful.",
 				icon: "success",
@@ -137,16 +137,22 @@ export const createProjects = ( name,description,price,photo) => async (
 				button: false,
 			});
 			setTimeout(function () {
-				window.location.href = "/trainer-leaves";
+				window.location.href = "/projectList";
 			}, 2000);
 
-			dispatch({ type: PROJECT_UPDATE_SUCCESS, payload: data });
-		} catch (error) {
-			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
-			dispatch({
-				type: PROJECT_UPDATE_FAIL,
-				payload: message,
+			//dispatch({ type: PROJECT_UPDATE_SUCCESS, payload: data });
+			})
+			.catch((error) => {
+			  // Handle error
+			  console.log(error);
 			});
+					
+		} catch (error) {
+			// const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+			// dispatch({
+			// 	type: PROJECT_UPDATE_FAIL,
+			// 	payload: message,
+			// });
 		}
 	};
 

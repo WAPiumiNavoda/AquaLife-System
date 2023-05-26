@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
+import { NavDropdown } from "react-bootstrap";
 
 
 const Sidebar = () => {
@@ -34,10 +35,15 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" activeClassName="active-link">
-              <i className="fa fa-envelope" aria-hidden="true"></i> Donations
-            </NavLink>
-          </li>
+          <NavDropdown title={<span><i className="fa fa-envelope" aria-hidden="true"></i>Donations</span>}>
+            <NavDropdown.Item as={NavLink} to="/laborListForAdmin" activeClassName="active-link" style={{color:"darkblue"}}>
+              Labor Donations
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/contact" activeClassName="active-link"style={{color:"darkblue"}}>
+              Payment Donations
+            </NavDropdown.Item>
+          </NavDropdown>
+        </li>
 
           <li>
             <NavLink to="/" activeClassName="active-link">
