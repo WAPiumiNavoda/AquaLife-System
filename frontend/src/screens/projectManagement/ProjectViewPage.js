@@ -35,11 +35,11 @@ const ProjectView = ({history,search,props}) => {
       </div>
       
 
-    <div className="container">
+    <div className="container1">
       <div className="row">
         {project && project.map((p) => (
           <div className="col-md-3" key={p.id}>
-            <div className="card bg-light mb-5 h-100">
+            <div className="card bg-light mb-9 h-100">
            
               <img src={p.photo} className="card-img-top" alt="Card image cap" />
               <div className="card-body">

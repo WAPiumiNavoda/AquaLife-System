@@ -107,7 +107,7 @@ export const createLabors = ( name,email,userName,availableDate,country,phone) =
 				button: false,
 			});
 			setTimeout(function () {
-				window.location.href = "/projectList";
+				window.location.href = "/laborList";
 			}, 2000);
 
 			})

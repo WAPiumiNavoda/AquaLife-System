@@ -1,26 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import swal from "sweetalert";
 import { Button, Form } from "react-bootstrap";
 import Sidebar from '../Sidebar';
 import { listDonateLabor } from "../../../actions/donateActions";
+import emailjs from 'emailjs-com';
 
 const LaborListForAdmin = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
+ 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const laborList = useSelector((state) => state.laborList);
   const { loading, labor, error } = laborList;
-
 
   useEffect(() => {
     dispatch(listDonateLabor());
   }, [dispatch]);
 
- 
+  const form = useRef(); // Add this line to create form reference
+  const formRef = useRef(); // Add this line to create formRef reference
+
+  const sendEmail = () => {
+    emailjs.sendForm("service_c2xbm9h", "template_iqfpnjo", form.current, "pmBrDg1YWasbFz2ho")
+      .then((result) => {
+        console.log(result.text);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
+  };
+  
+  const denyLabor = () => {
+    emailjs.sendForm("service_c2xbm9h", "template_i2njnhi", formRef.current, "pmBrDg1YWasbFz2ho")
+      .then((result) => {
+        console.log(result.text);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
+  };
+
   const filteredLabor = labor && labor.filter(L => L.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
@@ -29,7 +48,7 @@ const LaborListForAdmin = () => {
 
       <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px",fontFamily:"poppins",fontSize:"50px" }}>Human Labor List</h1>
+          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px", fontFamily:"poppins", fontSize:"50px" }}>Human Labor List</h1>
         </div>
 
         <div className="search-bar">
@@ -40,7 +59,7 @@ const LaborListForAdmin = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
-              style={{ width: "400px",marginLeft:"1000px" }} // Add width style to the input
+              style={{ width: "400px", marginLeft:"1000px" }} // Add width style to the input
             />
           </Form>
         </div>
@@ -68,28 +87,28 @@ const LaborListForAdmin = () => {
                   <td>{L.availableDate}</td>
                   <td>{L.country}</td>
                   <td>{L.phone}</td>
-               
                   <td>
-                    <div className="d-flex">
-                      <Button
-                        style={{
-                          marginLeft: 20,
-                          float: "left",
-                          fontSize: 18,
-                          marginTop: 20,
-                        }}
-                        href={`/labor/${L._id}`}
-                      >
-                        Approve
-                      </Button>
-                      <Button
-                        variant="danger"
-                        className="mx-2"
-                        style={{ marginLeft: 20, float: "left", fontSize: 18, marginTop: 20 }}
-                   
-                      >
-                        Reject
-                      </Button>
+                    <div className="user-actions">
+                      <form ref={form}>
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary"
+                          fdprocessedid="3ah475"
+                          onClick={sendEmail}
+                        >
+                          Approve
+                        </button>
+                      </form>
+                      <form ref={formRef}>
+                        <button
+                          type="button"
+                          className="btn btn-outline-danger"
+                          fdprocessedid="eb6yb"
+                          onClick={denyLabor}
+                        >
+                          Deny
+                        </button>
+                      </form>
                     </div>
                   </td>
                 </tr>

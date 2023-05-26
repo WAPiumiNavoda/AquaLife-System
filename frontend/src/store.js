@@ -48,7 +48,8 @@ import {
 import {
   DonateCreateReducer,
   DonateListReducer,
-  DonateDeleteReducer
+  DonateDeleteReducer,
+  DonateUpdateReducer
 } from "./reducers/donateReducers";
 
 import {
@@ -85,9 +86,11 @@ const reducer = combineReducers({
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
+
   laborCreate: DonateCreateReducer,
   laborList:DonateListReducer,
   laborDelete:DonateDeleteReducer,
+  laborUpdate:DonateUpdateReducer,
   
   
   productList: productListReducer,

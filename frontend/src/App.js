@@ -42,6 +42,10 @@ import Product from "./components/Admin/Product";
 import ProductAdmin from "./components/Admin/ProductAdmin";
 import ProductUpdate from "./components/Admin/ProductUpdate";
 import OneProduct from "./screens/WaterTreatment/OneProduct";
+import LaborUpdate from "./screens/donateManagement/UpdateLabor";
+import ProjectListReport from "./components/Report/ProjectListReport";
+import ProjectList from "./components/Report/projectList";
+import ProjectReport from "./components/Report/ProjectListReport";
 
 
 const App = () => {
@@ -53,9 +57,10 @@ const App = () => {
     "/allquality",
     "/admin-createProject",
     "/projectList",
-    "/laborListForAdmin"
+    "/laborListForAdmin",
     "/product",
     "/allproduct",
+
   ];
 
   const shouldHideHeaderFooter = () =>
@@ -98,6 +103,9 @@ const App = () => {
           <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
        {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
           <Route path="/selection" element={<Dashboard />} />
+          <Route path="/labor/:id" element={<LaborUpdate/>} />
+          {/* <Route path="/projectReport" element={<ProjectList/>}/>
+          <Route path="/reportProject" elemennt={<ProjectReport/>}/> */}
          
 
           {/* Admin */}
@@ -150,6 +158,7 @@ const App = () => {
           <Route path="/oneProduct/:id" element={<OneProduct />} />
         </Routes>
       </main>
+
       {!shouldHideHeaderFooter() && <Footer />}
     </BrowserRouter>
   );

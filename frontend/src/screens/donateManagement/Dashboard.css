@@ -4,6 +4,12 @@
 	background-size: cover;
 }
 
+.background1 {
+	background: url("https://res.cloudinary.com/flocktogether/image/upload/v1685115827/labour-day_bu8m8j.avif");
+	background-position: center;
+	background-size: cover;
+}
+
 .title {
 	font-size: 95px;
 }
@@ -40,4 +46,9 @@
 
 .card3{
     width: 1900px;
+}
+
+.table-container1{
+    width:1500px;
+	margin-left: 170px;
 }
