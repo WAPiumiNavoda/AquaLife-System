@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import Sidebar from './Sidebar'
-import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
 import {
   listInnoation, 
   approveInnovationAction,
   denyInnovationAction,
   setApprovedData
-} from '../../actions/innovationActions'
+} from '../../actions/innovationActions';
+import  { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const InnovationAdmin = () => {
 
@@ -22,30 +23,48 @@ const InnovationAdmin = () => {
       dispatch(listInnoation())
     }, [dispatch])
 
+  //approve innovation
+  //email send
+  const form = useRef();
+  const formRef = useRef();
 
-    //approve innovation
- const innovationApproveOne = useSelector((state) => state.innovationApprove);
- const { loadings,innovationApprove,errors} = innovationApproveOne; 
+  const sendEmail = () => {
 
-    const approveInnovation = (id) =>{
-       dispatch(approveInnovationAction(id))
-    }
+    emailjs
+      .sendForm(
+        "service_c2xbm9h",
+        "template_iqfpnjo",
+         form.current,
+        "pmBrDg1YWasbFz2ho"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
-    //deny innovation
-    useSelector((state) => state.innovationDeny);
-    const denyInnovation = (id) =>{
-      dispatch(denyInnovationAction(id));
-    }
-    const { data } = useSelector((state) => state.innovationDeny);
+  const denyInnovation = () => {
 
-    //approve innovations
-    const approveListInnovation = () =>{
-       const approveInnovationAction = data?.filter((item) => item.status === 'approved');
-       dispatch(setApprovedData(approveInnovationAction));
-       setTimeout(function () {
-				window.location.href = "/innovationApprove";
-			}, 2000);
-    }
+    emailjs
+      .sendForm(
+        "service_c2xbm9h",
+        "template_i2njnhi",
+         formRef.current,
+        "pmBrDg1YWasbFz2ho"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
    <div className="admin-dashboard">
@@ -77,12 +96,6 @@ const InnovationAdmin = () => {
   />
 
   <br/>
-         <button 
-         className="btn btn-primary mb-3 mt-3" 
-         style={{marginLeft:'190px'}}
-         onClick={approveListInnovation}>Approve List</button>
-
-
         <div className="admin-content-area" style={{paddingTop:'30px', paddingLeft:'200px'}} >
           <div className="content-box" style={{backgroundColor:"#f5f5f0"}}>
             <h2 className="content-box-title">Innovation Requests</h2>
@@ -117,7 +130,7 @@ const InnovationAdmin = () => {
             }).map((innovation,index)=>(
                 <tr>
                   <td>{innovation.innovationType}</td>
-                  <td>J{innovation.innovationTitle}</td>
+                  <td>{innovation.innovationTitle}</td>
                   <td>{innovation.innovationDes.slice(0, 20)}</td>
                   <td >
                     <img
@@ -134,8 +147,12 @@ const InnovationAdmin = () => {
                   <td>{innovation.innovationFile.slice(0, 25)}</td>
                  <td>
                 <div className="user-actions">
-                  <button type="button" class="btn btn-outline-primary" fdprocessedid="3ah475" onClick={() => approveInnovation(innovation._id)}>Approve</button>
-                  <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" onClick={() => denyInnovation(innovation._id)}>Deny</button>
+                  <form ref={form}>
+                  <button type="button" class="btn btn-outline-primary"  fdprocessedid="3ah475" ref={form} onClick={sendEmail}>Approve</button>
+                  </form>
+                  <form ref={formRef}>
+                  <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" ref={formRef} onClick={denyInnovation}>Deny</button>
+                  </form>
                 </div>
               </td>
                 </tr>

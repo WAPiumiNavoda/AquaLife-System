@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import img5 from "../../Assets/m1.png";
 import img6 from "../../Assets/m2.png";
 import img7 from "../../Assets/m3.png";
+import ProductCard from "./ProductCard";
 
 function Product() {
   return (
@@ -32,29 +33,7 @@ function Product() {
 
       <div className="featured-products2">
         <h2>Our Featured Products</h2>
-        <div className="card2-container">
-          <div className="card2">
-            <img src={img5} alt="machine" />
-            <div className="card2-content">
-              <h3>Wastewater Treatment Machine 1</h3>
-              <Link to="#">See More</Link>
-            </div>
-          </div>
-          <div className="card2">
-            <img src={img6} alt="machine" />
-            <div className="card2-content">
-              <h3>Wastewater Treatment Machine 2</h3>
-              <Link to="#">See More</Link>
-            </div>
-          </div>
-          <div className="card2">
-            <img src={img7} alt="machine" />
-            <div className="card2-content">
-              <h3>Wastewater Treatment Machine 3</h3>
-              <Link to="#">See More</Link>
-            </div>
-          </div>
-        </div>
+        <ProductCard />
       </div>
 
       <div className="services2">

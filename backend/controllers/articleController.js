@@ -4,20 +4,14 @@ const asyncHandler = require('express-async-handler');
 //Get Article controller
 const getArticle =  asyncHandler(
     async(req,res)=>{
-        const Articles = await Articles.find()
-        res.json(Articles);
+        const Article = await Articles.find()
+        res.json(Article);
     }
 )
 
 //Create Article controller
 const  createArticle = asyncHandler(async (req, res) => {
-  const { articleType, 
-          articleImage, 
-          articleTitle, 
-          articleContent, 
-          authorName, 
-          dateofPublish 
-        } = req.body;
+  const { articleType, articleImage, articleTitle, articleContent,  authorName, dateofPublish, IsApproved } = req.body;
 
   if (! articleType || !articleImage || !articleTitle || !articleContent || !authorName || !dateofPublish) {
     res.status(400);
@@ -60,12 +54,12 @@ const updateArticle = asyncHandler(async (req, res) => {
 
 		res.json({
 			_id: updateArticle._id,
-            articleType: updateArticle.articleType,
+      articleType: updateArticle.articleType,
 			articleImage: updateArticle.articleImage,
 			articleTitle: updateArticle.articleTitle,
 			articleContent: updateArticle.articleContent,
 			authorName: updateArticle.authorName,
-            dateofPublish: updateArticle.dateofPublish,
+      dateofPublish: updateArticle.dateofPublish,
 		});
 	} else {
 		res.status(404);
@@ -92,12 +86,74 @@ const deleteArticle = asyncHandler(async (req, res) => {
 });
 
 
+//approveArticleRequest
+const articleApprove = asyncHandler(async (req, res) => {
+
+
+  try {
+    const article = await Articles.findById(req.params.id);
+
+    if (!article) {
+      return res.status(404).json({ error: 'Article not found' });
+    }
+
+    article.IsApproved = true;
+
+    await article.save();
+
+    // Fetch all approved innovations
+    const approvedArticle = await Articles.find({ IsApproved: true });
+
+    res.json({
+      message: 'Article Request Approved successfully!',
+      approvedArticle: approvedArticle,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
+  }
+  
+});
+
+//deny article requests
+const articleDeny = asyncHandler(async (req, res) => {
+try {
+    const data = await Articles.findById(req.params._id);
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+    // Update the data with the denied status
+    data.status = 'denied';
+    await data.save();
+    res.json({ message: 'Data denied successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+const articleApproveList = asyncHandler(async(req, res)=>{
+   try {
+    const approvedData = await Articles.find({ IsApproved:true });
+    console.log(approvedData)
+    res.json(approvedData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
+  }
+})
+
+
+
 //export all functions
 module.exports = {
      getArticle,
      getArticleById,
      createArticle,
+     articleApprove,
+     articleDeny,
      updateArticle,
-     deleteArticle
+     deleteArticle,
+     articleApproveList
 
 }

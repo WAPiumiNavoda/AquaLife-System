@@ -1,17 +1,24 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+
 import {
   userLoginReducer,
   userRegisterReducer,
   //userViewReducer,
   //userUpdateReducer,
 } from "./reducers/userReducers";
+
+//Article Reducers
 import {
-  articleCreateReducer,
   articleListReducer,
+  articleCreateReducer,
   articleOneReducer,
+  ArticleAcceptReducer,
+  ArticleApproveListReducer,
+  ArticleDenyReducer,
 } from "./reducers/articleReducers";
+
 import {
   InnovationCreateReducer,
   innovationListReducer,
@@ -20,21 +27,22 @@ import {
   InnovationApproveListReducer,
   InnovationDenyReducer,
 } from "./reducers/innovationReducers";
+
 import {
   InnovationSupportCreateReducer,
   InnovationSupportListReducer,
 } from "./reducers/innovationSupportReducers";
+
 import {
   qualityListReducer,
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
 
-
 import {
   ProjectCreateReducer,
   ProjectListReducer,
   ProjectUpdateReducer,
-  ProjectDeleteReducer
+  ProjectDeleteReducer,
 } from "./reducers/projectReducers";
 
 import {
@@ -43,20 +51,35 @@ import {
   DonateDeleteReducer
 } from "./reducers/donateReducers";
 
+import {
+  ProductCreateReducer,
+  productDeleteReducer,
+  productListReducer,
+  productOneReducer,
+  productUpdateReducer,
+} from "./reducers/productReducers";
+
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
   userRegistration: userRegisterReducer,
   innovationList: innovationListReducer,
   innovationOne: innovationOneReducer,
-  articleList: articleListReducer,
   innovationCreate: InnovationCreateReducer,
   innovationSupportCreate: InnovationSupportCreateReducer,
   innovationSupportList: InnovationSupportListReducer,
+  articleList: articleListReducer,
+  //articleOne :  articleOneReducer,
+  articleCreate: articleCreateReducer,
+  articleApproveList: ArticleApproveListReducer,
+  articleAccept: ArticleAcceptReducer,
+  articleDeny: ArticleDenyReducer,
   projectCreate: ProjectCreateReducer,
+
   projectList:ProjectListReducer,
   projectUpdate:ProjectUpdateReducer,
   projectDelete:ProjectDeleteReducer,
+
   innovationApprove: InnovationAcceptReducer,
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
@@ -64,8 +87,14 @@ const reducer = combineReducers({
   qualityOne: qualityOneReducer,
   laborCreate: DonateCreateReducer,
   laborList:DonateListReducer,
-  laborDelete:DonateDeleteReducer
- 
+  laborDelete:DonateDeleteReducer,
+  
+  
+  productList: productListReducer,
+  productOne: productOneReducer,
+  productCreate: ProductCreateReducer,
+  productUpdate: productUpdateReducer,
+  productDelete: productDeleteReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

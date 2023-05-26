@@ -30,11 +30,19 @@ import LabourCreate from "./screens/donateManagement/LaborCreate";
 import InnovationSupportReportList from "./components/Report/InnovationSupportReportList";
 import InnovationSupportReport from "./components/Report/InnovationSupportReport";
 import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
-import ProjectListByAdmin from "./components/Admin/project/ProjectList"
+import ProjectListByAdmin from "./components/Admin/project/ProjectList";
 import ProjectUpdate from "./components/Admin/project/ProjectUpdate";
 import PaymentForm from "./screens/donateManagement/Payment";
 import LaborList from "./screens/donateManagement/ViewLaborList";
 import LaborListForAdmin from "./components/Admin/donate/LaborListForAdmin";
+import Machine from "./screens/WaterTreatment/Products";
+import Maintenance from "./screens/WaterTreatment/Maintenance";
+import QualityAdmin from "./components/Admin/AllQualityTests";
+import Product from "./components/Admin/Product";
+import ProductAdmin from "./components/Admin/ProductAdmin";
+import ProductUpdate from "./components/Admin/ProductUpdate";
+import OneProduct from "./screens/WaterTreatment/OneProduct";
+
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -46,8 +54,9 @@ const App = () => {
     "/admin-createProject",
     "/projectList",
     "/laborListForAdmin"
+    "/product",
+    "/allproduct",
   ];
-
 
   const shouldHideHeaderFooter = () =>
     hideHeaderFooterRoutes.includes(window.location.pathname);
@@ -70,6 +79,7 @@ const App = () => {
 
           {/* artical managment */}
           <Route path="/article" element={<Article />} />
+          <Route path="/AllArticle" element={<AllArticle />} />
           <Route path="/ArticleForm" element={<ArticleForm />} />
           <Route path="/articleHome" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
@@ -87,15 +97,19 @@ const App = () => {
           <Route path = "/laborList" element={<LaborList/>}/>
           <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
        {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
+          <Route path="/selection" element={<Dashboard />} />
+         
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-          <Route path="/innovationSupAdmin"element={<InnovationSuportAdmin />}
+          <Route
+            path="/innovationSupAdmin"
+            element={<InnovationSuportAdmin />}
           />
           <Route path="/innovationApprove" element={<InnovationApprove />} />
-          <Route path = "/admin-createProject" element={<ProjectCreate/>} />
-        
+          <Route path="/admin-createProject" element={<ProjectCreate />} />
+
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />
 
@@ -107,17 +121,33 @@ const App = () => {
           <Route path="/articleAdmin" element={<ArticleAdmin />} />
 
           <Route path="/innovationAdmin" element={<InnovationAdmin />} />
-      
+
           <Route path="/innovationApprove" element={<InnovationApprove />} />
           <Route path="/innovationmain" element={<InnovationMain />} />
-           <Route path="/innovationhistory" element={<InnovationSupportHistory />} />
-            <Route path="/innovationReportList" element={<InnovationSupportReportList />} />
-           <Route path="/innovationReport" element={<InnovationSupportReport />} />
-           
+          <Route
+            path="/innovationhistory"
+            element={<InnovationSupportHistory />}
+          />
+          <Route
+            path="/innovationReportList"
+            element={<InnovationSupportReportList />}
+          />
+          <Route
+            path="/innovationReport"
+            element={<InnovationSupportReport />}
+          />
+
           {/* Wastewater Treatment */}
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
-         <Route path="/quality/:id" element={<QualityDetails />} />
+          <Route path="/quality/:id" element={<QualityDetails />} />
+          <Route path="/machines" element={<Machine />} />
+          <Route path="/maintenance" element={<Maintenance />} />
+          <Route path="/allquality" element={<QualityAdmin />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/allproduct" element={<ProductAdmin />} />
+          <Route path="/product/:id" element={<ProductUpdate />} />
+          <Route path="/oneProduct/:id" element={<OneProduct />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

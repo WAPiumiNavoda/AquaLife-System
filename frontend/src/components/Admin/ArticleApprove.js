@@ -5,11 +5,11 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import {
-  denyInnovationAction,
+  denyArticleAction,
   setApprovedData
-} from '../../actions/innovationActions'
+} from '../../actions/articleActions'
 
-const InnovationApprove = () => {
+const ArticleApprove = () => {
     //deny innovation
     //  const dispatch = useDispatch();
     // useSelector((state) => state.innovationDeny);
@@ -26,8 +26,8 @@ const InnovationApprove = () => {
 	// 		}, 2000);
     // }
 
-     const innovationApproveOne = useSelector((state) => state.innovationSet);
-     const { loadings,updatedData,errors} = innovationApproveOne; 
+     const articleApproveOne = useSelector((state) => state.articleSet);
+     const { loadings,updatedData,errors} = articleApproveOne; 
 
      const [approvedData, setApprovedData] = useState([]);
 
@@ -37,7 +37,7 @@ const InnovationApprove = () => {
 
   const fetchApprovedData = async () => {
     try {
-      const response = await axios.get('/api/innovation/list');
+      const response = await axios.get('/api/article/list');
       const data = response.data;
       setApprovedData(data);
     } catch (error) {
@@ -45,15 +45,15 @@ const InnovationApprove = () => {
     }
   };
 
-  const [approvedInnovations, setApprovedInnovations] = useState([]);
+  const [approvedArticles, setapprovedArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-  const fetchApprovedInnovations = async () => {
+  const fetchApprovedArticles = async () => {
     try {
-      const response = await fetch('/api/innovation/approved');
+      const response = await fetch('/api/article/approved');
       const data = await response.json();
-      setApprovedInnovations(data.approvedInnovations);
+      setapprovedArticles(data.approvedArticles);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -62,24 +62,26 @@ const InnovationApprove = () => {
     }
   };
 
-  fetchApprovedInnovations();
+  fetchApprovedArticles();
 }, []);
 
   return (
+
+  
+
     <div className="admin-dashboard">
        <Sidebar />
+
           <div className="admin-content">
 
             
         <div className="admin-header">
-          <h1>All Approved Innovations</h1>
+          <h1>All Approved Articles</h1>
         </div>
        
         <div className="admin-content-area" >
           <div className="content-box" style={{backgroundColor:"#f5f5f0"}}>
             <p className="content-box-description">
-              You can delete or approve innovation submitions according to the 
-              suitable conditions
             </p>
 
             <table className="order-table">
@@ -94,12 +96,12 @@ const InnovationApprove = () => {
                 </tr>
               </thead>
               <tbody>
-              {approvedInnovations.map((innovation) => (
+              {approvedArticles.map((article) => (
                 <tr>
-                <td>{innovation.innovationType}</td>
+                <td>{article.articleType}</td>
                  <td>
                 <div className="user-actions">
-                  <button variant="outline-success" >Approve</button>
+                  <button variant="outline-success">Approve</button>
                   <button className="btn btn-danger">Deny</button>
                 </div>
               </td>
@@ -115,4 +117,4 @@ const InnovationApprove = () => {
   )
 }
 
-export default InnovationApprove
+export default ArticleApprove

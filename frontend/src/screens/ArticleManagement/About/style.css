@@ -1,0 +1,51 @@
+.container{
+    
+    width: 400px;
+    height: 600px;
+    margin-bottom: 25px;
+    padding: 5px;
+
+background: #F4F4F4;
+border-radius: 10px;
+
+}
+
+.articleCardFrame{
+    background: #F4F4F4;
+    margin-top: 70px;
+    border-radius: 10px;
+    display:grid;
+}
+
+
+.card-title{
+    font-weight: 700;
+}
+
+.cardview{
+        display:inline-flex;
+        width: 700px;
+        height: 400px;
+        background: #d2d1d18c;
+        margin: 50px;
+        padding: 5px;
+        margin-top: 90px;
+}
+
+.cardview:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-center{
+    width : 200px;
+    height: 150px;
+}
+
+.button{
+    padding: 5px;
+}
+
+.button:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+

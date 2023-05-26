@@ -3,6 +3,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import {  listSupportInnoation } from '../../actions/innovationSupportAction'
 import { Card } from 'react-bootstrap';
 import Sidebar from '../Admin/Sidebar';
+
 const InnovationSupportReportList = React.forwardRef((props, ref) => {
 
  const dispatch = useDispatch();
@@ -43,9 +44,6 @@ const InnovationSupportReportList = React.forwardRef((props, ref) => {
                   <td>{innovationSup.suppotorEmail}</td>
                   <td>{innovationSup.supportorPhone}</td>
                   <td>{innovationSup.price}</td>
-                 
-          
-              
                 </tr>
                     ))
       }
