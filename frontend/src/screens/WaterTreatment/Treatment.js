@@ -19,8 +19,8 @@ function Treatment() {
           <br /> & water quality monitoring solutions since 1995.
         </p>
       </div>
-      <div class="container">
-        <div class="description description-1">
+      <div class="container12">
+        <div class="description12 description-1">
           <h2>What is Wastewater Treatment?</h2>
           <p>
             Wastewater treatment is the process of removing contaminants from
@@ -31,7 +31,7 @@ function Treatment() {
             requirements.
           </p>
         </div>
-        <div class="description description-2">
+        <div class="description12 description-2">
           <h2>What is Water Quality Monitoring?</h2>
           <p>
             Water quality monitoring is the process of analyzing water to detect

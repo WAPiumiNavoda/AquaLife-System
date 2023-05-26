@@ -9,25 +9,24 @@ import {
   //userUpdateReducer,
 } from "./reducers/userReducers";
 
-
 //Article Reducers
-import {articleListReducer, 
-        articleCreateReducer,
-        articleOneReducer,
-        ArticleAcceptReducer,
-        ArticleApproveListReducer,
-        ArticleDenyReducer
-      }  from './reducers/articleReducers';
+import {
+  articleListReducer,
+  articleCreateReducer,
+  articleOneReducer,
+  ArticleAcceptReducer,
+  ArticleApproveListReducer,
+  ArticleDenyReducer,
+} from "./reducers/articleReducers";
 
-
-import {InnovationCreateReducer,
-        innovationListReducer,
-        innovationOneReducer,
-        InnovationAcceptReducer, 
-        InnovationApproveListReducer,
-        InnovationDenyReducer} from './reducers/innovationReducers';
-
-
+import {
+  InnovationCreateReducer,
+  innovationListReducer,
+  innovationOneReducer,
+  InnovationAcceptReducer,
+  InnovationApproveListReducer,
+  InnovationDenyReducer,
+} from "./reducers/innovationReducers";
 
 import {
   InnovationSupportCreateReducer,
@@ -39,16 +38,20 @@ import {
   qualityOneReducer,
 } from "./reducers/qualityTestReducers";
 
-
-
 import {
   ProjectCreateReducer,
   ProjectListReducer,
   ProjectUpdateReducer,
-  ProjectDeleteReducer
+  ProjectDeleteReducer,
 } from "./reducers/projectReducers";
 
-
+import {
+  ProductCreateReducer,
+  productDeleteReducer,
+  productListReducer,
+  productOneReducer,
+  productUpdateReducer,
+} from "./reducers/productReducers";
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -60,19 +63,24 @@ const reducer = combineReducers({
   innovationSupportList: InnovationSupportListReducer,
   articleList: articleListReducer,
   //articleOne :  articleOneReducer,
-  articleCreate : articleCreateReducer,
-  articleApproveList : ArticleApproveListReducer,
-  articleAccept : ArticleAcceptReducer,
-  articleDeny : ArticleDenyReducer,
+  articleCreate: articleCreateReducer,
+  articleApproveList: ArticleApproveListReducer,
+  articleAccept: ArticleAcceptReducer,
+  articleDeny: ArticleDenyReducer,
   projectCreate: ProjectCreateReducer,
-  projectList:ProjectListReducer,
+  projectList: ProjectListReducer,
   innovationApprove: InnovationAcceptReducer,
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
-  projectUpdate:ProjectUpdateReducer,
-  projectDelete:ProjectDeleteReducer
+  projectUpdate: ProjectUpdateReducer,
+  projectDelete: ProjectDeleteReducer,
+  productList: productListReducer,
+  productOne: productOneReducer,
+  productCreate: ProductCreateReducer,
+  productUpdate: productUpdateReducer,
+  productDelete: productDeleteReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

@@ -133,7 +133,6 @@ export const createQualityAction =
   };
 
 //delete
-
 export const deleteQuality = (id) => async (dispatch) => {
   try {
     dispatch({ type: QUALITY_DELETE_REQUEST });

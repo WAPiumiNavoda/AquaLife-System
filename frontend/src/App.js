@@ -32,13 +32,16 @@ import InnovationSupportReport from "./components/Report/InnovationSupportReport
 import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
 import ProjectListByAdmin from "./components/Admin/project/ProjectList";
 import ProjectUpdate from "./components/Admin/project/ProjectUpdate";
-import Product from "./screens/WaterTreatment/Products";
+import Machine from "./screens/WaterTreatment/Products";
 import Maintenance from "./screens/WaterTreatment/Maintenance";
 import QualityAdmin from "./components/Admin/AllQualityTests";
+import Product from "./components/Admin/Product";
+import ProductAdmin from "./components/Admin/ProductAdmin";
+import ProductUpdate from "./components/Admin/ProductUpdate";
+import OneProduct from "./screens/WaterTreatment/OneProduct";
 
 const App = () => {
-  const hideHeaderFooterRoutes =
-  [
+  const hideHeaderFooterRoutes = [
     "/dashboard",
     "/innovationAdmin",
     "/innovationSupAdmin",
@@ -46,6 +49,8 @@ const App = () => {
     "/allquality",
     "/admin-createProject",
     "/projectList",
+    "/product",
+    "/allproduct",
   ];
 
   const shouldHideHeaderFooter = () =>
@@ -125,9 +130,13 @@ const App = () => {
           <Route path="/services" element={<Treatment />} />
           <Route path="/quality" element={<Quality />} />
           <Route path="/quality/:id" element={<QualityDetails />} />
-          <Route path="/machines" element={<Product />} />
+          <Route path="/machines" element={<Machine />} />
           <Route path="/maintenance" element={<Maintenance />} />
           <Route path="/allquality" element={<QualityAdmin />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/allproduct" element={<ProductAdmin />} />
+          <Route path="/product/:id" element={<ProductUpdate />} />
+          <Route path="/oneProduct/:id" element={<OneProduct />} />
         </Routes>
       </main>
       {!shouldHideHeaderFooter() && <Footer />}

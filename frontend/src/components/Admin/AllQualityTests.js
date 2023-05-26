@@ -105,10 +105,10 @@ const QualityAdmin = () => {
                     <td>{quality.district}</td>
                     <td className="user-actions">
                       <Link to={`/quality/${quality._id}`}>
-                        <button className="btn btn-primary">View</button>
+                        <button class="btn btn-outline-primary">View</button>
                       </Link>
                       <button
-                        className="btn btn-danger"
+                        class="btn btn-outline-danger"
                         onClick={() => handleDelete(quality._id)}
                       >
                         Delete

@@ -10,9 +10,9 @@ const submitInnovations = require("./routes/submitInnovationRoutes");
 const supportInnovation = require("./routes/supportInnovationRoutes");
 const videoSubmit = require("./routes/videoRoutes");
 const qualityTest = require("./routes/qualityTestRoutes");
-const article = require("./routes/articleRoutes")
+const article = require("./routes/articleRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-
+const products = require("./routes/productRoutes");
 
 dotenv.config();
 connectDB();
@@ -29,8 +29,8 @@ app.use("/user", userRoutes);
 app.use("/video", videoSubmit);
 // app.use("/supportInnovation", supportInnovation);
 app.use("/qualityTest", qualityTest);
-app.use("/article",article);
-
+app.use("/article", article);
+app.use("/product", products);
 
 app.use(notFound);
 app.use(errorHandler);
