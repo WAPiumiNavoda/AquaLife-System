@@ -9,6 +9,7 @@ import {
 } from '../../actions/innovationActions';
 import  { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import swal from "sweetalert";
 
 const InnovationAdmin = () => {
 
@@ -39,7 +40,13 @@ const InnovationAdmin = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+         swal({
+			title: "Success !!!",
+			text: "Innovation details approved",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
         },
         (error) => {
           console.log(error.text);
@@ -58,7 +65,13 @@ const InnovationAdmin = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+            swal({
+			title: "Success !!!",
+			text: "Innovation details deny",
+		  icon: 'warning',
+			timer: 2000,
+			button: false,
+		});
         },
         (error) => {
           console.log(error.text);

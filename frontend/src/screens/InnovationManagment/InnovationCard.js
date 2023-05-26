@@ -35,8 +35,8 @@ const InnovationCard = ({history,search,props}) => {
 <div>
    {
       innovation?.reverse().map((innovation,index)=>(  
-    <Row className='m-5 shadow p-3 mb-5 bg-body bg-light rounded' style={{width:"1450px"}}>
-        <Col className='px-5 '>
+    <Row className='m-5 shadow p-3  mb-5 bg-body bg-light rounded' style={{width:"1450px"}}>
+        <Col className='pb-5'>
            <p className='pt-3 mx-5 text-center' style={{fontSize:'30px'}}>New Innovation : {innovation.innovationType}</p>
            <p className='pt-0 mx-5' style={{fontSize:'20px'}}>{innovation.innovationTitle}</p>
            <p className='pt-0 mx-5' style={{fontSize:'15px'}}>The advertisers and user guarantees that his or her Content do

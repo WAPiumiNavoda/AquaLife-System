@@ -4,7 +4,7 @@ const InnovationInstructions = () => {
   return (
     <div>
         <h1 style={{textAlign: "center", color:"#1D267D"}}> The Selection Process</h1>
-          <div class="container p-1">
+          <div class="container11 p-1">
       <div class="row">
       <div class="col-md-6">
         <h2 className='px-5'

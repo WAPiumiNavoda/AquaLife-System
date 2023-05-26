@@ -82,7 +82,7 @@ const InnovationForm = () => {
   return (
     <>
        <h1 style={{textAlign: "center", color:"#1D267D"}}>Submit Your Innovation Request</h1>
-    <div class="container p-1">
+    <div class="container22 p-1">
       <div class="row">
       <div class="col-md-6">
       <img src="https://i.ibb.co/VwQGYCB/depositphotos-18685161-stock-photo-evolution-of-an-idea.webp"
@@ -152,9 +152,6 @@ const InnovationForm = () => {
 
             <Button type="submit" variant="primary" className="my-4">
             Create Product
-            </Button>
-            <Button className="mx-5"  variant="danger">
-            Reset Feilds
             </Button>
         </Form>
     </div>
