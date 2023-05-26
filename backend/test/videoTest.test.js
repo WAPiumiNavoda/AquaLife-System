@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { createVideo } = require("../controllers/videoController");
 
-describe("Testing the project routes", () => {
+describe("Testing the Video routes", () => {
 	it("Create Video Test", async () => {
 		const returnedProject = createVideo({
 			videoCategory: "test category",
