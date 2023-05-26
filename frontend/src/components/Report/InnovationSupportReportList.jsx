@@ -21,11 +21,11 @@ const InnovationSupportReportList = React.forwardRef((props, ref) => {
        
           <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginLeft:"100px"}}>All Suppotors Report</h1>
+          <h1 style={{marginTop:'70px', marginLeft:"400px"}}>All Suppotors Report</h1>
         </div>
 
           <div className="content-box"
-           style={{backgroundColor:"#f5f5f0",width:"900px", marginLeft:"100px"}}>
+           style={{backgroundColor:"#f5f5f0",width:"900px", marginLeft:"200px"}}>
            
             <table ref={ref} className="order-table">
               <thead>
