@@ -53,7 +53,7 @@ const App = () => {
     "/allquality",
     "/admin-createProject",
     "/projectList",
-    "/laborListForAdmin"
+    "/laborListForAdmin",
     "/product",
     "/allproduct",
   ];
