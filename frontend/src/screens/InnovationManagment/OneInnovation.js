@@ -24,7 +24,7 @@ const OneInnovation = ({ match,props }) => {
   //get one innoation
   useEffect(() => {
     const fetching = async () => {
-      const { data } = await axios.get(`http://localhost:5000/innovation/${id}`);
+      const { data } = await axios.get(`http://localhost:5000/user/innovation/${id}`);
 
     setinnovationType(data.innovationType);
     setinnovationTitle(data.innovationTitle);
