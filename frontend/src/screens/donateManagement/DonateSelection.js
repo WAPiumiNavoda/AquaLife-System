@@ -31,7 +31,7 @@ const Dashboard = ({ history }) => {
           <div className="intro-text">
             <h1 style={{ fontSize: 24, marginBottom: 40 }}>You can Donate payement method or labour</h1>
             <div>
-              <Link to="/donate" style={{ textDecoration: "none", marginBottom: 20 }}>
+              <Link to="/payment" style={{ textDecoration: "none", marginBottom: 20 }}>
                 <Button
                   variant="success"
                   size="lg"
