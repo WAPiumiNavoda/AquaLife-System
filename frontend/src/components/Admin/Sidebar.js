@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 
-
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -13,8 +12,8 @@ const Sidebar = () => {
       <div className="sidebar-nav">
         <ul className="sidebar-links">
           <li>
-            <NavLink to="/" exact activeClassName="active-link">
-              <i className="fa fa-home" aria-hidden="true"></i> Users
+            <NavLink to="/allproduct" exact activeClassName="active-link">
+              <i className="fa fa-home" aria-hidden="true"></i> Products
             </NavLink>
           </li>
           <li>
@@ -43,28 +42,29 @@ const Sidebar = () => {
             <NavLink to="/videoAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Videos
             </NavLink>
-           </li>
+          </li>
 
           <li>
             <NavLink to="/" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Educational
-           </NavLink>
-         </li>
-           
+            </NavLink>
+          </li>
+
           <li>
             <NavLink to="/admin-createProject" activeClassName="active-link">
-              <i className="fa fa-envelope" aria-hidden="true"></i> projectManagement
-           </NavLink>
-           </li>
-           <li>
+              <i className="fa fa-envelope" aria-hidden="true"></i>{" "}
+              projectManagement
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/articleAdmin" activeClassName="active-link">
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
-           </NavLink>
+            </NavLink>
           </li>
-           <li>
+          <li>
             <NavLink to="/innovationReport" activeClassName="active-link">
               <i className="fa fa-download" aria-hidden="true"></i> Report
-           </NavLink>
+            </NavLink>
           </li>
         </ul>
       </div>
