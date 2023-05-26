@@ -19,10 +19,7 @@ const ProjectView = ({history,search,props}) => {
          dispatch(listProjects())
        }, [dispatch])
    
-    // project?.map((data) =>{
-    //     console.log("checkedMapData",data)
-    // })   
-   
+    
     return (
       
         <>
@@ -48,7 +45,7 @@ const ProjectView = ({history,search,props}) => {
                 <p className="card-text">{p.price}</p>
                
               </div>
-              <a href="/selection/${p.id}" className="btn btn-primary">Donate</a>
+              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"10px",fontSize:"20px"}}>Donate</a>
             </div>
           </div>
         ))

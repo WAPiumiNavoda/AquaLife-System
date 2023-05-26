@@ -46,6 +46,7 @@ import LaborUpdate from "./screens/donateManagement/UpdateLabor";
 import ProjectListReport from "./components/Report/ProjectListReport";
 import ProjectList from "./components/Report/projectList";
 import ProjectReport from "./components/Report/ProjectListReport";
+import PaymentListForAdmin from "./components/Admin/donate/PaymentListForAdmin";
 
 
 const App = () => {
@@ -60,6 +61,7 @@ const App = () => {
     "/laborListForAdmin",
     "/product",
     "/allproduct",
+    "/paymentList"
 
   ];
 
@@ -101,11 +103,12 @@ const App = () => {
           <Route path = "/createLabour" element={<LabourCreate/>}/>
           <Route path = "/laborList" element={<LaborList/>}/>
           <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
-       {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
+          <Route path = "/payment" element={<PaymentForm/>}/>
           <Route path="/selection" element={<Dashboard />} />
           <Route path="/labor/:id" element={<LaborUpdate/>} />
-          {/* <Route path="/projectReport" element={<ProjectList/>}/>
-          <Route path="/reportProject" elemennt={<ProjectReport/>}/> */}
+          <Route path="/projectReport" element={<ProjectList/>}/>
+          <Route path="/reportProject" element={<ProjectReport/>}/>
+          <Route path ="/paymentList" element={<PaymentListForAdmin/>}/>
          
 
           {/* Admin */}

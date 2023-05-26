@@ -10,8 +10,13 @@ import {
 	DONATELABOR_UPDATE_FAIL,
 	DONATELABOR_DELETE_REQUEST,
 	DONATELABOR_DELETE_SUCCESS,
-	DONATELABOR_DELETE_FAIL
-
+	DONATELABOR_DELETE_FAIL,
+	DONATEPAYMENT_LIST_FAIL,
+	DONATEPAYMENT_LIST_REQUEST,
+	DONATEPAYMENT_LIST_SUCCESS,
+	DONATEPAYMENT_CREATE_REQUEST,
+    DONATEPAYMENT_CREATE_SUCCESS,
+    DONATEPAYMENT_CREATE_FAIL,
 } from "../constants/donateConstants";
 import axios from "axios";
 import swal from "sweetalert";
@@ -46,18 +51,6 @@ export const createLabors = ( name,email,userName,availableDate,country,phone) =
 	  dispatch({
 		type: DONATELABOR_CREATE_REQUEST,
 	  });
-  
-	//   const {
-	//     userLogin: { userInfo },
-	//   } = getState();
-	  
-  
-	//   const config = {
-	//     headers: {
-	//       "Content-Type": "application/json",
-	//       Authorization: `Bearer ${userInfo.token}`,
-	//     },
-	//   };
   
 	  const { data } = await axios.post(
 		`http://localhost:5000/user/laborCreate`,
@@ -142,6 +135,69 @@ export const laborDelete = (id) => async (dispatch, getState) => {
 		});
 	}
 };
+
+
+export const listDonatePayment = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: DONATEPAYMENT_LIST_REQUEST,
+		});
+
+		const { data } = await axios.get(`http://localhost:5000/user/getdonates`);
+		console.log("Checked2data",data)
+
+		dispatch({
+			type: DONATEPAYMENT_LIST_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		dispatch({
+			type: DONATEPAYMENT_LIST_FAIL,
+			payload: message,
+		});
+	}
+};
+
+export const createPayement = ( email,cardNumber,date,cvc,donatePrice,cardName,country) => async (
+	dispatch,
+	getState
+  ) => {
+	try {
+	  dispatch({
+		type: DONATEPAYMENT_CREATE_REQUEST,
+	  });
+  
+	  const { data } = await axios.post(
+		`http://localhost:5000/user/donateCreate`,
+		{ email,cardNumber,date,cvc,donatePrice,cardName,country}
+		
+	  );
+	  console.log("data",data)
+	  swal({
+        title: "Success !!!",
+        text: "Your Details added successfully.",
+        icon: "success",
+        timer: 2000,
+        button: false,
+      });
+  
+	  dispatch({
+		type:   DONATEPAYMENT_CREATE_SUCCESS,
+		payload: data,
+	  });
+	} catch (error) {
+	  const message =
+		error.response && error.response.data.message
+		  ? error.response.data.message
+		  : error.message;
+	  dispatch({
+		type:  DONATEPAYMENT_CREATE_FAIL,
+		payload: message,
+	  });
+	}
+  };
+
 
 
 

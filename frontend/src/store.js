@@ -49,7 +49,8 @@ import {
   DonateCreateReducer,
   DonateListReducer,
   DonateDeleteReducer,
-  DonateUpdateReducer
+  DonateUpdateReducer,
+  PaymentDonateListReducer
 } from "./reducers/donateReducers";
 
 import {
@@ -91,6 +92,8 @@ const reducer = combineReducers({
   laborList:DonateListReducer,
   laborDelete:DonateDeleteReducer,
   laborUpdate:DonateUpdateReducer,
+  paymentCreate:DonateCreateReducer,
+  paymentList:PaymentDonateListReducer,
   
   
   productList: productListReducer,
