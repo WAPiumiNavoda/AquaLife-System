@@ -121,6 +121,7 @@ export const createProductAction =
     }
   };
 
+//update
 export const updateProductAction =
   (id, productName, productDes, productCap, productPrice, productImage) =>
   async (dispatch, getState) => {

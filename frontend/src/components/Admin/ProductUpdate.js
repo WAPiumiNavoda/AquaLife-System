@@ -10,6 +10,8 @@ import {
   updateProductAction,
 } from "../../actions/productActions";
 import { useParams, useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
+
 const ProductUpdate = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -87,119 +89,84 @@ const ProductUpdate = () => {
   };
 
   return (
-    <>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div style={{ display: "flex" }}>
+      <Sidebar />
+      <div style={{ marginLeft: "120px" }}>
+        <h1
+          style={{ textAlign: "center", color: "#1D267D", marginTop: "20px" }}
+        >
+          Update Product
+        </h1>
+        <div class="container p-1" style={{ width: "800px", height: "500px" }}>
+          <div class="row">
+            <div class="col-md-6">
+              <Form onSubmit={handleUpdate}>
+                <Form.Group controlId="title">
+                  <Form.Label>Product Name</Form.Label>
+                  <Form.Control
+                    type="title"
+                    value={productName}
+                    onChange={(e) => setProductName(e.target.value)}
+                    required
+                  />
+                </Form.Group>
 
-      <h2
-        style={{
-          textAlign: "center",
-          marginTop: "-60px",
-          fontFamily: "poppins",
-          fontSize: "55px",
-        }}
-      >
-        UPDATE PRODUCT DETAILS
-      </h2>
-      <Card
-        style={{
-          borderRadius: 80,
-          borderWidth: 7.0,
-          marginTop: 50,
-          paddingInline: 10,
-          background: "rgba(231, 238, 238, 0.8)",
-          marginLeft: "22%",
-          marginRight: "20%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh",
-          minWidth: "120vh",
-          width: 800,
-          Height: 400,
-        }}
-      >
-        <br />
-        <div>
-          {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-          {loading && <Loading />}
+                <Form.Group controlId="title">
+                  <Form.Label>Product Description</Form.Label>
+                  <Form.Control
+                    type="title"
+                    value={productDes}
+                    onChange={(e) => setProductDes(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="title">
+                  <Form.Label>Product Capacity</Form.Label>
+                  <Form.Control
+                    type="title"
+                    value={productCap}
+                    onChange={(e) => setProductCap(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="title">
+                  <Form.Label>Product Price</Form.Label>
+                  <Form.Control
+                    type="title"
+                    value={productPrice}
+                    onChange={(e) => setProductPrice(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+
+                {picMessage && (
+                  <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
+                )}
+                <Form.Group controlId="pic">
+                  <Form.Label>Product Images</Form.Label>
+                  <Form.Control
+                    id="custom-file"
+                    type="file"
+                    onChange={(e) => {
+                      const file = e.target.files[0];
+                      setUploadedImage(file);
+                      postDetails(file);
+                    }}
+                    custom
+                  />
+                </Form.Group>
+
+                <Button type="submit" variant="primary" className="my-4">
+                  Update
+                </Button>
+              </Form>
+            </div>
+          </div>
         </div>
-        <br />
-
-        <Form onSubmit={handleUpdate}>
-          <Form.Group controlId="pic">
-            <Form.Label>Product Image</Form.Label>
-            <Form.Control
-              type="file"
-              label="Upload Product Picture"
-              onChange={(e) => {
-                const file = e.target.files[0];
-                setUploadedImage(file);
-                postDetails(file);
-              }}
-              custom
-            />
-          </Form.Group>
-
-          <Form.Group controlId="price">
-            <Form.Label>Product Name</Form.Label>
-            <Form.Control
-              type="text"
-              value={productName}
-              placeholder="Enter Product Name"
-              onChange={(e) => setProductName(e.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group controlId="description">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              as="textarea"
-              placeholder="Enter Project Description"
-              value={productDes}
-              onChange={(e) => setProductDes(e.target.value)}
-              style={{ height: 100 }}
-            />
-          </Form.Group>
-
-          <Form.Group controlId="price">
-            <Form.Label>Capacity</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter the Project value"
-              value={productCap}
-              onChange={(e) => setProductCap(e.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group controlId="price">
-            <Form.Label>Price</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter the Project value"
-              value={productPrice}
-              onChange={(e) => setProductPrice(e.target.value)}
-            />
-          </Form.Group>
-
-          <Button
-            variant="primary"
-            type="submit"
-            style={{ fontSize: 20, marginTop: 10 }}
-          >
-            Update
-          </Button>
-        </Form>
-
-        <br />
-      </Card>
-      <br />
-      <br />
-    </>
+      </div>
+    </div>
   );
 };
 

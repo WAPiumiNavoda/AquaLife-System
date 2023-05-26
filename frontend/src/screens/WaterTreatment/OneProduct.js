@@ -41,8 +41,8 @@ const OneProduct = ({ match, props }) => {
         </p>
       </div>
 
-      <div className="product-details">
-        <div className="product-image">
+      <div className="product-details99">
+        <div className="product-image99">
           <img src={productImage} alt="Product" />
           <div className="call-now">
             <h3>
@@ -51,26 +51,26 @@ const OneProduct = ({ match, props }) => {
             <p>+94 77 92 84 961</p>
           </div>
         </div>
-        <div className="product-info">
+        <div className="product-info99">
           <h2>{productName}</h2>
-          <div className="product-attributes">
-            <div className="attribute">
+          <div className="product-attributes99">
+            <div className="attribute99">
               <h4>Price</h4>
               <h5> USD {productPrice}</h5>
             </div>
-            <div className="attribute">
+            <div className="attribute99">
               <h4>Capacity</h4>
               <h5>{productCap} L</h5>
             </div>
           </div>
           <h3>About Product</h3>
-          <hr className="horizontal-line" />
+          <hr className="horizontal-line99" />
           <p>{productDes}</p>
 
-          <div className="feature">
+          <div className="feature99">
             <h3>Product Features</h3>
-            <div className="feature-columns">
-              <div className="feature-column">
+            <div className="feature99-columns">
+              <div className="feature99-column">
                 <img src={img1} alt="Feature 1" />
                 <h5>MOISTURE REDUCTION</h5>
                 <p>
@@ -78,12 +78,12 @@ const OneProduct = ({ match, props }) => {
                   cone (improved dehydration)
                 </p>
               </div>
-              <div className="feature-column">
+              <div className="feature99-column">
                 <img src={img2} alt="Feature 2" />
                 <h5>SAND FILTRATION</h5>
                 <p>Sand filtration using appropriate cyclone</p>
               </div>
-              <div className="feature-column">
+              <div className="feature99-column">
                 <img src={img3} alt="Feature 3" />
                 <h5>FINE FILTRATION</h5>
                 <p>Fine adulteration filtration using wedge bar drum filter</p>
