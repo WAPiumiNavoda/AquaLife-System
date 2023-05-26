@@ -57,6 +57,8 @@ const ProjectUpdate = () => {
     };
   
     dispatch(updateProjectAction(id, updatedProject));
+    console.log("updatedProject",updatedProject)
+
   };
   
   const postDetails = (pics) => {
@@ -85,95 +87,105 @@ const ProjectUpdate = () => {
   };
 
   return (
-    <><br /><br /><br /><br/><br/><br/>
+    <div className="backgroundU">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+  
+      <h2 style={{ textAlign: "center", marginTop: "-60px", fontFamily: "poppins", fontSize: "55px" }}>UPDATE PROJECT DETAILS</h2>
+      
+      <Link to="/projectList" className="btn btn-success ml-9 my-4 custom-button" style={{ fontSize:'18px', marginLeft:"90px", backgroundColor: 'green', height: '40px'}}>
+        Back
+    </Link>
 
-    <h2 style={{ textAlign: "center", marginTop: "-60px", fontFamily: "poppins", fontSize: "55px" }}>UPDATE PROJECT DETAILS</h2>
-    <Card
-              style={{
-                  borderRadius: 80,
-                  borderWidth: 7.0,
-                  marginTop: 50,
-                  paddingInline: 10,
-                  background: "rgba(231, 238, 238, 0.8)",
-                  marginLeft: "22%",
-                  marginRight: "20%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  minHeight: "100vh",
-                  minWidth: "120vh",
-                  width: 800,
-                  Height: 400
+      <Card
+        style={{
+          borderRadius: 80,
+          borderWidth: 7.0,
+          marginTop: -30,
+          paddingInline: 10,
+          background: "rgba(231, 238, 238, 0.8)",
+          marginLeft: "22%",
+          marginRight: "20%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100vh",
+          minWidth: "120vh",
+          width: 800,
+          Height: 400
+        }}
+      >
+        <Form onSubmit={updateHandler}>
+          <Form.Group controlId="pic">
+            <Form.Label>Project Image</Form.Label>
+            <Form.Control
+              type="file"
+              label="Upload Project Picture"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                setUploadedImage(file);
+                postDetails(file);
               }}
-          >
-
-              <br />
-              <div>
-                  {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-                  {loading && <Loading />}
-              </div>
-              <br />
-
-            
-
-              <Form onSubmit={updateHandler}>
-
-                  <Form.Group controlId="pic">
-                      <Form.Label>Project Image</Form.Label>
-                      <Form.Control
-                          type="file"
-                          label="Upload Project Picture"
-                          onChange={(e) => {
-                              const file = e.target.files[0];
-                              setUploadedImage(file);
-                              postDetails(file);
-                          } }
-                          custom />
-                  </Form.Group>
-
-                  <Form.Group controlId="title">
-                      <Form.Label>Project Title</Form.Label>
-                      <Form.Control
-                          type="title"
-                          value={name}
-                          placeholder="Enter Project Title"
-                          onChange={(e) => setName(e.target.value)} style={{ height: 45,width:'670px', fontSize: 18 }} />
-                  </Form.Group>
-
-                  <Form.Group controlId="description">
-                      <Form.Label>Description</Form.Label>
-                      <Form.Control
-                          as="textarea"
-                          placeholder="Enter Project Description"
-                          value={description}
-                          onChange={(e) => setDescription(e.target.value)}style={{ height: 100 }} />
-                  </Form.Group>
-
-                  <Form.Group controlId="price">
-                      <Form.Label>Price</Form.Label>
-                      <Form.Control
-                          type="text"
-                          placeholder="Enter the Project value"
-                          value={price}
-                          onChange={(e) => setPrice(e.target.value)} />
-                  </Form.Group>
-
-                  <Button variant="primary" type="submit" style={{ fontSize: 20, marginTop: 10 }}>
-                      Update
-                  </Button>
-                  {'  '}
-                  <Button variant="danger" onClick={resetHandler} style={{ fontSize: 20, marginTop: 10 }}>
-                      Reset
-                  </Button>
-              </Form>
-
-              <br />
-
-          </Card>
-          <br />
-          <br />
-      </>        
+              custom
+            />
+          </Form.Group>
+  
+          <Form.Group controlId="title">
+            <Form.Label>Project Title</Form.Label>
+            <Form.Control
+              type="title"
+              value={name}
+              placeholder="Enter Project Title"
+              onChange={(e) => setName(e.target.value)}
+              style={{ width: "100%"}} // Maximize width
+            />
+          </Form.Group>
+  
+          <Form.Group controlId="description">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as="textarea"
+              placeholder="Enter Project Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              style={{ width: "800px", height: "200px" }} // Maximize width and height
+            />
+          </Form.Group>
+  
+          <Form.Group controlId="price">
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter the Project value"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              style={{ width: "100%" }} // Maximize width
+            />
+          </Form.Group>
+  
+          {picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
+  
+          <Button variant="primary" type="submit" style={{ fontSize: 20, marginTop: 10 }}>
+            Update
+          </Button>
+          {"  "}
+          <Button variant="danger" onClick={resetHandler} style={{ fontSize: 20, marginTop: 10,marginLeft:50 }}>
+            Reset
+          </Button>
+        </Form>
+  
+        <br />
+      </Card>
+      <br />
+      <br />
+    </div>
+  
   );
+  
   
 };
 
