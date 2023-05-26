@@ -46,12 +46,19 @@ import {
 } from "./reducers/projectReducers";
 
 import {
+  DonateCreateReducer,
+  DonateListReducer,
+  DonateDeleteReducer
+} from "./reducers/donateReducers";
+
+import {
   ProductCreateReducer,
   productDeleteReducer,
   productListReducer,
   productOneReducer,
   productUpdateReducer,
 } from "./reducers/productReducers";
+
 
 const reducer = combineReducers({
   user_Login: userLoginReducer,
@@ -68,14 +75,21 @@ const reducer = combineReducers({
   articleAccept: ArticleAcceptReducer,
   articleDeny: ArticleDenyReducer,
   projectCreate: ProjectCreateReducer,
-  projectList: ProjectListReducer,
+
+  projectList:ProjectListReducer,
+  projectUpdate:ProjectUpdateReducer,
+  projectDelete:ProjectDeleteReducer,
+
   innovationApprove: InnovationAcceptReducer,
   innovationDeny: InnovationDenyReducer,
   innovationSet: InnovationApproveListReducer,
   qualityList: qualityListReducer,
   qualityOne: qualityOneReducer,
-  projectUpdate: ProjectUpdateReducer,
-  projectDelete: ProjectDeleteReducer,
+  laborCreate: DonateCreateReducer,
+  laborList:DonateListReducer,
+  laborDelete:DonateDeleteReducer,
+  
+  
   productList: productListReducer,
   productOne: productOneReducer,
   productCreate: ProductCreateReducer,

@@ -26,6 +26,7 @@ const {
       deleteInnovationSupport,
       updateSupport
        } = require('../controllers/supportInnovationController');
+const { createLabour, getLabor, getLaborById, updateLabor, deleteLabor } = require("../controllers/laborController");
 
 
 
@@ -44,6 +45,16 @@ router
 	.get(getDonateById)
 	.put(updateDonate)
 	.delete(deleteDonate);
+
+//Routes for user labor donate management Operations
+router.route("/laborCreate").post(createLabour );
+router.route("/getLabors").get(getLabor);
+router
+	.route("/getLabor/:id")
+	.get(getLaborById)
+	.put(updateLabor)
+	.delete(deleteLabor);
+
 
 //innovation user routes
 router.route('/innovation').get(getInnovation);

@@ -2,53 +2,44 @@ import React,{useState,useEffect} from 'react'
 import { Button, Card, Form } from "react-bootstrap";
 import ErrorMessage from '../../components/ErrorMessage';
 import { useDispatch, useSelector } from "react-redux";
-import { createProjects } from '../../actions/projectsActions';
 import "./Dashboard.css"
+import { createLabors } from '../../actions/donateActions';
+import Loading from "../../components/Loading";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 const LabourCreate = () => {
 
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [photo, setPhoto] = useState();
-  const [picMessage, setPicMessage] = useState(null);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [availableDate, setAvailableDate] = useState("");
+  const [country, setCountry] = useState("");
+  const [phone, setPhone] = useState("");
+  const [myArrayName, setMyArrayName] = useState([]);
 
-   
+  useEffect(() => {
+		const fetching = async () => {
+			const { data } = await axios.get(`http://localhost:5000/user/admin/getProjects`, {
+		
+			});
+			setMyArrayName(data);
+		};
+
+		fetching();
+	});
+
+ 
   const dispatch = useDispatch();
 
-  const projectCreate = useSelector((state) => state.projectCreate);
-  const { loading, project ,error} = projectCreate;
+  const laborCreate = useSelector((state) => state.laborCreate);
+  const { loading, project ,error} = laborCreate;
 
-  const postDetails = (pics) => {
-    if (!pics) {
-      return setPicMessage("Please Select an Image");
-    }
-    if (pics.type === "image/jpeg" || pics.type === "image/png" || pics.type === "image/jpg") {
-      const data = new FormData();
-      data.append("file", pics);
-      data.append("upload_preset", "LAYOUTindex");
-      data.append("cloud_name", "dknttakfo");
-      fetch("https://api.cloudinary.com/v1_1/dknttakfo/image/upload", {
-        method: "post",
-        body: data,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-        //   console.log(data);
-          setPhoto(data.url.toString());
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      return setPicMessage("Please Select an Image");
-    }
-  };
-
+ 
   //submit form
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(createProjects( name,description,price,photo ));
+    dispatch(createLabors( name,email,userName,availableDate,country,phone ));
   };
 
   return (
@@ -62,6 +53,12 @@ const LabourCreate = () => {
       </div>
 
           <div class="container p-5">
+
+          <div>
+              {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+              {loading && <Loading />}
+          </div>
+
               <div class="row">
                   <div class="col-md 5">
                       <img src="https://assets-news.housing.com/news/wp-content/uploads/2021/06/14175932/A-guide-to-water-conservation-methods-and-its-importance-FB-1200x700-compressed.jpg" alt="Image" class="img-fluid" />
@@ -69,62 +66,81 @@ const LabourCreate = () => {
                   <div class="col-md-6">
 
                       <Form onSubmit={submitHandler}>
+                     
+
+                    <Form.Group controlId="projects">
+                          <Form.Label>Select Project</Form.Label>
+                          <select
+                            style={{
+                              height: "30px",
+                              width: "100%",
+                              borderRadius: 5,
+                              borderColor: "#808080",
+                              borderWidth: 0.5,
+                            }}
+                            onChange={(e) => setName(e.target.value)}
+                          >
+                            <option value="Select">Select</option>
+                            {myArrayName.map((project) => (
+                              <option value={project.name}>{project.name}</option>
+                            ))}
+                          </select>
+                          </Form.Group>
+
+
                           <Form.Group controlId="title">
                               <Form.Label>Email</Form.Label>
                               <Form.Control
                                   type="email"
-                                  value={name}
-                                  placeholder="Enter Project Title"
-                                  onChange={(e) => setName(e.target.value)} />
+                                  value={email}
+                                  placeholder="Enter Your Email"
+                                  onChange={(e) => setEmail(e.target.value)} />
                           </Form.Group>
 
                           <Form.Group controlId="title">
-                              <Form.Label>Name</Form.Label>
+                              <Form.Label>User Name</Form.Label>
                               <Form.Control
-                                  type="name"
-                                  placeholder="Enter Project Description"
-                                  value={description}
-                                  onChange={(e) => setDescription(e.target.value)} />
+                                  type="text"
+                                  placeholder="Enter Your Name"
+                                  value={userName}
+                                  onChange={(e) => setUserName(e.target.value)} />
                           </Form.Group>
 
                           <Form.Group controlId="title">
-                              <Form.Label>Phone Number</Form.Label>
+                              <Form.Label>Avalable Date</Form.Label>
                               <Form.Control
-                                  type="number"
-                                  placeholder="Enter the Project value"
-                                  value={price}
-                                  onChange={(e) => setPrice(e.target.value)} />
-                          </Form.Group>
-
-                          {picMessage && (
-                              <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
-                          )}
-
-                          <Form.Group controlId="title">
-                              <Form.Label>Your Avalable Date</Form.Label>
-                              <Form.Control
-                                  type="Date"
-                                  placeholder="Enter the Project value"
-                                  value={price}
-                                  onChange={(e) => setPrice(e.target.value)} />
+                                  type="date"
+                                  placeholder="Enter the date"
+                                  value={availableDate}
+                                  onChange={(e) => setAvailableDate(e.target.value)} />
                           </Form.Group>
 
                           <Form.Group controlId="title">
                               <Form.Label>Country</Form.Label>
                               <Form.Control
-                                  type=""
-                                  placeholder="Enter the Project value"
-                                  value={price}
-                                  onChange={(e) => setPrice(e.target.value)} />
+                                  type="text"
+                                  placeholder="Enter the date"
+                                  value={country}
+                                  onChange={(e) => setCountry(e.target.value)} />
+                          </Form.Group>
+
+                         <Form.Group controlId="title">
+                              <Form.Label>Phone Number</Form.Label>
+                              <Form.Control
+                                  type="number"
+                                  placeholder="Enter the phone number"
+                                  value={phone}
+                                  onChange={(e) => setPhone(e.target.value)} />
                           </Form.Group>
 
 
                           <Button type="submit" variant="primary" className="my-4">
                               Submit
                           </Button>
-                          <Button className="mx-5" variant="danger">
-                              Reset Feilds
-                          </Button>
+                          <Link to="/laborList" className="btn btn-success ml-9 my-4 custom-button" style={{ fontSize:'18px', marginLeft:"30px", backgroundColor: 'green', height: '40px',width:'120px'}}>
+                              View List
+                         </Link>
+
                       </Form>
                   </div>
               </div>

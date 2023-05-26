@@ -32,6 +32,12 @@
     font-size: 16px;
   }
 
+  .backgroundU {
+    background: url("https://res.cloudinary.com/flocktogether/image/upload/v1685109513/nature-liquid-water-water-drops-wallpaper-preview_wll9hi.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
   
   
   

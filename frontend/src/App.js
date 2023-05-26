@@ -32,6 +32,9 @@ import InnovationSupportReport from "./components/Report/InnovationSupportReport
 import InnovationSupportHistory from "./screens/InnovationManagment/InnovationSupportHistory";
 import ProjectListByAdmin from "./components/Admin/project/ProjectList";
 import ProjectUpdate from "./components/Admin/project/ProjectUpdate";
+import PaymentForm from "./screens/donateManagement/Payment";
+import LaborList from "./screens/donateManagement/ViewLaborList";
+import LaborListForAdmin from "./components/Admin/donate/LaborListForAdmin";
 import Machine from "./screens/WaterTreatment/Products";
 import Maintenance from "./screens/WaterTreatment/Maintenance";
 import QualityAdmin from "./components/Admin/AllQualityTests";
@@ -39,6 +42,7 @@ import Product from "./components/Admin/Product";
 import ProductAdmin from "./components/Admin/ProductAdmin";
 import ProductUpdate from "./components/Admin/ProductUpdate";
 import OneProduct from "./screens/WaterTreatment/OneProduct";
+
 
 const App = () => {
   const hideHeaderFooterRoutes = [
@@ -49,6 +53,7 @@ const App = () => {
     "/allquality",
     "/admin-createProject",
     "/projectList",
+    "/laborListForAdmin"
     "/product",
     "/allproduct",
   ];
@@ -82,12 +87,18 @@ const App = () => {
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
-          <Route path="/selection" element={<Dashboard />} />
-          <Route path="/project/:id" element={<ProjectUpdate />} />
+          <Route path = "/selection/:id" element={<Dashboard/>}/>
+          <Route path = "/project/:id" element={<ProjectUpdate/>}/>
+          <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
+
 
           {/* Donate management */}
-          <Route path="/createLabour" element={<LabourCreate />} />
-          <Route path="/projectList" element={<ProjectListByAdmin />} />
+          <Route path = "/createLabour" element={<LabourCreate/>}/>
+          <Route path = "/laborList" element={<LaborList/>}/>
+          <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
+       {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
+          <Route path="/selection" element={<Dashboard />} />
+         
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />

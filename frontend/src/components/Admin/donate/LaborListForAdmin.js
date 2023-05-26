@@ -1,59 +1,27 @@
-import { projectDelete as deleteProject } from "../../../actions/projectsActions"; // Rename the imported action
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listProjects} from "../../../actions/projectsActions";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { Button, Form } from "react-bootstrap";
-import "./Project.css";
 import Sidebar from '../Sidebar';
+import { listDonateLabor } from "../../../actions/donateActions";
 
-const ProjectListByAdmin = () => {
+const LaborListForAdmin = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const projectList = useSelector((state) => state.projectList);
-  const { loading, project, error } = projectList;
+  const laborList = useSelector((state) => state.laborList);
+  const { loading, labor, error } = laborList;
 
-  const projectDeleteState = useSelector((state) => state.projectDelete);
-  const { success: successDelete } = projectDeleteState;
 
   useEffect(() => {
-    dispatch(listProjects());
-  }, [dispatch, successDelete]);
+    dispatch(listDonateLabor());
+  }, [dispatch]);
 
-  const deleteHandler = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover these details!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          dispatch(deleteProject(id));
-          swal({
-            title: "Success!",
-            text: "Deleted Successfully",
-            icon: "success",
-            timer: 2000,
-            button: false,
-          });
-        }
-      })
-      .catch((err) => {
-        swal({
-          title: "Error!",
-          text: "Couldn't Delete",
-          type: "error",
-        });
-      });
-  };
-
-  const filteredProjects = project && project.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+ 
+  const filteredLabor = labor && labor.filter(L => L.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div className="admin-dashboard">
@@ -61,7 +29,7 @@ const ProjectListByAdmin = () => {
 
       <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px",fontFamily:"poppins",fontSize:"50px" }}>Projects List</h1>
+          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px",fontFamily:"poppins",fontSize:"50px" }}>Human Labor List</h1>
         </div>
 
         <div className="search-bar">
@@ -82,20 +50,25 @@ const ProjectListByAdmin = () => {
           <table className="table table-bordered table-striped">
             <thead className="thead-dark">
               <tr>
-                <th>Project Image</th>
+                <th>Project Name</th>
+                <th>Email</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
+                <th>Available Date</th>
+                <th>Country</th>
+                <th>Contact Number</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {filteredProjects && filteredProjects.map((p) => (
-                <tr key={p.id}>
-                  <td><img src={p.photo} alt="Project" style={{ width: "150px", height: "150px" }} /></td>
-                  <td>{p.name}</td>
-                  <td>{p.description}</td>
-                  <td>{p.price}</td>
+              {filteredLabor && filteredLabor.map((L) => (
+                <tr key={L.id}>
+                  <td>{L.name}</td>
+                  <td>{L.email}</td>
+                  <td>{L.userName}</td>
+                  <td>{L.availableDate}</td>
+                  <td>{L.country}</td>
+                  <td>{L.phone}</td>
+               
                   <td>
                     <div className="d-flex">
                       <Button
@@ -105,17 +78,17 @@ const ProjectListByAdmin = () => {
                           fontSize: 18,
                           marginTop: 20,
                         }}
-                        href={`/project/${p._id}`}
+                        href={`/labor/${L._id}`}
                       >
-                        Edit
+                        Approve
                       </Button>
                       <Button
                         variant="danger"
                         className="mx-2"
                         style={{ marginLeft: 20, float: "left", fontSize: 18, marginTop: 20 }}
-                        onClick={() => deleteHandler(p._id)}
+                   
                       >
-                        Delete
+                        Reject
                       </Button>
                     </div>
                   </td>
@@ -129,6 +102,4 @@ const ProjectListByAdmin = () => {
   );
 };
 
-export default ProjectListByAdmin;
-
-
+export default LaborListForAdmin;
