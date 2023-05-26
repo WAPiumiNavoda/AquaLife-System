@@ -16,14 +16,14 @@ const handlePrint = useReactToPrint({
  return (
 
 
-<div style={{marginTop:'100px'}}>
+<div style={{marginTop:'10px'}}>
 <InnovationSupportReportList ref={componentRef} />
 <br></br>
 
 
  <br></br>
 <Button
- style={{ marginLeft: "80%",marginBottom:'100px', width: "15%", height: "20%", fontSize: 15 }}
+ style={{ marginLeft: "40%",marginBottom:'50px', width: "15%", height: "20%", fontSize: 15 }}
  onClick={handlePrint}
  variant="success"
 >
