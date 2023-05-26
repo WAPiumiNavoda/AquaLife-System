@@ -43,7 +43,6 @@ import ProductAdmin from "./components/Admin/ProductAdmin";
 import ProductUpdate from "./components/Admin/ProductUpdate";
 import OneProduct from "./screens/WaterTreatment/OneProduct";
 
-
 const App = () => {
   const hideHeaderFooterRoutes = [
     "/dashboard",
@@ -87,18 +86,16 @@ const App = () => {
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
-          <Route path = "/selection/:id" element={<Dashboard/>}/>
-          <Route path = "/project/:id" element={<ProjectUpdate/>}/>
-          <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
-
+          <Route path="/selection/:id" element={<Dashboard />} />
+          <Route path="/project/:id" element={<ProjectUpdate />} />
+          <Route path="/projectList" element={<ProjectListByAdmin />} />
 
           {/* Donate management */}
-          <Route path = "/createLabour" element={<LabourCreate/>}/>
-          <Route path = "/laborList" element={<LaborList/>}/>
-          <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
-       {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
+          <Route path="/createLabour" element={<LabourCreate />} />
+          <Route path="/laborList" element={<LaborList />} />
+          <Route path="/laborListForAdmin" element={<LaborListForAdmin />} />
+          {/* <Route path = "/payment" element={<PaymentForm/>}/> */}
           <Route path="/selection" element={<Dashboard />} />
-         
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />

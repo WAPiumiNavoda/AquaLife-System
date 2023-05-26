@@ -8,8 +8,8 @@ const ProductAdmin = () => {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, product, error } = productList;
-  const [ProductSearch, setSearch] = useState("");
-  const navigate = useNavigate(); // Add this line
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     dispatch(listProduct());
@@ -25,6 +25,12 @@ const ProductAdmin = () => {
     navigate(`/product/${id}`); // Navigate to ProductUpdate page
   };
 
+  const filteredProduct =
+    product &&
+    product.filter((item) => {
+      return item.productName.includes(searchTerm);
+    });
+
   return (
     <div className="admin-dashboard">
       <Sidebar />
@@ -39,8 +45,9 @@ const ProductAdmin = () => {
           placeholder="Search.."
           className="text111"
           name="search2"
+          value={searchTerm}
           onChange={(e) => {
-            setSearch(e.target.value);
+            setSearchTerm(e.target.value);
           }}
           style={{
             backgroundColor: "white",
@@ -83,56 +90,57 @@ const ProductAdmin = () => {
                 </tr>
               </thead>
               <tbody>
-                {product &&
-                  product
-                    .filter((val) => {
-                      if (ProductSearch === "") {
-                        return val;
-                      } else if (
-                        val.productName
-                          .toLowerCase()
-                          .includes(ProductSearch.toLowerCase())
-                      ) {
-                        return val;
-                      }
-                    })
-                    .map((product, index) => (
-                      <tr key={product._id}>
-                        <td>{product.productName}</td>
-                        <td>{product.productDes}</td>
-                        <td>{product.productCap}</td>
-                        <td>{product.productPrice}</td>
-                        <td>
-                          <img
-                            style={{
-                              objectFit: "cover",
-                              height: "40px",
-                              width: "60px",
-                            }}
-                            src={product.productImage}
-                            alt=""
-                          />
-                        </td>
-                        <td>
-                          <div className="user-actions">
-                            <button
-                              type="button"
-                              className="btn btn-outline-primary"
-                              onClick={() => handleUpdate(product._id)} // Pass product ID
-                            >
-                              Update
-                            </button>
-                            <button
-                              type="button"
-                              className="btn btn-outline-danger"
-                              onClick={() => handleDelete(product._id)}
-                            >
-                              Delete
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
+                {loading ? (
+                  <tr>
+                    <td colSpan="6">Loading...</td>
+                  </tr>
+                ) : error ? (
+                  <tr>
+                    <td colSpan="6">{error}</td>
+                  </tr>
+                ) : filteredProduct && filteredProduct.length === 0 ? (
+                  <tr>
+                    <td colSpan="6">No matching results found.</td>
+                  </tr>
+                ) : (
+                  filteredProduct.map((product) => (
+                    <tr key={product._id}>
+                      <td>{product.productName}</td>
+                      <td>{product.productDes}</td>
+                      <td>{product.productCap}</td>
+                      <td>{product.productPrice}</td>
+                      <td>
+                        <img
+                          style={{
+                            objectFit: "cover",
+                            height: "40px",
+                            width: "60px",
+                          }}
+                          src={product.productImage}
+                          alt=""
+                        />
+                      </td>
+                      <td>
+                        <div className="user-actions">
+                          <button
+                            type="button"
+                            className="btn btn-outline-primary"
+                            onClick={() => handleUpdate(product._id)} // Pass product ID
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger"
+                            onClick={() => handleDelete(product._id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>

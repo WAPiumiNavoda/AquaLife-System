@@ -47,10 +47,10 @@ const Maintenance = () => {
           <br />
 
           <div className="service-maintenance-left">
-            <div className="image-container">
+            <div className="image-container99">
               <img src={img1} />
             </div>
-            <form className="form" ref={formRef} onSubmit={sendEmail}>
+            <form className="form99" ref={formRef} onSubmit={sendEmail}>
               <input
                 type="text"
                 className="form-control"
