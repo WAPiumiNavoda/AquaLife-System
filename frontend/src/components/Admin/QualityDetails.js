@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listQualityOne } from "../../actions/qualityTestActions";
 import { useParams } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { Button } from "react-bootstrap";
 
 const QualityDetails = () => {
   const { id } = useParams(); // get the _id from the URL
@@ -44,6 +45,8 @@ const QualityDetails = () => {
             <p>
               <strong>Created At:</strong> {quality && quality.createdAt}
             </p>
+            <br />
+            <Button>Send Report</Button>
           </div>
         )}
       </div>

@@ -49,6 +49,9 @@ import ProjectReport from "./components/Report/ProjectListReport";
 import PaymentListForAdmin from "./components/Admin/donate/PaymentListForAdmin";
 import ArticalListReport from "./components/Report/ArticalListReport";
 import ArticalList from "./components/Report/ArticalList";
+import QualityTestReport from "./components/Report/qualityTestReport";
+import QualityTestReportList from "./components/Report/qualityTestReportList";
+
 const App = () => {
   const hideHeaderFooterRoutes = [
     "/dashboard",
@@ -63,6 +66,8 @@ const App = () => {
     "/allproduct",
     "/paymentList",
     "/articleReportList",
+    "/qualityTestReport",
+
   ];
 
   const shouldHideHeaderFooter = () =>
@@ -161,6 +166,11 @@ const App = () => {
           <Route path="/allproduct" element={<ProductAdmin />} />
           <Route path="/product/:id" element={<ProductUpdate />} />
           <Route path="/oneProduct/:id" element={<OneProduct />} />
+          <Route path="/qualityTestReport" element={<QualityTestReport />} />
+          <Route
+            path="/qualityTestReportList"
+            element={<QualityTestReportList />}
+          />
         </Routes>
       </main>
 

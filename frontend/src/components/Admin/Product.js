@@ -74,13 +74,26 @@ const ProductForm = () => {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar />
-      <div style={{ marginLeft: "120px" }}>
+      <div>
         <h1
-          style={{ textAlign: "center", color: "#1D267D", marginTop: "20px" }}
+          style={{
+            textAlign: "center",
+            color: "#1D267D",
+            marginTop: "20px",
+            marginRight: "100px",
+          }}
         >
           Add New Product
         </h1>
-        <div class="container p-1" style={{ width: "800px", height: "500px" }}>
+        <div
+          class="container88"
+          style={{
+            width: "800px",
+            height: "500px",
+            marginLeft: "350px",
+            marginTop: "40px",
+          }}
+        >
           <div class="row">
             <div class="col-md-6">
               <Form ref={formRef} onSubmit={submitHandler}>

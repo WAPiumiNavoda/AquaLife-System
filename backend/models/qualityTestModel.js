@@ -17,14 +17,8 @@ const qualityTestSchema = new mongoose.Schema({
 		type: String,
 	},
 	createdAt: {
-		type: String,
-		default: () =>
-			new Date().toLocaleDateString(undefined, {
-				weekday: "short",
-				year: "numeric",
-				month: "short",
-				day: "numeric",
-			}),
+		type: Date,
+		default: Date.now,
 	},
 });
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listQuality, deleteQuality } from "./../../actions/qualityTestActions";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const QualityAdmin = () => {
   const dispatch = useDispatch();
@@ -60,6 +61,13 @@ const QualityAdmin = () => {
         <br />
         <br />
 
+        <Button
+          href="/qualityTestReport"
+          style={{ marginLeft: "115px", marginBottom: "10px" }}
+          size="sm"
+        >
+          Genarate Report
+        </Button>
         <div
           className="content-box"
           style={{
