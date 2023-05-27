@@ -11,7 +11,7 @@ describe('ProjectView', () => {
   const projects = [
     {
       id: 1,
-      name: 'Project 1',
+      name: 'Project 123',
       description: 'Project 1 Description',
       price: 100,
       photo: 'project1.jpg',
