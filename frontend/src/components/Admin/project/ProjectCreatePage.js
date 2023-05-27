@@ -61,7 +61,7 @@ const ProjectCreate = () => {
   };
 
   return (
-    <div className="admin-dashboard" style={{ backgroundColor: "lightblue" }}>
+    <div className="admin-dashboard" style={{ backgroundColor: "#87CEEB" }}>
   <Sidebar />
 
   <div className="admin-content">
@@ -77,12 +77,12 @@ const ProjectCreate = () => {
             </div>
             <br />
 
-      <h1 style={{ marginLeft: "100px", marginTop: "-10px",marginLeft:"400px",fontFamily:"poppins",fontSize:"40px"}}>Add Your New Projects</h1>
+      <h1 style={{ marginLeft: "100px", marginTop: "-10px",marginLeft:"500px",fontFamily:"poppins",fontSize:"40px"}}>Add Your New Projects</h1>
       <br />
     </div>
 
   
-    <div className="container p-9">
+    <div className="container2">
   <div className="col-md-9">
   {uploadedImage && (
   <img

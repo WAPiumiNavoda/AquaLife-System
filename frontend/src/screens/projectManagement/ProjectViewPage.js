@@ -19,10 +19,7 @@ const ProjectView = ({history,search,props}) => {
          dispatch(listProjects())
        }, [dispatch])
    
-    // project?.map((data) =>{
-    //     console.log("checkedMapData",data)
-    // })   
-   
+    
     return (
       
         <>
@@ -35,11 +32,11 @@ const ProjectView = ({history,search,props}) => {
       </div>
       
 
-    <div className="container">
+    <div className="container1">
       <div className="row">
         {project && project.map((p) => (
           <div className="col-md-3" key={p.id}>
-            <div className="card bg-light mb-5 h-100">
+            <div className="card bg-light mb-9 h-100">
            
               <img src={p.photo} className="card-img-top" alt="Card image cap" />
               <div className="card-body">
@@ -48,7 +45,7 @@ const ProjectView = ({history,search,props}) => {
                 <p className="card-text">{p.price}</p>
                
               </div>
-              <a href="/selection/${p.id}" className="btn btn-primary">Donate</a>
+              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"10px",fontSize:"20px"}}>Donate</a>
             </div>
           </div>
         ))

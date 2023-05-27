@@ -2,19 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Form } from "react-bootstrap";
 import Sidebar from '../Sidebar';
-import { listDonateLabor } from "../../../actions/donateActions";
+import { listDonatePayment } from "../../../actions/donateActions";
 import emailjs from 'emailjs-com';
 
-const LaborListForAdmin = () => {
+const PaymentListForAdmin = () => {
   const [searchTerm, setSearchTerm] = useState("");
  
   const dispatch = useDispatch();
 
-  const laborList = useSelector((state) => state.laborList);
-  const { loading, labor, error } = laborList;
+  const paymentList = useSelector((state) => state.paymentList);
+  const { loading, payment, error } = paymentList;
 
   useEffect(() => {
-    dispatch(listDonateLabor());
+    dispatch(listDonatePayment());
   }, [dispatch]);
 
   const form = useRef(); // Add this line to create form reference
@@ -40,7 +40,7 @@ const LaborListForAdmin = () => {
       });
   };
 
-  const filteredLabor = labor && labor.filter(L => L.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredPayment = payment && payment.filter(pm => pm.country.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div className="admin-dashboard">
@@ -48,14 +48,14 @@ const LaborListForAdmin = () => {
 
       <div className="admin-content">
         <div className="admin-header">
-          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px", fontFamily:"poppins", fontSize:"50px" }}>Human Labor List</h1>
+          <h1 style={{ marginLeft: "100px", marginTop: "20px", marginLeft: "500px", fontFamily:"poppins", fontSize:"50px" }}>Donate Payment List</h1>
         </div>
 
         <div className="search-bar">
           <Form>
             <Form.Control
               type="text"
-              placeholder="Search by project name"
+              placeholder="Search by Country Name"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
@@ -69,24 +69,23 @@ const LaborListForAdmin = () => {
           <table className="table table-bordered table-striped">
             <thead className="thead-dark">
               <tr>
-                <th>Project Name</th>
+                <th>CardName</th>
                 <th>Email</th>
-                <th>Name</th>
-                <th>Available Date</th>
+                <th>Date</th>
+                <th>DonatePrice</th>
                 <th>Country</th>
-                <th>Contact Number</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {filteredLabor && filteredLabor.map((L) => (
-                <tr key={L.id}>
-                  <td>{L.name}</td>
-                  <td>{L.email}</td>
-                  <td>{L.userName}</td>
-                  <td>{L.availableDate}</td>
-                  <td>{L.country}</td>
-                  <td>{L.phone}</td>
+              {filteredPayment && filteredPayment.map((pm) => (
+                <tr key={pm.id}>
+                  <td>{pm.cardName}</td>
+                  <td>{pm.email}</td>
+                  <td>{pm.donatePrice}</td>
+                  <td>{pm.availableDate}</td>
+                  <td>{pm.country}</td>
+                 
                   <td>
                     <div className="user-actions">
                       <form ref={form}>
@@ -121,4 +120,4 @@ const LaborListForAdmin = () => {
   );
 };
 
-export default LaborListForAdmin;
+export default PaymentListForAdmin;

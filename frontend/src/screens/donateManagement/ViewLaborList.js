@@ -66,10 +66,10 @@ const LaborList = () => {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="search-input"
-                      style={{ width: "400px", marginLeft: "1400px" }} // Add width style to the input
+                      style={{ width: "400px", marginLeft: "1250px" }} // Add width style to the input
                   />
               </Form>
-          </div><br /><div className="table-container">
+          </div><br /><div className="table-container1">
               <table className="table table-bordered table-striped">
                   <thead className="thead-dark">
                       <tr>
@@ -119,6 +119,7 @@ const LaborList = () => {
                       ))}
                   </tbody>
               </table>
+              <br/><br/><br/>
           </div></>
       
   );
