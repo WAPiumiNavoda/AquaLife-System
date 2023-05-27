@@ -58,6 +58,7 @@ export default function PaymentForm() {
           "url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp)",
       }}
     >
+      <br/><br/>
       <MDBRow className="d-flex justify-content-center">
         <MDBCol md="10" lg="8" xl="5">
           <MDBCard className="rounded-3" style={{ marginLeft: "200px" }}>

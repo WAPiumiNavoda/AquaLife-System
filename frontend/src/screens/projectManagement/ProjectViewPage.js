@@ -30,6 +30,7 @@ const ProjectView = ({history,search,props}) => {
           Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
         </div>
       </div>
+      <br/><br/>
       
 
     <div className="container1">
@@ -45,7 +46,7 @@ const ProjectView = ({history,search,props}) => {
                 <p className="card-text">{p.price}</p>
                
               </div>
-              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"0px",fontSize:"20px"}}>Donate</a>
+              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"4px",fontSize:"20px"}}>Donate</a>
             </div>
           </div>
         ))
@@ -54,6 +55,7 @@ const ProjectView = ({history,search,props}) => {
 
       </div>
     </div>
+    <br/><br/>
   </>
 );
 
