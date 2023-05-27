@@ -88,7 +88,7 @@ const UserRegisterScreen = () => {
 			return setPicMessage("Please Select an Image");
 		}
 	};
-	if (userInfo) {
+
 		return (
 			<div className="registerBg  m-5">
 				<br></br>
@@ -100,7 +100,7 @@ const UserRegisterScreen = () => {
 							marginTop: 5,
 							fontSize: 15,
 						}}
-						href="/admin"
+						href="/"
 					>
 						{" "}
 						Back to Dashboard
@@ -118,6 +118,8 @@ const UserRegisterScreen = () => {
 							paddingLeft: 25,
 							paddingRight: 25,
 							background: "rgba(231, 238, 238, 0.8)",
+							width:"1000px",
+							marginLeft:"500px"
 						}}
 					>
 						<div className="loginContainer">
@@ -298,14 +300,7 @@ const UserRegisterScreen = () => {
 				<br></br>
 			</div>
 		);
-	} else {
-		return (
-			<div className="denied">
-				<MainScreen />
-				<br></br>
-			</div>
-		);
-	}
-};
+	} 
+
 
 export default UserRegisterScreen;

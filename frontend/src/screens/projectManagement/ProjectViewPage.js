@@ -45,7 +45,7 @@ const ProjectView = ({history,search,props}) => {
                 <p className="card-text">{p.price}</p>
                
               </div>
-              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"10px",fontSize:"20px"}}>Donate</a>
+              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"0px",fontSize:"20px"}}>Donate</a>
             </div>
           </div>
         ))

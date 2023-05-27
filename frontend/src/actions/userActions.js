@@ -67,14 +67,15 @@ export const userRegister = (name, dob, nic, telephone, address, email, password
 	try {
 		dispatch({ type: USER_REGISTER_REQUEST });
 
-		const config = {
-			headers: {
-				"Content-type": "application/json",
-			},
-		};
+		// const config = {
+		// 	headers: {
+		// 		"Content-type": "application/json",
+		// 	},
+		// };
 
+		
 		const { data } = await axios.post(
-			`/user/register`,
+			`http://localhost:5000/user/register`,
 			{
 				name,
 				dob,
@@ -86,7 +87,7 @@ export const userRegister = (name, dob, nic, telephone, address, email, password
 				pic,
 				role
 			},
-			config
+		
 		);
 
 		dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
@@ -99,7 +100,7 @@ export const userRegister = (name, dob, nic, telephone, address, email, password
 		});
 
 		setTimeout(function () {
-			window.location.href = "/admin";
+			window.location.href = "/";
 		}, 2000);
 	} catch (error) {
 		dispatch({
