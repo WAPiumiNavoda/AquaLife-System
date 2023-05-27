@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArticleDes = () => {
   return (
-
+<>
 <div class="card p-5">
    <h2 className='m-3' style={{fontSize:'45px', color:"#57aade"}}>Request a Share Your knwoladge by write for us</h2>
 
@@ -20,6 +20,7 @@ const ArticleDes = () => {
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div> */}
 </div>
+</>
   )
 }
 

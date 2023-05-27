@@ -9,7 +9,7 @@ const AboutArticle = () => {
     <div>
 
     <div   style={{
-        width: "90%",
+        width: "70%",
         margin: "0px auto",
       }}>
       <div className="article_about__page">

@@ -19,10 +19,7 @@ const ProjectView = ({history,search,props}) => {
          dispatch(listProjects())
        }, [dispatch])
    
-    // project?.map((data) =>{
-    //     console.log("checkedMapData",data)
-    // })   
-   
+    
     return (
       
         <>
@@ -33,13 +30,14 @@ const ProjectView = ({history,search,props}) => {
           Online platforms provide a unique opportunity to support critical water projects around the world. From drilling wells in areas without access to clean drinking water to implementing water conservation initiatives in drought-prone regions, these projects are crucial to improving the quality of life for communities in need. By contributing to a water project that resonates with you, you can play a vital role in ensuring that everyone has access to this essential resource. Join the movement and help make a difference today.
         </div>
       </div>
+      <br/><br/>
       
 
-    <div className="container">
+    <div className="container1">
       <div className="row">
         {project && project.map((p) => (
           <div className="col-md-3" key={p.id}>
-            <div className="card bg-light mb-5 h-100">
+            <div className="card bg-light mb-9 h-100">
            
               <img src={p.photo} className="card-img-top" alt="Card image cap" />
               <div className="card-body">
@@ -48,7 +46,7 @@ const ProjectView = ({history,search,props}) => {
                 <p className="card-text">{p.price}</p>
                
               </div>
-              <a href="/selection/${p.id}" className="btn btn-primary">Donate</a>
+              <a href="/selection/${p.id}" className="btn btn-primary" style={{padding:"4px",fontSize:"20px"}}>Donate</a>
             </div>
           </div>
         ))
@@ -57,6 +55,7 @@ const ProjectView = ({history,search,props}) => {
 
       </div>
     </div>
+    <br/><br/>
   </>
 );
 

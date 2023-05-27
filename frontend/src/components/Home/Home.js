@@ -18,9 +18,11 @@ function Home() {
         </div>
         <div className="service-container">
           <div className="service-text">
+            <a style={{textDecoration: "none"}}  href="/services" className="tab">
             <h3 className="pt-5">
               Wastewater Treatment & Water Quality Monitoring
             </h3>
+            </a>
             <p className="px-5">
               Wastewater treatment is the process of removing contaminants from
               wastewater to make it safe for discharge into the environment or
@@ -38,7 +40,7 @@ function Home() {
         <div className="service-container" style={{ paddingLeft: "20px" }}>
           <img src={img2} alt="Donate" className="service-image" />
           <div className="service-text">
-            <a href="/user-projectView" className="tab">
+            <a style={{textDecoration: "none"}} href="/user-projectView" className="tab">
               <h3> Donate Now </h3>
             </a>
             <p>
@@ -54,7 +56,9 @@ function Home() {
         </div>
         <div className="service-container">
           <div className="service-text">
+             <a  style={{textDecoration: "none"}} href="/articleHome" className="tab">
             <h3>Education and Knwoladge</h3>
+            </a>
             <p>
               Learn more about water management, conservation, and
               sustainability through our educational resources and expert
@@ -75,7 +79,7 @@ function Home() {
         <div className="service-container" style={{ paddingLeft: "20px" }}>
           <img src={img4} alt="Build" className="service-image" />
           <div className="service-text">
-            <a href="/innovation" className="tab">
+            <a style={{textDecoration: "none"}} href="/innovationmain" className="tab">
               <h3> Build your dreams</h3>
             </a>
             <p style={{ paddingLeft: "50px", paddingRight: "50px" }}>

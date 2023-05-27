@@ -15,7 +15,10 @@ import {
     INNOVATION_DENY_REQUEST,
     INNOVATION_DENY_SUCCESS,
     INNOVATION_DENY_FAIL,
-    SET_APPROVED_DATA
+    SET_APPROVED_DATA,
+    INNOVATION_DELETE_FAIL,
+    INNOVATION_DELETE_SUCCESS,
+    INNOVATION_DELETE_REQUEST,
 } from '../constants/innovationConstants'
 
 
@@ -172,6 +175,8 @@ export const approveInnovationAction = ( id ) => async (
   }
 };
 
+
+
 //innovation approve action
 export const denyInnovationAction = ( id ) => async (
   dispatch,
@@ -228,5 +233,41 @@ export const setApprovedData = () => async (dispatch) => {
     dispatch({ type: SET_APPROVED_DATA, payload: res.data });
   } catch (error) {
     console.error(error);
+  }
+};
+
+
+//delete note action
+export const deleteInnoAction = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type:  INNOVATION_DELETE_REQUEST,
+    });
+
+    // const {
+    //   userLogin: { userInfo },
+    // } = getState();
+
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${userInfo.token}`,
+    //   },
+    // };
+
+    const { data } = await axios.delete(`http://localhost:5000/user/innovation/delete/${id}`);
+
+    dispatch({
+      type:  INNOVATION_DELETE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type:  INNOVATION_DELETE_FAIL,
+      payload: message,
+    });
   }
 };

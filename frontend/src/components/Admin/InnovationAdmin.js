@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import { useDispatch,useSelector } from 'react-redux';
 import {
   listInnoation, 
+  deleteInnoAction,
   approveInnovationAction,
   denyInnovationAction,
   setApprovedData
@@ -54,7 +55,11 @@ const InnovationAdmin = () => {
       );
   };
 
-  const denyInnovation = () => {
+    const deleteHandler = (id) => {
+    dispatch(deleteInnoAction(id))
+  };
+
+  const denyInnovation = (id) => {
 
     emailjs
       .sendForm(
@@ -72,6 +77,7 @@ const InnovationAdmin = () => {
 			timer: 2000,
 			button: false,
 		});
+    deleteHandler(id);
         },
         (error) => {
           console.log(error.text);
@@ -164,7 +170,7 @@ const InnovationAdmin = () => {
                   <button type="button" class="btn btn-outline-primary"  fdprocessedid="3ah475" ref={form} onClick={sendEmail}>Approve</button>
                   </form>
                   <form ref={formRef}>
-                  <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" ref={formRef} onClick={denyInnovation}>Deny</button>
+                  <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" ref={formRef} onClick={()=>denyInnovation(innovation._id)} >Deny</button>
                   </form>
                 </div>
               </td>

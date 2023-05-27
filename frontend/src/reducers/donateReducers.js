@@ -10,8 +10,13 @@ import {
 	DONATELABOR_UPDATE_FAIL,
 	DONATELABOR_DELETE_REQUEST,
 	DONATELABOR_DELETE_SUCCESS,
-	DONATELABOR_DELETE_FAIL
-
+	DONATELABOR_DELETE_FAIL,
+    DONATEPAYMENT_LIST_FAIL,
+	DONATEPAYMENT_LIST_REQUEST,
+	DONATEPAYMENT_LIST_SUCCESS,
+	DONATEPAYMENT_CREATE_REQUEST,
+    DONATEPAYMENT_CREATE_SUCCESS,
+    DONATEPAYMENT_CREATE_FAIL,
 } from "../constants/donateConstants";
 
 export const DonateListReducer = (state = { donate: [] }, action) => {
@@ -68,5 +73,34 @@ export const DonateDeleteReducer = (state = {}, action) => {
 			return state;
 	}
 };
+
+export const PaymentDonateListReducer = (state = { Paymentdonate: [] }, action) => {
+	switch (action.type) {
+		case DONATEPAYMENT_LIST_REQUEST:
+			return { loading: true };
+		case DONATEPAYMENT_LIST_SUCCESS:
+			return { loading: false, payment: action.payload };
+		case DONATEPAYMENT_LIST_FAIL:
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};
+
+
+export const PaymentCreateReducer = (state = {}, action) => {
+	switch (action.type) {
+	  case DONATEPAYMENT_CREATE_REQUEST:
+		return { loading: true };
+	  case DONATEPAYMENT_CREATE_SUCCESS:
+		return { loading: false, success: true };
+	  case DONATEPAYMENT_CREATE_FAIL:
+		return { loading: false, error: action.payload };
+	  default:
+		return state;
+	}
+}
+
 
 

@@ -14,13 +14,13 @@ const getInnovation =  asyncHandler(
 
 //Create innovation controller
 const  createInnovation = asyncHandler(async (req, res) => {
-  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
+  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile } = req.body;
 
-  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
+  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile ) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved });
+    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile});
 
     const createdInnovation = await Innovation.save();
 
@@ -44,11 +44,6 @@ const getInnovationById= asyncHandler(async (req,res)=>{
 //delete innovation controller
 const deleteInnovation = asyncHandler(async (req, res) => {
   const innovation = await Innovations.findById(req.params.id);
-
-  if ( innovation.user.toString() !== req.user._id.toString()) {
-    res.status(401);
-    throw new Error("You can't perform this action");
-  }
 
   if ( innovation ) {
     await  innovation.remove();
@@ -158,5 +153,6 @@ module.exports = {
      innovationApprove,
      innovationDeny,
      UpdateInnovation,
+     deleteInnovation ,
      innovationApproveList,
 }

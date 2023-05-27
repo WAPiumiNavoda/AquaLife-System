@@ -59,7 +59,9 @@ const ArticleCard = ({history,search,props}) => {
                  width:"100px",
                  height:"25px"
               }}>Read More</Button>
-          </div>        
+          </div>      
+          
+ 
         ))
       }
 
