@@ -39,36 +39,29 @@ const ArticleCard = ({history,search,props}) => {
 
       article?.reverse().map((article,index)=>(  
 
-          // <div class="card" style={{width: "400px",
-          //                           height: "500px",
-          //                           margintop: "15px",
-          //                           padding:"5px",
-          //                           gridGap:"1rem",
+          <div class="card" style={{width: "400px",
+                                    height: "500px",
+                                    margintop: "15px",
+                                    padding:"5px",
+                                    gridGap:"1rem",
                                     
-          // }}>
-          //   <img class="card-img-top" src={article.articleImage} style={{
-          //     width:"390px",
-          //     height:"200px",
-          //   }} alt="Card image cap"/>
-          //   <div class="card-body">
-          //     <h3>{article.articleTitle}</h3>
-          //     <p class="card-text">{article.articleContent}</p>
-          //   </div>
-          //   <Button type="submit" href= {`/oneArticle/${article._id}`} class="btn btn-primary" style={{
-          //         marginLeft:"200px",
-          //        width:"100px",
-          //        height:"25px"
-          //     }}>Read More</Button>
-          // </div>      
+          }}>
+            <img class="card-img-top" src={article.articleImage} style={{
+              width:"390px",
+              height:"200px",
+            }} alt="Card image cap"/>
+            <div class="card-body">
+              <h3>{article.articleTitle}</h3>
+              <p class="card-text">{article.articleContent}</p>
+            </div>
+            <Button type="submit" href= {`/oneArticle/${article._id}`} class="btn btn-primary" style={{
+                  marginLeft:"200px",
+                 width:"100px",
+                 height:"25px"
+              }}>Read More</Button>
+          </div>      
           
-          <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap" />
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+ 
         ))
       }
 
