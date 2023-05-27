@@ -44,7 +44,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "dev": "concurrently \"npm start\" \"cd ../backend && npm start\"",
-    "type":"module"
+    "type": "module"
   },
   "eslintConfig": {
     "extends": [
