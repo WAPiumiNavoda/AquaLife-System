@@ -22,7 +22,7 @@ const ProjectReport = () => {
           height: "20%",
           fontSize: 15,
           padding:10,
-          marginTop:"-200px"
+          marginTop:"250px"
         }}
         onClick={handlePrint}
         variant="success"
