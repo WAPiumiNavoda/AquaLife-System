@@ -90,8 +90,11 @@ export const createArticleAction = (articleType, articleImage, articleTitle, art
      text: "Article details added successfully.",
      icon: "success",
      timer: 2000,
-     button: false,
+     button: false
    });
+	setTimeout(function () {
+				window.location.href = "/articleHome";
+			}, 2000);
 
    dispatch({
      type: ARTICLE_CREATE_SUCCESS,

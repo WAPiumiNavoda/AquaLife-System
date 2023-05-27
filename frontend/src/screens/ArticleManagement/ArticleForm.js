@@ -80,7 +80,7 @@ const ArticleForm = () => {
 
   return (
     <>
-       <h1 style={{textAlign: "center", color:"#1D267D"}}>Submit Your Article Request</h1>
+       <h1 style={{textAlign: "center", color:"#1D267D" , paddingTop:'70px'}}>Submit Your Article Request</h1>
           <div class="container">
           <div class="row">
             <div class="col-md-6">

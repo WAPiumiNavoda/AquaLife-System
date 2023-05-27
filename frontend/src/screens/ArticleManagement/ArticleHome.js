@@ -11,7 +11,7 @@ const ArticleHome = () => {
             <Row>
                  <div className='mainTopIntro_article'>
                     <div>
-                      ArticleAbout
+               
                     </div>
                  </div>
             </Row>

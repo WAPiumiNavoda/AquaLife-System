@@ -7,7 +7,7 @@ const Article = () => {
   return (
     <div>
         <ArticleHome />
-        <ArticleDes />
+        {/* <ArticleDes /> */}
         <ArticleForm />
     </div>
   )
