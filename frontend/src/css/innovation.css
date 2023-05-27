@@ -9,7 +9,7 @@
     background-position: center;
 }
 
-/* .mainTop1 {
+.mainTop1 {
     align-items: center;
     display: flex;
     min-height: 83vh;
@@ -18,7 +18,7 @@
     color: #0667a7;
     opacity: 0.8;
     background-position: center;
-} */
+}
 
   .mainTop1 h1 {
       color: rgb(13, 118, 188);
