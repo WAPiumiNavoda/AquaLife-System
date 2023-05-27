@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import { userRegister } from "../../actions/userActions";
-import MainScreen from "../../components/MainScreen";
 //import "./RegisterScreen.css";
 
 const UserRegisterScreen = () => {

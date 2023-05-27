@@ -97,6 +97,7 @@ const App = () => {
           <Route path="/oneArticle" element={<OneArticle />} />
           <Route path="/articleReport" element={<ArticalList />} />
           <Route path="/articleReportList" element={<ArticalListReport />} />
+          
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
@@ -105,7 +106,6 @@ const App = () => {
           <Route path="/projectList" element={<ProjectListByAdmin />} />
 
           {/* Donate management */}
-
           <Route path = "/createLabour" element={<LabourCreate/>}/>
           <Route path = "/laborList" element={<LaborList/>}/>
           <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>

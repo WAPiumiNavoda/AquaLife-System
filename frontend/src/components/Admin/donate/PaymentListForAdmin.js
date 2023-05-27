@@ -82,6 +82,7 @@ const PaymentListForAdmin = () => {
                 <tr key={pm.id}>
                   <td>{pm.cardName}</td>
                   <td>{pm.email}</td>
+                  <td>{pm.date}</td>
                   <td>{pm.donatePrice}</td>
                   <td>{pm.availableDate}</td>
                   <td>{pm.country}</td>
