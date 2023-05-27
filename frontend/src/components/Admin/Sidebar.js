@@ -7,8 +7,10 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
+      <a href="/" className="logo-container">
         <img src={logo} alt="logo" className="logo" />
         <h3 className="sidebar-title">Aqua Life</h3>
+        </a>
       </div>
       <div className="sidebar-nav">
         <ul className="sidebar-links">

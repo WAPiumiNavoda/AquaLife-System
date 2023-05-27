@@ -27,6 +27,9 @@ function Header() {
         <a href="/user-login" className="button login-button">
           Login
         </a>
+        <a href="/" className="button login-button">
+          Logout
+        </a>
         <a href="/user-register" className="button signup-button">
           Sign Up
         </a>
