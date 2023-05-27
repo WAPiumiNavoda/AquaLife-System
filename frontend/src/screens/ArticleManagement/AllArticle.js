@@ -37,9 +37,12 @@ const AllArticle = () => {
     <div>
     {
        article?.reverse().map((article,index)=>(  
-        <div class="cardview">
-            <div>
-             <img class="card-img-center" src={article.articleImage} alt="Card image cap"/>
+         <div class="card p-5 " style={{marginTop:'100px' , marginLeft:'100px' , width:'1200px'}}>
+  <div class="card-header">
+    Artical
+  </div>
+  <div>
+             <img class="card-img-center m-4" style={{marginRight:'500px'}} src={article.articleImage} alt="Card image cap"/>
             </div><br></br>
             <div>
                <h3 class="card-title">{article.articleTitle}</h3>
@@ -52,7 +55,7 @@ const AllArticle = () => {
                 height:"35px"
              }} class="btn btn-success">Read More</Button>
             </div>
-        </div>        
+</div>
          ))
        }
  
