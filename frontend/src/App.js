@@ -48,7 +48,6 @@ import ProjectList from "./components/Report/projectList";
 import ProjectReport from "./components/Report/ProjectListReport";
 import PaymentListForAdmin from "./components/Admin/donate/PaymentListForAdmin";
 
-
 const App = () => {
   const hideHeaderFooterRoutes = [
     "/dashboard",
@@ -94,12 +93,12 @@ const App = () => {
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />
-          <Route path = "/selection/:id" element={<Dashboard/>}/>
-          <Route path = "/project/:id" element={<ProjectUpdate/>}/>
-          <Route path = "/projectList"  element={<ProjectListByAdmin/>}/>
-
+          <Route path="/selection/:id" element={<Dashboard />} />
+          <Route path="/project/:id" element={<ProjectUpdate />} />
+          <Route path="/projectList" element={<ProjectListByAdmin />} />
 
           {/* Donate management */}
+
           <Route path = "/createLabour" element={<LabourCreate/>}/>
           <Route path = "/laborList" element={<LaborList/>}/>
           <Route path = "/laborListForAdmin"  element={< LaborListForAdmin/>}/>
@@ -110,6 +109,7 @@ const App = () => {
           <Route path="/reportProject" element={<ProjectReport/>}/>
           <Route path ="/paymentList" element={<PaymentListForAdmin/>}/>
          
+
 
           {/* Admin */}
           <Route path="/dashboard" element={<AdminDashboard />} />

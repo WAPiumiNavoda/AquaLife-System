@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 const InnovationDes = () => {
   return (
     
-<div class="card m-5">
+<div class="card11 m-5">
     <div className="service-container" style={{paddingLeft:"20px"}}>
           <img src={img4} alt="Build" className="service-image"  />
           <div className="service-text">

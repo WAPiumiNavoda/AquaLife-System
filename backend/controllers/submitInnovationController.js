@@ -14,13 +14,13 @@ const getInnovation =  asyncHandler(
 
 //Create innovation controller
 const  createInnovation = asyncHandler(async (req, res) => {
-  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved } = req.body;
+  const { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile } = req.body;
 
-  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile || !IsApproved) {
+  if (!innovationType || !innovationTitle || !innovationDes || !innovationImage || !innovationFile ) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
   } else {
-    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile,IsApproved });
+    const Innovation = new Innovations({ innovationType,innovationTitle, innovationDes, innovationImage,innovationFile});
 
     const createdInnovation = await Innovation.save();
 

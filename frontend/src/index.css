@@ -826,12 +826,12 @@ button[type="submit"]:hover {
   padding: 20px;
 }
 
-.image-container img {
+.image-container99 img {
   max-width: 100%;
   height: 260px;
 }
 
-.form{
+.form99{
   margin-top: 50px;
   padding-left: 40px;
   padding-right: 40px;
@@ -879,7 +879,7 @@ button[type="submit"]:hover {
 
 
 /* Single Quality Test Request */
-.card-new {
+.card-new99 {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -888,69 +888,69 @@ button[type="submit"]:hover {
   width: 600px;
 }
 
-.card-new h2 {
+.card-new99 h2 {
   margin-bottom: 10px;
 }
 
-.card-new p {
+.card-new99 p {
   margin-bottom: 5px;
 }
 
 /* One Product Page */
 
-.product-details {
+.product-details99 {
   display: flex;
   margin-top: 20px;
   padding: 15px;
 }
 
-.product-image {
+.product-image99 {
   flex: 1;
   margin: 80px;
   margin-top: 50px;
 }
 
-.product-image img {
+.product-image99 img {
   width: 100%;
   height: auto;
   border-radius: 10px;
   background-color: #ebebeb;
 }
 
-.product-info {
+.product-info99 {
   flex: 2;
   position: relative;
 }
 
-.product-info h2 {
+.product-info99 h2 {
   font-size: 48px;
   margin-bottom: 10px;
   margin-top: 50px;
   font-weight: bold;
 }
 
-.product-attributes {
+.product-attributes99 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 40px;
 }
 
-.attribute {
+.attribute99 {
   flex: 1;
 }
 
-.attribute h4 {
+.attribute99 h4 {
   font-size: 20px;
   margin-bottom: 5px;
   color: rgb(139, 139, 139);
 }
 
-.attribute h5 {
+.attribute99 h5 {
   font-size: 35px;
 }
 
-.product-info h3 {
+.product-info99 h3 {
   margin-top: 10px;
   font-size: 23px;
   margin-bottom: 10px;
@@ -958,7 +958,7 @@ button[type="submit"]:hover {
   color: #0052cc;
 }
 
-.product-info p {
+.product-info99 p {
   font-size: 16px;
   margin-bottom: 20px;
   padding-inline-end: 10px;
@@ -985,36 +985,36 @@ button[type="submit"]:hover {
   color: white;
 }
 
-.horizontal-line {
+.horizontal-line99 {
   width: 97%; /* Adjust the length as needed */
   height: 3px;
   background-color: #000000;
 }
 
-.feature{
+.feature99{
   margin-top: 30px;
 }
 
-.feature-columns {
+.feature99-columns {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
 
-.feature-column {
+.feature99-column {
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.feature-column img {
+.feature99-column img {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
 }
 
-.feature-column p {
+.feature99-column p {
   text-align: center;
   font-size: 14px;
   padding-inline-end: 10px;

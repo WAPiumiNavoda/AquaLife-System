@@ -96,7 +96,7 @@ export const createInnovationAction = ( innovationType,innovationTitle, innovati
     // };
 
     const { data } = await axios.post(
-      `http://localhost:5000//user/innovation/create`,
+      `http://localhost:5000/user/innovation/create`,
       { innovationType,innovationTitle, innovationDes, innovationImage,innovationFile }
     );
      swal({

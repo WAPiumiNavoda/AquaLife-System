@@ -24,7 +24,7 @@ const OneInnovation = ({ match,props }) => {
   //get one innoation
   useEffect(() => {
     const fetching = async () => {
-      const { data } = await axios.get(`http://localhost:5000/innovation/${id}`);
+      const { data } = await axios.get(`http://localhost:5000/user/innovation/${id}`);
 
     setinnovationType(data.innovationType);
     setinnovationTitle(data.innovationTitle);
@@ -69,9 +69,9 @@ const OneInnovation = ({ match,props }) => {
 
         <p className='px-5' 
         style={{fontSize:"25px"}}>{innovationTitle}</p> 
-           <p className='pt-4 mx-5 pb-4'>The advertisers and user guarantees that his or her Content do
-               {innovationDes} </p>
-               <img src={innovationImage} style={{paddingLeft:'40px', width:"400px"}} />
+           {/* <p className='pt-4 mx-5 pb-4'>The advertisers and user guarantees that his or her Content do
+               {innovationDes} </p> */}
+               <Image src='https://i.ibb.co/JrnFm75/support.jpg' style={{paddingLeft:'40px', width:"600px",height:'550px'}} />
          </Col>
          <Col 
          className='p-5'

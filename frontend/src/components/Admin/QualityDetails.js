@@ -25,7 +25,7 @@ const QualityDetails = () => {
         {error ? (
           <p>{error}</p>
         ) : (
-          <div className="card-new">
+          <div className="card-new99">
             <h2 style={{ color: "red" }}>
               Token No: {quality && quality.token}
             </h2>
