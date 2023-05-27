@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
-import InnovationSupportReportList from "./InnovationSupportReportList";
+import ArticleList from "./ArticalList";
 
-const InnovationSupportReport = () => {
+const ArticalListReport = () => {
  const componentRef = useRef();
 
 
@@ -15,20 +15,20 @@ const handlePrint = useReactToPrint({
 
 
 <div style={{marginTop:'10px'}}>
-<InnovationSupportReportList ref={componentRef} />
+<ArticleList ref={componentRef} />
 <br></br>
 
 
  <br></br>
 <Button
   style={{
-          marginLeft: "50%",
+          marginLeft: "80%",
           marginBottom: "100px",
           width: "15%",
           height: "20%",
           fontSize: 15,
           padding:10,
-          marginTop:"0px"
+          marginTop:"250px"
         }}
  onClick={handlePrint}
  variant="success"
@@ -43,4 +43,4 @@ const handlePrint = useReactToPrint({
 
  
 
-export default InnovationSupportReport;
+export default ArticalListReport;

@@ -47,7 +47,8 @@ import ProjectListReport from "./components/Report/ProjectListReport";
 import ProjectList from "./components/Report/projectList";
 import ProjectReport from "./components/Report/ProjectListReport";
 import PaymentListForAdmin from "./components/Admin/donate/PaymentListForAdmin";
-
+import ArticalListReport from "./components/Report/ArticalListReport";
+import ArticalList from "./components/Report/ArticalList";
 const App = () => {
   const hideHeaderFooterRoutes = [
     "/dashboard",
@@ -60,8 +61,8 @@ const App = () => {
     "/laborListForAdmin",
     "/product",
     "/allproduct",
-    "/paymentList"
-
+    "/paymentList",
+    "/articleReportList",
   ];
 
   const shouldHideHeaderFooter = () =>
@@ -89,7 +90,8 @@ const App = () => {
           <Route path="/ArticleForm" element={<ArticleForm />} />
           <Route path="/articleHome" element={<AllArticle />} />
           <Route path="/oneArticle" element={<OneArticle />} />
-
+          <Route path="/articleReport" element={<ArticalList />} />
+          <Route path="/articleReportList" element={<ArticalListReport />} />
           {/* project managment */}
           <Route path="/user-projectView" element={<ProjectView />} />
           <Route path="/admin-createProject" element={<ProjectCreate />} />

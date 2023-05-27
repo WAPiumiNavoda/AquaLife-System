@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import Sidebar from './Sidebar'
+import Sidebar from '../../components/Admin/Sidebar.js'
 import { FaUser, FaProductHunt } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux';
 import {
@@ -11,7 +11,7 @@ import {
 
 
 
-  const ArticleAdmin = () => {
+  const ArticleList = React.forwardRef((props, ref)=> {
 
   //list all articles
   const dispatch = useDispatch();
@@ -22,13 +22,7 @@ import {
       dispatch(listArticle())
     }, [dispatch])
 
-  //approve article request
-  // const articleApproveOne = useSelector((state) => state.articleApprove);
-  // const {loadings,articleApprove, errors} = articleApproveOne;
 
-  const approveArticle = (id) =>{
-    dispatch(approveArticleAction(id))
-  }
 
   //deny article request
   useSelector((state) => state.articleDeny);
@@ -38,14 +32,6 @@ import {
   const { data } = useSelector((state) => state.articleDeny);
 
 
-//approve article request
-  const approveListArticle = () =>{
-      const approveArticleAction = data?.filter((item) => item.status === 'approved');
-      dispatch(setApprovedData(approveArticleAction));
-      setTimeout(function () {
-      window.location.href = "/ArticleApprove";
-    }, 2000);
-  }
 
 
   return (
@@ -60,10 +46,9 @@ import {
        <h1>All Article Requests</h1>
      </div>
 
-      <button 
+      {/* <button 
       className="btn btn-primary mb-3" 
-      href=""
-      onClick={approveListArticle}>Genarate Report</button>
+      onClick={approveListArticle}>Genarate Report</button> */}
 
      {}
 
@@ -75,7 +60,7 @@ import {
            suitable conditions
          </p>
 
-         <table  className="order-table">
+         <table  ref={ref} className="order-table">
            <thead>
              <tr>
                <th >Category</th>
@@ -83,7 +68,6 @@ import {
                <th>Description</th>
                <th >Author</th>
                <th>Image</th>
-                <th>Action</th>
              </tr>
            </thead>
            <tbody>
@@ -105,10 +89,6 @@ import {
                   alt=""
                 /></td>
               <td>
-             <div className="user-actions">
-               <button type="button" class="btn btn-outline-primary" fdprocessedid="3ah475" onClick={() => approveArticle(article._id)}>Approve</button>
-               <button type="button" class="btn btn-outline-danger" fdprocessedid="eb6yb" onClick={() => denyArticle(article._id)}>Deny</button>
-             </div>
            </td>
              </tr>
                  ))
@@ -123,5 +103,5 @@ import {
 
   )
 }
-
-export default ArticleAdmin
+  )
+export default ArticleList
