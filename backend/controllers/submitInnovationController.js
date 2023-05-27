@@ -45,11 +45,6 @@ const getInnovationById= asyncHandler(async (req,res)=>{
 const deleteInnovation = asyncHandler(async (req, res) => {
   const innovation = await Innovations.findById(req.params.id);
 
-  if ( innovation.user.toString() !== req.user._id.toString()) {
-    res.status(401);
-    throw new Error("You can't perform this action");
-  }
-
   if ( innovation ) {
     await  innovation.remove();
     res.json({ message: "Innovation item is removed" });
@@ -158,5 +153,6 @@ module.exports = {
      innovationApprove,
      innovationDeny,
      UpdateInnovation,
+     deleteInnovation ,
      innovationApproveList,
 }

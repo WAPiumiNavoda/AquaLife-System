@@ -64,7 +64,7 @@ router.route('/innovation/:id').post(innovationApprove);
 router.route('/innovation/deny/:id').post(innovationDeny);
 router.route('/innovation/update/:id').put(UpdateInnovation);
 router.route('/innovation/approved/:id').get(innovationApproveList);
-
+router.route('/innovation/delete/:id').delete(deleteInnovation);
 
 
 router.route('/supportInnovation/create').post(createSupportInnovation);
