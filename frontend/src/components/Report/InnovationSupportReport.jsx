@@ -3,8 +3,6 @@ import { Card, Button } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 import InnovationSupportReportList from "./InnovationSupportReportList";
 
-
-
 const InnovationSupportReport = () => {
  const componentRef = useRef();
 

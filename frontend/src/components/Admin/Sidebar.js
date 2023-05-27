@@ -38,7 +38,7 @@ const Sidebar = () => {
             <NavDropdown.Item as={NavLink} to="/laborListForAdmin" activeClassName="active-link" style={{color:"darkblue"}}>
               Labor Donations
             </NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/contact" activeClassName="active-link"style={{color:"darkblue"}}>
+            <NavDropdown.Item as={NavLink} to="/paymentList" activeClassName="active-link"style={{color:"darkblue"}}>
               Payment Donations
             </NavDropdown.Item>
           </NavDropdown>
@@ -67,11 +67,21 @@ const Sidebar = () => {
               <i className="fa fa-envelope" aria-hidden="true"></i> Article
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/innovationReport" activeClassName="active-link">
               <i className="fa fa-download" aria-hidden="true"></i> Report
             </NavLink>
-          </li>
+          </li> */}
+          <li>
+          <NavDropdown title={<span><i className="fa fa-envelope" aria-hidden="true"></i>Reports</span>}>
+            <NavDropdown.Item as={NavLink} to="/innovationReport" activeClassName="active-link" style={{color:"darkblue"}}>
+              Innovations
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/reportProject" activeClassName="active-link"style={{color:"darkblue"}}>
+              Projects
+            </NavDropdown.Item>
+          </NavDropdown>
+        </li>
         </ul>
       </div>
     </div>
