@@ -8,7 +8,7 @@ function Header() {
     <div className="header-container">
       <a href="/" className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
-        <h1 className="webpage-name">Aqua Life</h1>
+        <h1 style={{textDecoration: "none"}} className="webpage-name">Aqua Life</h1>
       </a>
       <div className="tab-container">
         <a href="/" className="tab">
