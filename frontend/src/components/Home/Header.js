@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import logo from "../../Assets/logo.png";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
   return (
@@ -23,7 +24,7 @@ function Header() {
           Support
         </a>
       </div>
-      <div className="button-container">
+      {/* <div className="button-container">
         <a href="/user-login" className="button login-button">
           Login
         </a>
@@ -33,7 +34,18 @@ function Header() {
         <a href="/user-register" className="button signup-button">
           Sign Up
         </a>
-      </div>
+      </div> */}
+
+       <NavDropdown title="Features" id="navbarScrollingDropdown">
+              {/* <NavDropdown.Item ><Link to='/category'>Product</Link></NavDropdown.Item> */}
+              <NavDropdown.Divider />
+              <NavDropdown.Item  href="/">
+                Logout
+              </NavDropdown.Item>
+              <NavDropdown.Item   href="/login">
+                LogIn
+              </NavDropdown.Item>
+            </NavDropdown>
     </div>
   );
 }

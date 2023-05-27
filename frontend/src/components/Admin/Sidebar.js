@@ -46,14 +46,7 @@ const Sidebar = () => {
           </NavDropdown>
         </li>
 
-          <li>
-            <NavLink to="/videoAdmin" activeClassName="active-link">
-              <i  aria-hidden="true"></i> Videos
-            </NavLink>
-          </li>
-
-      
-
+    
           <li>
             <NavLink to="/admin-createProject" activeClassName="active-link">
               <i  aria-hidden="true"></i>{" "}
